@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE HelpCollection>
+<HelpCollection
+  DTDVersion="1.0"
+  Id=""
+  FileVersion="6.6.0.1"
+  LangId="2052"
+  Font="MingLiu"
+  FontSize="10"
+  Charset="132"
+  Title="MapXtreme 2005 联机帮助"
+  Copyright="">
+
+  <AttributeDef File="MapXtreme.HxA"/>
+
+  <TOCDef File="MapXtreme.HxT"/>
+
+  <KeywordIndexDef File="MapXtreme_A.HxK"/>
+  <KeywordIndexDef File="MapXtreme_F.HxK"/>
+  <KeywordIndexDef File="MapXtreme_K.HxK"/>
+  <KeywordIndexDef File="NamedURLIndex.HxK"/>
+
+  <ItemMoniker Name="!DefaultFullTextSearch" ProgId="HxDs.HxFullTextSearch" InitData="FTS"/>
+  <ItemMoniker Name="!DefaultTOC" ProgId="HxDs.HxHierarchy" InitData="MapXtreme"/>
+  <ItemMoniker Name="!DefaultKeywordIndex" ProgId="HxDs.HxIndex" InitData="K"/>
+  <ItemMoniker Name="!DefaultAssociativeIndex" ProgId="HxDs.HxIndex" InitData="A"/>
+  <ItemMoniker Name="!DefaultContextWindowIndex" ProgId="HxDs.HxIndex" InitData="F"/>
+  <ItemMoniker Name="!DefaultNamedUrlIndex" ProgId="HxDs.HxIndex" InitData="NamedUrlIndex"/>
+
+  <ToolData Name="FAR.IncBuildNumber" Value="0"/>
+  <ToolData Name="MSVHWLogFile" Value="MapXtreme.log"/>
+  <ToolData Name="MSVHWLogLevel" Value="3"/>
+  <ToolData Name="MSVHWNamespace" Value="MapXtreme2005.66.Help"/>
+  <ToolData Name="MSVHWUniqueID" Value="MapXtreme"/>
+  <ToolData Name="FAR.CommandLine" Value="C:\Program Files\Helpware\FAR\FAR.exe"/>
+  <ToolData Name="FAR.CommandLineArgs" Value="ms-help://$NAMESPACE"/>
+  <ToolData Name="FAR.NamespaceDesc" Value="MapXtreme 2005 Online Help"/>
+  <ToolData Name="FAR.ProjectList_00" Value="MapXtreme2005v66DeveloperReference.HxC"/>
+</HelpCollection>

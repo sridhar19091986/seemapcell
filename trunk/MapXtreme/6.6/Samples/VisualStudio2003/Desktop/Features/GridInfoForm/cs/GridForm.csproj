@@ -1,0 +1,163 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{0EB2DA08-2B61-4D0A-8630-3E213E9E1726}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = "App.ico"
+                AssemblyKeyContainerName = ""
+                AssemblyName = "GridForm"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "GridForm"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "MapInfo.CoreTypes"
+                    AssemblyName = "MapInfo.CoreTypes"
+                    HintPath = "..\..\..\..\..\..\Ellis\Types\Wrapper\Dev\uw32\MapInfo.CoreTypes.dll"
+                    AssemblyFolderKey = "hklm\mapinfo.net 6.6"
+                />
+                <Reference
+                    Name = "MapInfo.CoreEngine"
+                    AssemblyName = "MapInfo.CoreEngine"
+                    HintPath = "..\..\..\..\..\..\CoreEngine\Dev\uw32\MapInfo.CoreEngine.dll"
+                    AssemblyFolderKey = "hklm\mapinfo.net 6.6"
+                />
+                <Reference
+                    Name = "MapInfo.Windows"
+                    AssemblyName = "MapInfo.Windows"
+                    HintPath = "..\..\..\..\..\..\Windows\Dev\uw32\MapInfo.Windows.dll"
+                    AssemblyFolderKey = "hklm\mapinfo.net 6.6"
+                />
+                <Reference
+                    Name = "MapInfo.Windows.Framework"
+                    AssemblyName = "MapInfo.Windows.Framework"
+                    HintPath = "..\..\..\..\..\..\Windows\Framework\Dev\uw32\MapInfo.Windows.Framework.dll"
+                    AssemblyFolderKey = "hklm\mapinfo.net 6.6"
+                />
+                <Reference
+                    Name = "MapInfo.Windows.Dialogs"
+                    AssemblyName = "MapInfo.Windows.Dialogs"
+                    HintPath = "..\..\..\..\..\..\Windows\Dialogs\Dev\uw32\MapInfo.Windows.Dialogs.dll"
+                    AssemblyFolderKey = "hklm\mapinfo.net 6.6"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "App.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "App.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "GridStyleForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "GridStyleForm.resx"
+                    DependentUpon = "GridStyleForm.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MapForm1.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MapForm1.resx"
+                    DependentUpon = "MapForm1.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

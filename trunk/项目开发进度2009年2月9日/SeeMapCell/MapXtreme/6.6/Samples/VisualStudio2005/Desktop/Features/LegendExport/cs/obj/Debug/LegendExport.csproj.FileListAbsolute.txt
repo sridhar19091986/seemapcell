@@ -1,0 +1,9 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\bin\Debug\LegendExport.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\bin\Debug\LegendExport.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\bin\Debug\LegendExport.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\LegendExport.LegendForm.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\LegendExport.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\LegendExport.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\LegendExport.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LegendExport\cs\obj\Debug\LegendExport.pdb

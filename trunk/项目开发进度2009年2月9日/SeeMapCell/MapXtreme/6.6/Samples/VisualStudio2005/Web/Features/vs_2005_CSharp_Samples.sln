@@ -1,0 +1,160 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\HelloWorldCS\", "HelloWorld\HelloWorldCS\", "{1E7A1B5E-572C-4840-8316-FE9CB110B5DC}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/HelloWorldCS"
+		Debug.AspNetCompiler.PhysicalPath = "HelloWorld\HelloWorldCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\HelloWorldCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/HelloWorldCS"
+		Release.AspNetCompiler.PhysicalPath = "HelloWorld\HelloWorldCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\HelloWorldCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1469"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\CustomToolsCS\", "CustomTools\CustomToolsCS\", "{15F8DE5D-FCBB-4502-AB3E-7B101F2CDFEB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/CustomToolsCS"
+		Debug.AspNetCompiler.PhysicalPath = "CustomTools\CustomToolsCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CustomToolsCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CustomToolsCS"
+		Release.AspNetCompiler.PhysicalPath = "CustomTools\CustomToolsCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CustomToolsCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1473"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\DataAccessCS\", "DataAccess\DataAccessCS\", "{F4C18677-2806-406C-B9AD-6A440421C46D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/DataAccessCS"
+		Debug.AspNetCompiler.PhysicalPath = "DataAccess\DataAccessCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DataAccessCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DataAccessCS"
+		Release.AspNetCompiler.PhysicalPath = "DataAccess\DataAccessCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DataAccessCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1475"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\InfoToolCS\", "InfoTool\InfoToolCS\", "{7A41982C-15BD-4158-8AC9-5CD3FE596289}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/InfoToolCS"
+		Debug.AspNetCompiler.PhysicalPath = "InfoTool\InfoToolCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\InfoToolCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/InfoToolCS"
+		Release.AspNetCompiler.PhysicalPath = "InfoTool\InfoToolCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\InfoToolCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1477"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\ThematicsCS\", "Thematics\ThematicsCS\", "{8A10D3AF-FE87-4DC6-9BBC-692BAF0CCA53}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ThematicsCS"
+		Debug.AspNetCompiler.PhysicalPath = "Thematics\ThematicsCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ThematicsCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ThematicsCS"
+		Release.AspNetCompiler.PhysicalPath = "Thematics\ThematicsCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ThematicsCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1482"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\LegendControlCS\", "LegendControl\LegendControlCS\", "{4C8E1C5E-8BD0-471D-9F20-33EF3AA9E137}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/LegendControlCS"
+		Debug.AspNetCompiler.PhysicalPath = "LegendControl\LegendControlCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\LegendControlCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/LegendControlCS"
+		Release.AspNetCompiler.PhysicalPath = "LegendControl\LegendControlCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\LegendControlCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1484"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\FindCS\", "Find\FindCS\", "{2AE4937C-FFDB-4891-8AE3-8BCA458E9AAB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/FindCS"
+		Debug.AspNetCompiler.PhysicalPath = "Find\FindCS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\FindCS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/FindCS"
+		Release.AspNetCompiler.PhysicalPath = "Find\FindCS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\FindCS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1488"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E7A1B5E-572C-4840-8316-FE9CB110B5DC}.Debug|.NET.ActiveCfg = Debug|.NET
+		{1E7A1B5E-572C-4840-8316-FE9CB110B5DC}.Debug|.NET.Build.0 = Debug|.NET
+		{15F8DE5D-FCBB-4502-AB3E-7B101F2CDFEB}.Debug|.NET.ActiveCfg = Debug|.NET
+		{15F8DE5D-FCBB-4502-AB3E-7B101F2CDFEB}.Debug|.NET.Build.0 = Debug|.NET
+		{F4C18677-2806-406C-B9AD-6A440421C46D}.Debug|.NET.ActiveCfg = Debug|.NET
+		{F4C18677-2806-406C-B9AD-6A440421C46D}.Debug|.NET.Build.0 = Debug|.NET
+		{7A41982C-15BD-4158-8AC9-5CD3FE596289}.Debug|.NET.ActiveCfg = Debug|.NET
+		{7A41982C-15BD-4158-8AC9-5CD3FE596289}.Debug|.NET.Build.0 = Debug|.NET
+		{8A10D3AF-FE87-4DC6-9BBC-692BAF0CCA53}.Debug|.NET.ActiveCfg = Debug|.NET
+		{8A10D3AF-FE87-4DC6-9BBC-692BAF0CCA53}.Debug|.NET.Build.0 = Debug|.NET
+		{4C8E1C5E-8BD0-471D-9F20-33EF3AA9E137}.Debug|.NET.ActiveCfg = Debug|.NET
+		{4C8E1C5E-8BD0-471D-9F20-33EF3AA9E137}.Debug|.NET.Build.0 = Debug|.NET
+		{2AE4937C-FFDB-4891-8AE3-8BCA458E9AAB}.Debug|.NET.ActiveCfg = Debug|.NET
+		{2AE4937C-FFDB-4891-8AE3-8BCA458E9AAB}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

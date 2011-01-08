@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GridForm">
+</Property><Property Name="解决方案文件" Value="C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\GridForm.sln">
+</Property><Property Name="Date" Value="2009年2月8日">
+</Property><Property Name="Time" Value="21:05:35">
+</Property></Properties><Event ErrorLevel="0" Project="GridForm" Source="GridForm.csproj" Description="项目文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\GridForm.csproj">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="AssemblyInfo.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="GridStyleForm.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\GridStyleForm.cs">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="MapForm1.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\MapForm1.cs">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="App.config" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\App.config">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="App.ico" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="GridStyleForm.resx" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\GridStyleForm.resx">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="MapForm1.resx" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\Backup\MapForm1.resx">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="GridForm.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="GridForm" Source="GridForm.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GridForm" Source="GridForm.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

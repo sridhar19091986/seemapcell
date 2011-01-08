@@ -1,0 +1,95 @@
+<MI_WMS_ServerList version="1.0">
+	<Server>
+		<HTTP>http://www.mapinfo.com/miwms</HTTP>
+		<Description>MapInfo Global WMS Server</Description>
+		<Default/>
+	</Server>
+	<Server>
+		<HTTP>http://terraserver.microsoft.com/ogccapabilities.ashx</HTTP>
+		<Description>Microsoft TerraServer Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://wms.globexplorer.com/gexservlets/wms?SERVICENAME=wms_world</HTTP>
+		<Description>Globe Explorer WMS Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://www2.demis.nl/mapserver/request.asp</HTTP>
+		<Description>Demis WMS Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://ceoware2.ccrs.nrcan.gc.ca/cubewerx/cubeserv/cubeserv.cgi</HTTP>
+		<Description>Canada Centre for Remote Sensing Web Map Service</Description>
+	</Server>
+	<Server>
+		<HTTP>http://geo.compusult.net/scripts/mapman.dll?Name=weather</HTTP>
+		<Description>Compusult Limited METAR Weather Mapping service</Description>
+	</Server>
+	<Server>
+		<HTTP>http://loki.compusult.nf.ca/scripts/mapman.dll?Name=DAFIF</HTTP>
+		<Description>Compusult Limited DAFIF Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://demo.cubewerx.com/demo/cubeserv/cubeserv.cgi?config=gita</HTTP>
+		<Description>CubeSERV</Description>
+	</Server>
+	<Server>
+		<HTTP>http://maps1.intergraph.com/wms/world/request.asp</HTTP>
+		<Description>Intergraph World Map</Description>
+	</Server>
+	<Server>
+		<HTTP>http://wmt.jpl.nasa.gov/cgi-bin/wmt.cgi</HTTP>
+		<Description>JPL Web Mapping Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://beta.lifemapper.org/Services/WMS</HTTP>
+		<Description>Lifemapper Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://coast.mit.edu/wmtserver.cgi</HTTP>
+		<Description>MIT Ortho Web Mapping Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://lioib.lio.mnr.gov.on.ca/lioogc/default.asp</HTTP>
+		<Description>OGC_View</Description>
+	</Server>
+	<Server>
+		<HTTP>http://gisdata.usgs.net/servlet/com.esri.wms.Esrimap?servicename=USGS_WMS_GNIS</HTTP>
+		<Description>USGS EROS Data Center Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://gisdata.usgs.net/servlet/com.esri.wms.Esrimap?servicename=USGS_WMS_REF</HTTP>
+		<Description>WMT Map Server maintained by USGS EROS Data Center</Description>
+	</Server>
+	<Server>
+		<HTTP>http://www.geoarctic.com/cgi-bin/wmsgeomapcan</HTTP>
+		<Description>GeoMap_Canada</Description>
+	</Server>
+	<Server>
+		<HTTP>http://cabi.graphdata.co.uk/webmapservice/planaccesswms.asp</HTTP>
+		<Description>GDC CABI PlanAccess WMS</Description>
+	</Server>
+	<Server>
+		<HTTP>http://atlas.walis.wa.gov.au/servlet/com.esri.wms.Esrimap</HTTP>
+		<Description>Australian Atlas - WMS Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://grid.cr.usgs.gov/cgi-bin/mapserver/elsalvador</HTTP>
+		<Description>El Salvador</Description>
+	</Server>
+	<Server>
+		<HTTP>http://www2.dmsolutions.ca/cgi-bin/mswms_gmap</HTTP>
+		<Description>GMap WMS Demo Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://www.ga.gov.au/bin/getmap.pl</HTTP>
+		<Description>Geoscience Australia Map Server</Description>
+	</Server>
+	<Server>
+		<HTTP>http://www.dottedeyes.com/wms/</HTTP>
+		<Description>Dotted Eyes Ltd - Backdrop of Britain - Case-sensitive maps</Description>
+	</Server>
+	<Server>
+		<HTTP>http://globe.digitalearth.gov/viz-bin/wmt.cgi</HTTP>
+		<Description>The GLOBE Program Visualization Server</Description>
+	</Server>
+</MI_WMS_ServerList>

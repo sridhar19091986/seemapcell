@@ -1,0 +1,10 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\bin\Debug\ToolsAppCS.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\bin\Debug\ToolsAppCS.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\bin\Debug\ToolsAppCS.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ToolsAppCS.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ToolsAppCS.LayerFilterDialog.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ToolsAppCS.LayerFilterStatusBar.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\DesktopTools.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ToolsAppCS.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\obj\Debug\ToolsAppCS.pdb

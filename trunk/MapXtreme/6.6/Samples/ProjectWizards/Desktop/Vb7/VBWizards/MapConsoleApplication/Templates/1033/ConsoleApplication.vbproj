@@ -1,0 +1,46 @@
+<VisualStudioProject>
+    <VisualBasic>
+        <Build>
+            <Settings 
+                OutputType = "Exe" 
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    DebugSymbols = "true"
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    IncrementalBuild = "true"
+                    OutputPath = "bin\Debug\"
+                />
+                <Config
+                    Name = "Release"
+                    DebugSymbols = "false"
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                />
+            </Settings>
+            <References>
+                <Reference Name = "System" />
+                <Reference Name = "System.Data" />
+                <Reference Name = "System.XML" />
+                <Reference Name = "MapInfo.CoreTypes" />
+                <Reference Name = "MapInfo.CoreEngine" />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Diagnostics" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>

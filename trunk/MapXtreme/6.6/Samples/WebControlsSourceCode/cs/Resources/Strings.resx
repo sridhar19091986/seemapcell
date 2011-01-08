@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="LCDesignString">
+		<value>Supports runtime rendering only. Please set the MapControlID before running the application</value>
+	</data>
+	<data name="MCDesignString">
+		<value>Supports runtime rendering only. Please use the combination of preloaded workspaces configuration in the web.config file and MapAlias property to load the map.</value>
+	</data>
+	<data name="PooledSetting">
+		<value>Use this setting to turn Session pooling on/off (true/false)</value>
+	</data>
+	<data name="StateSetting">
+		<value>Use this setting to save Session state automatically (HttpSessionState) or manually (Manual)</value>
+	</data>
+	<data name="WorkspaceSetting">
+		<value>Use this setting to preload a workspace on Session creation</value>
+	</data>
+	<data name="RestoreWithinCallContextSetting">
+		<value>Use this setting to solve the deserialization issue related to multiple simultaneous asynchronize calls from the same client(true/false, default is true), this setting will be only taken into account when state is HttpSessionState, UseCallContext is true and sessionStateMode is not Off/InProc.</value>
+	</data>
+	<data name="StateManagerInstanceError">
+		<value>Cannot find instance of StateManager in the ASP.NET session.</value>
+	</data>
+	<data name="ZoomInMapToolHelpText">
+		<value>To zoom in, click on the map or hold the mouse down and drag to draw rectangle, and release to end the operation</value>
+	</data>
+	<data name="ZoomOutMapToolHelpText">
+		<value>To zoom out, click on the map or hold the mouse down and drag to draw rectangle, and release to end the operation</value>
+	</data>
+	<data name="CenterMapToolHelpText">
+		<value>To center the map, click on the map</value>
+	</data>
+	<data name="PanMapToolHelpText">
+		<value>To pan the map, hold the mouse down and drag the map to pan</value>
+	</data>
+	<data name="DistanceMapToolHelpText">
+		<value>To find distance between points, click to start, every click finishes the line and double click ends the operation</value>
+	</data>
+	<data name="PointSelectionMapToolHelpText">
+		<value>To select features at point, click on map to select features at point</value>
+	</data>
+	<data name="PolygonSelectionMapToolHelpText">
+		<value>To select features within polygon, click to start, every click finishes the line and double click ends the operation</value>
+	</data>
+	<data name="RectangleSelectionMapToolHelpText">
+		<value>To select features within rectangle, hold the mouse down and drag to draw rectangle, and release to end the operation</value>
+	</data>
+	<data name="RadiusSelectionMapToolHelpText">
+		<value>To select features within radius, hold the mouse down and drag to draw circle, and release to end the operation</value>
+	</data>
+	<data name="InfoMapToolHelpText">
+		<value>To find information about a feature, click on the map</value>
+	</data>
+	<data name="ZoomBarMapToolHelpText">
+		<value>Click on this tool to zoom to specified level</value>
+	</data>
+	<data name="NavigationMapToolHelpText">
+		<value>Click on this tool to pan the map</value>
+	</data>
+	<data name="MapNotFoundErrorString">
+		<value>The MapInfo session doesn't contain any maps. The reason for this is that the workspace is not preloaded correctly.</value>
+	</data>
+	<data name="UseCallContextSetting">
+		<value>Use this setting to allow the MapInfo ISession instance to remain the same within the lifetime of the ASP.NET request</value>
+	</data>
+	<data name="Treeview2_1">
+		<value>Layer Name</value>
+	</data>
+	<data name="Treeview2_2">
+		<value>Zoom Level</value>
+	</data>
+</root>

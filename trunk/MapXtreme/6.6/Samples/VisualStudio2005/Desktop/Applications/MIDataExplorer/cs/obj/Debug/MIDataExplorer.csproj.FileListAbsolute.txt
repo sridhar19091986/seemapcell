@@ -1,0 +1,12 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\bin\Debug\MIDataExplorer.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\bin\Debug\MIDataExplorer.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\bin\Debug\MIDataExplorer.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.MainForm.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.TableSearchPathDialog.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.pdb
+F:\项目开发进度2009年2月9日\SeeMapCell\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\bin\Debug\MIDataExplorer.exe.config
+F:\项目开发进度2009年2月9日\SeeMapCell\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.exe
+F:\项目开发进度2009年2月9日\SeeMapCell\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Applications\MIDataExplorer\cs\obj\Debug\MIDataExplorer.pdb

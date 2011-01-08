@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE HelpTOC>
+<HelpTOC
+   DTDVersion="1.0"
+   LangId="2052"
+   PluginStyle="Hierarchical"
+   PluginTitle="MapXtreme 2005 联机帮助">
+
+   <HelpTOCNode Title="MapXtreme 2005 开发人员参考">
+      <HelpTOCNode NodeType="TOC" Url="MapXtreme2005v66DeveloperReference"/>
+   </HelpTOCNode>
+
+   <HelpTOCNode Title="MapInfo SQL 语言帮助">
+      <HelpTOCNode NodeType="TOC" Url="MapInfoSQL"/>
+   </HelpTOCNode>
+   <HelpTOCNode Title="MapXtreme 2005 如何实现...？">
+      <HelpTOCNode NodeType="TOC" Url="MapXtreme2005HowDoI"/>
+   </HelpTOCNode>
+
+</HelpTOC>

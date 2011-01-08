@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="DesktopTools">
+</Property><Property Name="解决方案文件" Value="C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\DesktopTools.sln">
+</Property><Property Name="Date" Value="2009年2月8日">
+</Property><Property Name="Time" Value="19:43:04">
+</Property></Properties><Event ErrorLevel="0" Project="DesktopTools" Source="DesktopTools.csproj" Description="项目文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\DesktopTools.csproj">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="AssemblyInfo.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="DesktopTools.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\DesktopTools.cs">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="LayerFilterDialog.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\LayerFilterDialog.cs">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="LayerFilterStatusBar.cs" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\LayerFilterStatusBar.cs">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="App.config" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\App.config">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="App.ico" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="buttons.bmp" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\buttons.bmp">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="DesktopTools.resx" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\DesktopTools.resx">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="LayerFilterDialog.resx" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\LayerFilterDialog.resx">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="LayerFilterStatusBar.resx" Description="文件已成功备份为 C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\DesktopTools\cs\Backup\LayerFilterStatusBar.resx">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="DesktopTools.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="DesktopTools" Source="DesktopTools.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DesktopTools" Source="DesktopTools.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
