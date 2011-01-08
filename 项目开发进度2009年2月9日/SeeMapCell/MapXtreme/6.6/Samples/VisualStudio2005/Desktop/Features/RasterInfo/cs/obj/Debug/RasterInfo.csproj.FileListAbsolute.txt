@@ -1,0 +1,8 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\bin\Debug\RasterInfo.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\bin\Debug\RasterInfo.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\bin\Debug\RasterInfo.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\obj\Debug\RasterInfoSample.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\obj\Debug\RasterInfo.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\obj\Debug\RasterInfo.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\RasterInfo\cs\obj\Debug\RasterInfo.pdb

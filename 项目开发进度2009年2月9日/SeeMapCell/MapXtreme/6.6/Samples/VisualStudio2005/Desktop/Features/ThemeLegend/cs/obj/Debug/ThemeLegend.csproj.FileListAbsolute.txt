@@ -1,0 +1,8 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\bin\Debug\ThemeLegend.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\bin\Debug\ThemeLegend.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\bin\Debug\ThemeLegend.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\obj\Debug\ThemeLegend.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\obj\Debug\ThemeLegend.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\obj\Debug\ThemeLegend.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\ThemeLegend\cs\obj\Debug\ThemeLegend.pdb

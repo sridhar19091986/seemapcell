@@ -1,0 +1,6 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\bin\Debug\WfsClient.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\bin\Debug\WfsClient.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\bin\Debug\WfsClient.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\obj\Debug\WfsClient.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\WfsClient\cs\obj\Debug\WfsClient.pdb

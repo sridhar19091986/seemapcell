@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.vb" Inherits="MapXTremeWebApplication3.Global" %>

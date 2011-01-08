@@ -1,0 +1,9 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\bin\Debug\GridForm.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\bin\Debug\GridForm.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\bin\Debug\GridForm.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\GridForm.GridStyleForm.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\GridForm.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\GridForm.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\GridForm.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GridInfoForm\cs\obj\Debug\GridForm.pdb

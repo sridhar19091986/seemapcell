@@ -1,0 +1,8 @@
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\bin\Debug\Styles.exe.config
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\bin\Debug\Styles.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\bin\Debug\Styles.pdb
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\obj\Debug\Styles.MapForm1.resources
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\obj\Debug\Styles.csproj.GenerateResource.Cache
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\obj\Debug\Styles.exe
+C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\FeatureStyles\cs\obj\Debug\Styles.pdb

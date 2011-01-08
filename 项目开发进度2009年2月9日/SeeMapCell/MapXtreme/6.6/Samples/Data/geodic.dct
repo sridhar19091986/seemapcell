@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<!--GeoDictionary file-->
+<GeoDictionary>
+  <DefaultMatchThreshold>80</DefaultMatchThreshold>
+  <MatchTables>
+    <MatchTable>
+      <TablePath>usa.TAB</TablePath>
+      <TableDescription>usa</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields>
+        <MatchField>
+          <FieldName>State</FieldName>
+        </MatchField>
+        <MatchField>
+          <FieldName>State_Name</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>usa_caps.TAB</TablePath>
+      <TableDescription>usa capitals</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields>
+        <MatchField>
+          <FieldName>Capital</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>US_HIWAY.TAB</TablePath>
+      <TableDescription>US Highway</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields>
+        <MatchField>
+          <FieldName>Highway</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>US_CNTY.TAB</TablePath>
+      <TableDescription>US county boundary</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields>
+        <MatchField>
+          <FieldName>County</FieldName>
+        </MatchField>
+        <MatchField>
+          <FieldName>Fips_code</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>FLORIDA.TAB</TablePath>
+      <TableDescription>FLORIDA</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields />
+    </MatchTable>
+    <MatchTable>
+      <TablePath>grid15.TAB</TablePath>
+      <TableDescription>grid15</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields />
+    </MatchTable>
+    <MatchTable>
+      <TablePath>mexico.TAB</TablePath>
+      <TableDescription>mexico</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps>
+        <AssociatedMap>TwoMexicos.mws</AssociatedMap>
+        <AssociatedMap>Mexico.gst</AssociatedMap>
+      </AssociatedMaps>
+      <MatchFields>
+        <MatchField>
+          <FieldName>State_Name</FieldName>
+        </MatchField>
+        <MatchField>
+          <FieldName>State_Code</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>ocean.TAB</TablePath>
+      <TableDescription>ocean</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields />
+    </MatchTable>
+    <MatchTable>
+      <TablePath>uscty_1k.TAB</TablePath>
+      <TableDescription>uscty_1k</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps />
+      <MatchFields />
+    </MatchTable>
+    <MatchTable>
+      <TablePath>WLDCTY25.TAB</TablePath>
+      <TableDescription>WLDCTY25</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps>
+        <AssociatedMap>world.mws</AssociatedMap>
+        <AssociatedMap>WORLD.GST</AssociatedMap>
+      </AssociatedMaps>
+      <MatchFields>
+        <MatchField>
+          <FieldName>Place_Name</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>World.TAB</TablePath>
+      <TableDescription>World</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps>
+        <AssociatedMap>world.mws</AssociatedMap>
+        <AssociatedMap>WORLD.GST</AssociatedMap>
+      </AssociatedMaps>
+      <MatchFields>
+        <MatchField>
+          <FieldName>Country</FieldName>
+        </MatchField>
+        <MatchField>
+          <FieldName>Continent</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+    <MatchTable>
+      <TablePath>worldcap.TAB</TablePath>
+      <TableDescription>worldcap</TableDescription>
+      <RefineTableName>
+      </RefineTableName>
+      <MatchThreshold>80</MatchThreshold>
+      <AssociatedMaps>
+        <AssociatedMap>world.mws</AssociatedMap>
+        <AssociatedMap>WORLD.GST</AssociatedMap>
+      </AssociatedMaps>
+      <MatchFields>
+        <MatchField>
+          <FieldName>Capital</FieldName>
+        </MatchField>
+        <MatchField>
+          <FieldName>Country</FieldName>
+        </MatchField>
+      </MatchFields>
+    </MatchTable>
+  </MatchTables>
+</GeoDictionary>
