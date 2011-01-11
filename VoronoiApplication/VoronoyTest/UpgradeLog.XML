@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="VoronoyTest">
+</Property><Property Name="解决方案文件" Value="D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\VoronoyTest.sln">
+</Property><Property Name="Date" Value="2010年2月24日">
+</Property><Property Name="Time" Value="19:33:02">
+</Property></Properties><Event ErrorLevel="0" Project="GALib" Source="..\..\..\TSP\TSP C#\GALIb\GALib.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="GALib" Source="..\..\..\TSP\TSP C#\GALIb\GALib.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GALib" Source="..\..\..\TSP\TSP C#\GALIb\GALib.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
