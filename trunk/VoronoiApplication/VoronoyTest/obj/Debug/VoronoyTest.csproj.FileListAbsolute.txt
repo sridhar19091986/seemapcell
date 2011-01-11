@@ -1,0 +1,17 @@
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\VoronoyTest.exe
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\VoronoyTest.pdb
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\FortuneVoronoi.dll
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\ResolveAssemblyReference.cache
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.MainForm.resources
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.Properties.Resources.resources
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.csproj.GenerateResource.Cache
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.exe
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.pdb
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\TSPApp.About.resources
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.Form1.resources
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\obj\Debug\TSPApp.TSPForm.resources
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\GALib.dll
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\GALib.pdb
+D:\TDDOWNLOAD\开源软件研究-20091008\QQ_619498525_记事本\VoronoiApplication\VoronoiApplication\VoronoyTest\bin\Debug\FortuneVoronoi.pdb
+D:\sharpmap\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.exe
+D:\sharpmap\VoronoiApplication\VoronoyTest\obj\Debug\VoronoyTest.pdb
