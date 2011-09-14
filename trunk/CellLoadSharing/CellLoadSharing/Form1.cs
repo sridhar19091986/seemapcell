@@ -78,17 +78,27 @@ namespace CellLoadSharing
                 //string cellname = dataGridView1[1, e.RowIndex].Value.ToString();
                 gridControl2.DataSource = FilterDataTable(StaticTable.computecell.dtDetail, cellname);
                 gridView2.OptionsView.ColumnAutoWidth = false;
-                ConditionsAdjustment_thr("accmin", 110, 111);  //小于110红色
+                ConditionsAdjustment_not_equal("accmin", 110);  //不等于110红色
                 ConditionsAdjustment_equal("pt", 31);           //等于31红色
                 ConditionsAdjustment_thr("mrrRX", -86, -84);   //小于-85红色
                 ConditionsAdjustment_thr("T空闲信道", 0, 16); //小于0红色
-
+                ConditionsAdjustment_not_equal("EDGE信道数简易计算",0); //不等于0红色
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void ConditionsAdjustment_not_equal(string col, int thr)
+        {
+            StyleFormatCondition cn;
+            cn = new StyleFormatCondition(FormatConditionEnum.NotEqual, gridView2.Columns[col], null, thr);
+            cn.Appearance.BackColor = Color.Red;
+            cn.Appearance.ForeColor = Color.White;
+            gridView2.FormatConditions.Add(cn);
+        }
+
         private void ConditionsAdjustment_equal(string col, int thr)
         {
             StyleFormatCondition cn;
@@ -122,15 +132,17 @@ namespace CellLoadSharing
         {
             string connstr = null;
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel (*.mdb)|*.mdb|(*.mdb)|*.mdb";
+            ofd.Filter = "Access (*.mdb)|*.mdb|(*.mdb)|*.mdb";
             ofd.Title = title;
+            ofd.FileName = title + ".mdb";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 obj.Text += ofd.FileName + "\r\n" + "\r\n";
                 connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source= " + ofd.FileName;
+                OleDbConnection conn = new OleDbConnection(connstr);
+                return conn;
             }
-            OleDbConnection conn = new OleDbConnection(connstr);
-            return conn;
+            return null;
         }
 
         private void btnImportCellGPRS_Click(object sender, EventArgs e)
