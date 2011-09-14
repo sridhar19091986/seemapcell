@@ -1,47 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 13.75" name="DataClasses1">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.5" name="DataClasses1">
   <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
-    <classShape Id="a17cbdca-bd15-4f97-8174-de726097b51f" absoluteBounds="0.75, 0.75, 2, 3.4717838541666666">
-      <DataClassMoniker Name="/DataClasses1DataContext/CELLGPRS_0822_1" />
+    <classShape Id="f95a9a1b-8887-41f9-bc9e-64f1519dbbc8" absoluteBounds="0.75, 0.75, 2, 1.9542057291666666">
+      <DataClassMoniker Name="/DataClasses1DataContext/MRR小区小时常规统计" />
       <nestedChildShapes>
-        <elementListCompartment Id="acb198fd-cc3e-4a28-8fa4-2a9ff901f86f" absoluteBounds="0.76500000000000012, 1.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c7bc9be8-fe4f-42af-80c3-117b62216736" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a2e49cb0-ee27-4dd8-a96a-9fef56043591" absoluteBounds="3.75, 0.75, 2, 12.745872395833333">
-      <DataClassMoniker Name="/DataClasses1DataContext/MRR_0822" />
+    <classShape Id="f62b47dd-0c57-440d-97e1-ac66ebf3ba33" absoluteBounds="3.75, 0.75, 2, 2.9659244791666666">
+      <DataClassMoniker Name="/DataClasses1DataContext/现网cdd" />
       <nestedChildShapes>
-        <elementListCompartment Id="ca5c9e7d-6472-4250-8899-1e70d7f5e18b" absoluteBounds="3.765, 1.21, 1.9700000000000002, 12.185872395833332" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4ad665ed-d069-45ad-a414-2450aece8bd1" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.4059244791666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="21c00185-9826-400f-be59-74df0fcd5192" absoluteBounds="6.75, 0.75, 2, 2.9659244791666666">
-      <DataClassMoniker Name="/DataClasses1DataContext/现网cdd_0822" />
+    <classShape Id="7e44fdd8-897d-418f-8dd1-25adbd679b78" absoluteBounds="0.75, 4.75, 2, 5.4952213541666666">
+      <DataClassMoniker Name="/DataClasses1DataContext/现网cdd_Nrel" />
       <nestedChildShapes>
-        <elementListCompartment Id="5b0fc4a2-cb29-42d7-a846-0c6ed9410aee" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 2.4059244791666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ad049742-ec85-42d4-9025-8b3306b3e795" absoluteBounds="0.765, 5.21, 1.9700000000000002, 4.9352213541666661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cd586a00-0d85-4e24-846a-86c68815de71" absoluteBounds="6.75, 4.75, 2, 5.4952213541666666">
-      <DataClassMoniker Name="/DataClasses1DataContext/现网cdd_Nrel_0822" />
+    <classShape Id="b93d7016-f617-4386-992b-193a06bbb388" absoluteBounds="3.75, 4.75, 2, 3.4717838541666666">
+      <DataClassMoniker Name="/DataClasses1DataContext/小区基础数据" />
       <nestedChildShapes>
-        <elementListCompartment Id="166fd33c-4af0-4517-80dc-99d423b72ab9" absoluteBounds="6.765, 5.21, 1.9700000000000002, 4.9352213541666661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="34775c23-d9f0-4b23-9f8e-2e047bb031a8" absoluteBounds="3.765, 5.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ba764edf-efb6-4217-8fd1-53e1f903abe7" absoluteBounds="9.75, 0.75, 2, 3.4717838541666666">
-      <DataClassMoniker Name="/DataClasses1DataContext/小区基础数据_0822" />
+    <classShape Id="9402fcc9-0329-414c-a5bf-dc2f7934a98b" absoluteBounds="6.75, 0.75, 2, 1.2797265625000003">
+      <DataClassMoniker Name="/DataClasses1DataContext/小区切换查询" />
       <nestedChildShapes>
-        <elementListCompartment Id="210d8019-56e5-4ff3-969d-cfa5504e39e4" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.9117838541666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4f5bcc2d-eba1-49ac-9913-0273acfba26a" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9d849b58-69c0-4780-814b-9af503402d64" absoluteBounds="9.75, 5.75, 2, 1.2797265625000005">
-      <DataClassMoniker Name="/DataClasses1DataContext/小区切换查询_0822_1" />
+    <classShape Id="1a2e2d14-acea-49c7-945e-6cf24bf3d7e2" absoluteBounds="6.75, 3.75, 2, 3.8090234374999992">
+      <DataClassMoniker Name="/DataClasses1DataContext/CELLGPRS" />
       <nestedChildShapes>
-        <elementListCompartment Id="256b10c8-4fba-4cc6-8447-c74630f7b826" absoluteBounds="9.765, 6.21, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c7e6b7d4-da35-4927-b9a0-39c74b3369e8" absoluteBounds="2.625, 0.75, 2, 3.8090234374999996">
-      <DataClassMoniker Name="/DataClasses1DataContext/CELLGPRS_0902_1" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e2c6f746-bf89-4c57-a14c-ff266e3d80e6" absoluteBounds="2.64, 1.21, 1.9700000000000002, 3.2490234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f178d127-78f1-426d-97c1-72d0fabf90cb" absoluteBounds="6.765, 4.21, 1.9700000000000002, 3.2490234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

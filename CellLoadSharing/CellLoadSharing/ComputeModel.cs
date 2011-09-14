@@ -7,8 +7,7 @@ namespace CellLoadSharing
 {
     public class ComputeModel
     {
-        private DataClasses1DataContext dcc = new DataClasses1DataContext();
-        // Define other methods and classes here
+        //private DataClasses1DataContext dcc = new DataClasses1DataContext();
         public double Variance(IEnumerable<double> ncell)
         {
             List<double> source = ncell.ToList();
@@ -29,18 +28,11 @@ namespace CellLoadSharing
             if (ss == null) return 0;
             return (double)ss;
         }
-
-
-        public List<CellName> Ho_Nrel_Get()
+       public List<CellName> Ho_Nrel_Get(IEnumerable<小区切换查询> cdd_nrel)
         {
-            //替换3
-            var cdd_nrel = dcc.小区切换查询_0822_1;
-
             var nrelation = cdd_nrel.ToLookup(e => e.小区名);
 
             List<CellName> nrel = new List<CellName>();
-
-            //string temp="";
             int thr = 0;
             foreach (var n in nrelation)
             {
@@ -48,7 +40,7 @@ namespace CellLoadSharing
                 foreach (var nn in nreltop)
                 {
                     thr++;
-                    if (thr > 5) continue;    //top5 小区
+                    if (thr > 5) continue; 
                     CellName cn = new CellName();
                     cn.Cell_name = n.Key;
                     cn.N_cell_name = nn.邻小区名;
@@ -67,17 +59,12 @@ namespace CellLoadSharing
             return nrel;
         }
 
-        public List<CellName> Cdd_Nrel_Get()
+        public List<CellName> Cdd_Nrel_Get(IEnumerable<现网cdd_Nrel> cdd_nrel)
         {
-            //替换4
-            var cdd_nrel = dcc.现网cdd_Nrel_0822;
-
             List<CellName> nrel = new List<CellName>();
             var nrelation = from p in cdd_nrel
                             select new { p.cell_name, p.n_cell_name };
             var nnative = cdd_nrel.Select(e => e.cell_name).Distinct();
-
-            //string temp="";
             foreach (var n in nrelation)
             {
                 CellName cn = new CellName();
@@ -118,7 +105,6 @@ namespace CellLoadSharing
                     return n;
                 n = n + 1;
             }
-            //return n;
         }
     }
 }
