@@ -9,69 +9,6 @@ using System.Collections.ObjectModel;
 
 namespace CellLoadSharing
 {
-    class Simulink
-    {
-        //切换取一周统计
-        //GPRS/EDGE 复用度分开计算
-
-        /*
-        t=[0,110,250,245];
-        h=[47254,199713,14691,0];
-        polar(pi*t/180,h,'ro')
-        title('FAILDLTBFEST')
-
-        t=[0,110,250,245];
-        h=[8.95782857142857,11.4418571428571,4.18382857142857,1.83878571428571];
-        polar(pi*t/180,h,'ro')
-        title('PDCH复用度')
-
-        t=[0,110,250,245];
-        h=[60.5780142857143,69.4765571428571,0.0521571428571429,0.139571428571429];
-        polar(pi*t/180,h,'ro')
-        title('H话务比')
-
-        t=[245,250,0,110];
-        h=[1,2,8,11];
-        polar(pi*t/180,h,'ro')
-
-
-        theta=-pi.*30/180:0.0001:pi.*30/180;
-        r3=abs(sin(8000*theta/5));
-        t=[110,0,250,245];
-        h=[199713,47254,14691,0];
-        for i=1:4
-        polar(theta+pi.*t(1,i)/180,h(1,i)*r3,'ro');
-        hold on;
-        end
-        hold off;
-        title('FAILDLTBFEST')
-
-
-        theta=-pi.*30/180:0.0001:pi.*30/180;
-        r3=abs(sin(8000*theta/5));
-        t=[110,0,250,245];
-        h=[11.4418571428571,8.95782857142857,4.18382857142857,1.83878571428571];
-        for i=1:4
-        polar(theta+pi.*t(1,i)/180,h(1,i)*r3,'ro');
-        hold on;
-        end
-        hold off;
-        title('PDCH复用度')
-
-
-        theta=-pi.*0.01/180:0.000001:pi.*0.01/180;
-        r3=abs(sin(8000*theta/5));
-        t=[110,0,250,245];
-        h=[1,1,1,1];
-        for i=1:4
-        polar(theta+pi.*t(1,i)/180,h(1,i)*r3,'ro');
-        hold on;
-        end
-        hold off;
-        title('各扇区方向角')
-
-        **/
-    }
     public static class IEnumerableExtensions
     {
 

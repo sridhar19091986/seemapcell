@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CellLoadSharing" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=CellLoadSharing;Integrated Security=True" SettingsObjectName="CellLoadSharing.Properties.Settings" SettingsPropertyName="CellLoadSharingConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CELLGPRS_0822_1" Member="CELLGPRS_0822_1">
-    <Type Name="CELLGPRS_0822_1">
-      <Column Name="时间" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
-      <Column Name="小区号" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
-      <Column Name="BSC" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
-      <Column Name="下行TBF建立成功率" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="平均分配PDCH" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="EDGE下行激活信道" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="EDGE每线下行用户" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="EDGE终端使用EDGE比例" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PDCH复用度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="GPRS下行激活信道" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="GPRS每线下行用户" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="T可用信道" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="T话务量" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="H话务比" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FAILDLTBFEST" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MRR_0822" Member="MRR_0822">
-    <Type Name="MRR_0822">
+  <Table Name="MRR小区小时常规统计">
+    <Type Name="MRR小区小时常规统计">
       <Column Name="时间" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="DL覆盖94" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -29,74 +8,10 @@
       <Column Name="DL覆盖85" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="DL覆盖75" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="DL覆盖采样数" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DL覆盖0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖10" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖12" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖13" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖14" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖15" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖17" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖18" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖19" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖20" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖21" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖22" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖23" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖24" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖25" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖26" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖27" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖28" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖29" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖30" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖31" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖32" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖33" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖34" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖35" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖36" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖37" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖38" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖39" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖40" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖41" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖42" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖43" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖44" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖45" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖46" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖47" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖48" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖49" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖50" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖51" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖52" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖53" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖54" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖55" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖56" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖57" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖58" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖59" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖60" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖61" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖62" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DL覆盖63" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.现网cdd_0822" Member="现网cdd_0822">
-    <Type Name="现网cdd_0822">
+  <Table Name="现网cdd">
+    <Type Name="现网cdd">
       <Column Name="cellid" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cell_name" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="accmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -112,8 +27,8 @@
       <Column Name="CDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.现网cdd_Nrel_0822" Member="现网cdd_Nrel_0822">
-    <Type Name="现网cdd_Nrel_0822">
+  <Table Name="现网cdd_Nrel">
+    <Type Name="现网cdd_Nrel">
       <Column Name="CDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NW" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="MSC" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
@@ -144,8 +59,8 @@
       <Column Name="troffset" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.小区基础数据_0822" Member="小区基础数据_0822">
-    <Type Name="小区基础数据_0822">
+  <Table Name="小区基础数据">
+    <Type Name="小区基础数据">
       <Column Name="小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="小区号" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="状态" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
@@ -164,15 +79,15 @@
       <Column Name="天线数目" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.小区切换查询_0822_1" Member="小区切换查询_0822_1">
-    <Type Name="小区切换查询_0822_1">
+  <Table Name="小区切换查询">
+    <Type Name="小区切换查询">
       <Column Name="切换次数" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="邻小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CELLGPRS_0902_1" Member="CELLGPRS_0902_1">
-    <Type Name="CELLGPRS_0902_1">
+  <Table Name="CELLGPRS">
+    <Type Name="CELLGPRS">
       <Column Name="时间" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="小区名" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
       <Column Name="小区号" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
