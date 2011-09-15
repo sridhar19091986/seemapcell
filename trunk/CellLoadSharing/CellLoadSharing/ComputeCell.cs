@@ -12,8 +12,9 @@ namespace CellLoadSharing
     {
         public static ComputeCell computecell;
 
-        public static void ExportToExcel(DataGridView DataGridView1)
+        public static void ExportToExcel(DevExpress.XtraGrid.Views.Grid.GridView DataGridView1)
         {
+
             // creating Excel Application
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application
@@ -35,17 +36,21 @@ namespace CellLoadSharing
                 // storing header part in Excel
                 for (int i = 1; i < DataGridView1.Columns.Count + 1; i++)
                 {
-                    worksheet.Cells[1, i] = DataGridView1.Columns[i - 1].HeaderText;
+                    worksheet.Cells[1, i] = DataGridView1.Columns[i - 1].FieldName;
                 }
                 // storing Each row and column value to excel sheet
-                for (int i = 0; i < DataGridView1.Rows.Count - 1; i++)
+                for (int i = 0; i < DataGridView1.RowCount - 1; i++)
                 {
                     for (int j = 0; j < DataGridView1.Columns.Count; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = DataGridView1.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 2, j + 1] =
+
+                            DataGridView1.GetRowCellValue(i, DataGridView1.Columns[j]).ToString();
+                        //DataGridView1.Rows[i].Cells[j].Value.ToString();
                     }
                 }
 
+                /*
                 // save the application
                 string fileName = String.Empty;
                 SaveFileDialog saveFileExcel = new SaveFileDialog();
@@ -66,6 +71,7 @@ namespace CellLoadSharing
 
                 // Exit from the application
                 //app.Quit();
+                 * */
             }
             catch (System.Exception ex)
             {
@@ -73,12 +79,15 @@ namespace CellLoadSharing
             }
             finally
             {
+                /*
                 app.Quit();
                 workbook = null;
                 app = null;
+                 * */
             }
         }
     }
+
     public class ComputeCell : ComputeModel
     {
         public DataTable dtVar;
@@ -91,7 +100,7 @@ namespace CellLoadSharing
         public List<小区切换查询> cellho { get; set; }
         public List<MRR小区小时常规统计> mrr { get; set; }
 
-        public ComputeCell(){}
+        public ComputeCell() { }
         public void ComputeCellData(int top, double MsPerEdge, double HalfRate)
         {
             double hf = (1 - HalfRate) + HalfRate / 2;
