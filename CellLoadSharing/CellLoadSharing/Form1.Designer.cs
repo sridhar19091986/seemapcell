@@ -31,6 +31,17 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraCharts.PolarDiagram polarDiagram1 = new DevExpress.XtraCharts.PolarDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel1 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView1 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel2 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView2 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel3 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView3 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             this.btnImportCellGPRS = new System.Windows.Forms.Button();
             this.btnImportMRR = new System.Windows.Forms.Button();
             this.btnImportCDD = new System.Windows.Forms.Button();
@@ -41,10 +52,9 @@
             this.btnExecuteCLS = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ExportXls2 = new System.Windows.Forms.Button();
+            this.ExportXls1 = new System.Windows.Forms.Button();
             this.btnExportExcel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.BSC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,12 +76,15 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.staticTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ImportAd.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
@@ -81,12 +94,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView3)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staticTableBindingSource)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnImportCellGPRS
             // 
-            this.btnImportCellGPRS.Location = new System.Drawing.Point(0, 46);
+            this.btnImportCellGPRS.Location = new System.Drawing.Point(12, 20);
             this.btnImportCellGPRS.Name = "btnImportCellGPRS";
             this.btnImportCellGPRS.Size = new System.Drawing.Size(193, 23);
             this.btnImportCellGPRS.TabIndex = 0;
@@ -96,7 +124,7 @@
             // 
             // btnImportMRR
             // 
-            this.btnImportMRR.Location = new System.Drawing.Point(0, 75);
+            this.btnImportMRR.Location = new System.Drawing.Point(12, 49);
             this.btnImportMRR.Name = "btnImportMRR";
             this.btnImportMRR.Size = new System.Drawing.Size(193, 23);
             this.btnImportMRR.TabIndex = 1;
@@ -106,7 +134,7 @@
             // 
             // btnImportCDD
             // 
-            this.btnImportCDD.Location = new System.Drawing.Point(0, 104);
+            this.btnImportCDD.Location = new System.Drawing.Point(12, 78);
             this.btnImportCDD.Name = "btnImportCDD";
             this.btnImportCDD.Size = new System.Drawing.Size(193, 23);
             this.btnImportCDD.TabIndex = 2;
@@ -116,7 +144,7 @@
             // 
             // btnImportCDD_Nrel
             // 
-            this.btnImportCDD_Nrel.Location = new System.Drawing.Point(0, 133);
+            this.btnImportCDD_Nrel.Location = new System.Drawing.Point(12, 106);
             this.btnImportCDD_Nrel.Name = "btnImportCDD_Nrel";
             this.btnImportCDD_Nrel.Size = new System.Drawing.Size(193, 23);
             this.btnImportCDD_Nrel.TabIndex = 3;
@@ -126,7 +154,7 @@
             // 
             // btnImportBaseData
             // 
-            this.btnImportBaseData.Location = new System.Drawing.Point(0, 162);
+            this.btnImportBaseData.Location = new System.Drawing.Point(12, 135);
             this.btnImportBaseData.Name = "btnImportBaseData";
             this.btnImportBaseData.Size = new System.Drawing.Size(193, 23);
             this.btnImportBaseData.TabIndex = 4;
@@ -136,7 +164,7 @@
             // 
             // btnImportHandover
             // 
-            this.btnImportHandover.Location = new System.Drawing.Point(0, 191);
+            this.btnImportHandover.Location = new System.Drawing.Point(12, 162);
             this.btnImportHandover.Name = "btnImportHandover";
             this.btnImportHandover.Size = new System.Drawing.Size(193, 23);
             this.btnImportHandover.TabIndex = 5;
@@ -153,18 +181,18 @@
             this.ImportAd.Controls.Add(this.btnImportCDD);
             this.ImportAd.Controls.Add(this.btnImportCDD_Nrel);
             this.ImportAd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ImportAd.Location = new System.Drawing.Point(619, 240);
+            this.ImportAd.Location = new System.Drawing.Point(590, 3);
             this.ImportAd.Name = "ImportAd";
-            this.ImportAd.Size = new System.Drawing.Size(214, 231);
+            this.ImportAd.Size = new System.Drawing.Size(243, 191);
             this.ImportAd.TabIndex = 6;
             this.ImportAd.TabStop = false;
             this.ImportAd.Text = "Import Analysis Data";
             // 
             // btnExecuteCLS
             // 
-            this.btnExecuteCLS.Location = new System.Drawing.Point(9, 40);
+            this.btnExecuteCLS.Location = new System.Drawing.Point(9, 29);
             this.btnExecuteCLS.Name = "btnExecuteCLS";
-            this.btnExecuteCLS.Size = new System.Drawing.Size(120, 23);
+            this.btnExecuteCLS.Size = new System.Drawing.Size(117, 23);
             this.btnExecuteCLS.TabIndex = 1;
             this.btnExecuteCLS.Text = "ExecuteCLS";
             this.btnExecuteCLS.UseVisualStyleBackColor = true;
@@ -175,72 +203,65 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControl1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.gridControl2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ImportAd, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ImportAd, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(836, 474);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(836, 395);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ExportXls2);
+            this.groupBox3.Controls.Add(this.ExportXls1);
             this.groupBox3.Controls.Add(this.btnExportExcel);
             this.groupBox3.Controls.Add(this.btnExecuteCLS);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(144, 231);
+            this.groupBox3.Size = new System.Drawing.Size(144, 191);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Excute Command";
             // 
+            // ExportXls2
+            // 
+            this.ExportXls2.Location = new System.Drawing.Point(9, 135);
+            this.ExportXls2.Name = "ExportXls2";
+            this.ExportXls2.Size = new System.Drawing.Size(117, 23);
+            this.ExportXls2.TabIndex = 12;
+            this.ExportXls2.Text = "ExportXls2";
+            this.ExportXls2.UseVisualStyleBackColor = true;
+            this.ExportXls2.Click += new System.EventHandler(this.ExportXls2_Click);
+            // 
+            // ExportXls1
+            // 
+            this.ExportXls1.Location = new System.Drawing.Point(9, 106);
+            this.ExportXls1.Name = "ExportXls1";
+            this.ExportXls1.Size = new System.Drawing.Size(117, 23);
+            this.ExportXls1.TabIndex = 11;
+            this.ExportXls1.Text = "ExportXls1";
+            this.ExportXls1.UseVisualStyleBackColor = true;
+            this.ExportXls1.Click += new System.EventHandler(this.ExportXls1_Click);
+            // 
             // btnExportExcel
             // 
-            this.btnExportExcel.Location = new System.Drawing.Point(9, 138);
+            this.btnExportExcel.Location = new System.Drawing.Point(9, 58);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(120, 23);
+            this.btnExportExcel.Size = new System.Drawing.Size(117, 23);
             this.btnExportExcel.TabIndex = 10;
             this.btnExportExcel.Text = "ExportExcel";
             this.btnExportExcel.UseVisualStyleBackColor = true;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(619, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 231);
-            this.panel1.TabIndex = 10;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(214, 231);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Check File List";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 17);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(208, 211);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // gridControl1
             // 
@@ -248,7 +269,7 @@
             this.gridControl1.Location = new System.Drawing.Point(153, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(460, 231);
+            this.gridControl1.Size = new System.Drawing.Size(431, 191);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -367,13 +388,14 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(153, 240);
+            this.gridControl2.Location = new System.Drawing.Point(153, 200);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(460, 231);
+            this.gridControl2.Size = new System.Drawing.Size(431, 192);
             this.gridControl2.TabIndex = 14;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gridControl2.Click += new System.EventHandler(this.gridControl2_Click);
             // 
             // gridView2
             // 
@@ -389,9 +411,9 @@
             this.groupBox2.Controls.Add(this.numericUpDown2);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 240);
+            this.groupBox2.Location = new System.Drawing.Point(3, 200);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(144, 231);
+            this.groupBox2.Size = new System.Drawing.Size(144, 192);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Define Parameter";
@@ -399,7 +421,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 162);
+            this.label3.Location = new System.Drawing.Point(11, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 12);
             this.label3.TabIndex = 5;
@@ -408,7 +430,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 102);
+            this.label2.Location = new System.Drawing.Point(11, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 4;
@@ -417,7 +439,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 34);
+            this.label1.Location = new System.Drawing.Point(11, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 3;
@@ -425,7 +447,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(9, 182);
+            this.numericUpDown3.Location = new System.Drawing.Point(9, 137);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -442,7 +464,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(9, 117);
+            this.numericUpDown2.Location = new System.Drawing.Point(9, 86);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown2.TabIndex = 1;
@@ -454,7 +476,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(9, 49);
+            this.numericUpDown1.Location = new System.Drawing.Point(9, 38);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 21);
             this.numericUpDown1.TabIndex = 0;
@@ -464,16 +486,102 @@
             0,
             0});
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chartControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(590, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(243, 192);
+            this.panel1.TabIndex = 10;
+            // 
+            // chartControl1
+            // 
+            polarDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            polarDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            this.chartControl1.Diagram = polarDiagram1;
+            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartControl1.Legend.Visible = false;
+            this.chartControl1.Location = new System.Drawing.Point(0, 0);
+            this.chartControl1.Name = "chartControl1";
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            radarPointSeriesLabel1.LineVisible = true;
+            radarPointSeriesLabel1.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            series1.Label = radarPointSeriesLabel1;
+            series1.Name = "H话务比";
+            series1.View = polarLineSeriesView1;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            radarPointSeriesLabel2.LineVisible = true;
+            radarPointSeriesLabel2.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            series2.Label = radarPointSeriesLabel2;
+            series2.Name = "PDCH复用度";
+            series2.View = polarLineSeriesView2;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1,
+        series2};
+            this.chartControl1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            radarPointSeriesLabel3.LineVisible = true;
+            radarPointSeriesLabel3.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            this.chartControl1.SeriesTemplate.Label = radarPointSeriesLabel3;
+            this.chartControl1.SeriesTemplate.View = polarLineSeriesView3;
+            this.chartControl1.Size = new System.Drawing.Size(243, 192);
+            this.chartControl1.TabIndex = 0;
+            chartTitle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle1.Text = "同站小区负荷均衡";
+            chartTitle2.Text = "";
+            this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1,
+            chartTitle2});
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(836, 48);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Check File List";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 17);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(830, 28);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // staticTableBindingSource
             // 
             this.staticTableBindingSource.DataSource = typeof(CellLoadSharing.StaticTable);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(836, 447);
+            this.splitContainer1.SplitterDistance = 395;
+            this.splitContainer1.TabIndex = 12;
             // 
             // FormCellLoadSharing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 474);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(836, 447);
+            this.Controls.Add(this.splitContainer1);
             this.Name = "FormCellLoadSharing";
             this.Text = "CellLoadSharing";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -481,8 +589,6 @@
             this.ImportAd.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
@@ -493,7 +599,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(polarDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.staticTableBindingSource)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -536,6 +657,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn Variance_H话务比;
         private DevExpress.XtraGrid.Columns.GridColumn Variance_EDGE终端使用EDGE比例;
         private System.Windows.Forms.BindingSource staticTableBindingSource;
+        private System.Windows.Forms.Button ExportXls1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.Button ExportXls2;
     }
 }
 

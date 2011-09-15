@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using DevExpress.XtraGrid;
 using System.Threading;
+using DevExpress.XtraCharts;
 
 namespace CellLoadSharing
 {
@@ -33,9 +34,11 @@ namespace CellLoadSharing
 
                 gridControl1.DataSource = StaticTable.computecell.dtVar;
                 //gridView1.PopulateColumns(); //会删除手动建立的字段，需要在窗口中定义其属性，一一映射
-                gridControl1.Refresh();
+
                 gridView1.OptionsView.ColumnAutoWidth = true;
                 ConditionsAdjustment();
+
+                gridControl1.Refresh();
             }
             catch (Exception ex)
             {
@@ -77,12 +80,20 @@ namespace CellLoadSharing
                 string cellname = this.gridView1.GetRowCellValue(a[0], "Cell_name").ToString();//获取选中行的内容
                 //string cellname = dataGridView1[1, e.RowIndex].Value.ToString();
                 gridControl2.DataSource = FilterDataTable(StaticTable.computecell.dtDetail, cellname);
+
+                //删除不能恢复原来的问题
+                gridView2.PopulateColumns();
+
                 gridView2.OptionsView.ColumnAutoWidth = false;
+
                 ConditionsAdjustment_not_equal("accmin", 110);  //不等于110红色
                 ConditionsAdjustment_equal("pt", 31);           //等于31红色
                 ConditionsAdjustment_thr("mrrRX", -86, -84);   //小于-85红色
                 ConditionsAdjustment_thr("T空闲信道", 0, 16); //小于0红色
-                ConditionsAdjustment_not_equal("EDGE信道数简易计算",0); //不等于0红色
+                ConditionsAdjustment_not_equal("EDGE信道数简易计算", 0); //不等于0红色
+
+                gridControl2.Refresh();
+
             }
             catch (Exception ex)
             {
@@ -137,7 +148,7 @@ namespace CellLoadSharing
             ofd.FileName = title + ".mdb";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                obj.Text += ofd.FileName + "\r\n" + "\r\n";
+                obj.Text += ofd.FileName + "\r\n";
                 connstr = "Provider=Microsoft.Jet.OleDb.4.0;Data Source= " + ofd.FileName;
                 OleDbConnection conn = new OleDbConnection(connstr);
                 return conn;
@@ -275,7 +286,98 @@ namespace CellLoadSharing
 
         private void FormCellLoadSharing_Load(object sender, EventArgs e)
         {
-     
+
+        }
+
+
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+            chartControl1.Series.Clear();
+            //chartControl1.
+            // Create a new chart.
+            //ChartControl polarAreaChart = new ChartControl();
+
+            // Add a polar series to it.
+            Series series1 = new Series("H话务比", ViewType.PolarPoint);
+            Series series2 = new Series("PDCH复用度", ViewType.PolarPoint);
+
+
+            double x, y, z;
+            for (int i = 0; i < gridView2.RowCount; i++)
+            {
+                //for (int j = 0; j < gridView1.Columns.Count; j++)
+                //{
+                //    object val = 
+                //}
+                x = double.Parse(gridView2.GetRowCellValue(i, gridView2.Columns["方向角"]).ToString());
+                y = double.Parse(gridView2.GetRowCellValue(i, gridView2.Columns["H话务比"]).ToString());
+                z = double.Parse(gridView2.GetRowCellValue(i, gridView2.Columns["PDCH复用度"]).ToString());
+                series1.Points.Add(new SeriesPoint(x, y));
+
+                //放大5倍，不然看不清楚
+                series2.Points.Add(new SeriesPoint(x, 5 * z));
+            }
+
+
+
+            // Populate the series with points.
+            //series1.Points.Add(new SeriesPoint(0, 90));
+            //series1.Points.Add(new SeriesPoint(90, 70));
+            //series1.Points.Add(new SeriesPoint(180, 50));
+            //series1.Points.Add(new SeriesPoint(270, 100));
+
+
+            // Add the series to the chart.
+            chartControl1.Series.Add(series1);
+            chartControl1.Series.Add(series2);
+
+            // Adjust the series options.
+            series1.Label.Visible = false;
+            series2.Label.Visible = false;
+
+            // Flip the diagram (if necessary).
+            ((PolarDiagram)chartControl1.Diagram).StartAngleInDegrees = 180;
+            ((PolarDiagram)chartControl1.Diagram).RotationDirection =
+                RadarDiagramRotationDirection.Counterclockwise;
+
+            // Add a title to the chart and hide the legend.
+            //ChartTitle chartTitle1 = new ChartTitle();
+            //chartTitle1.Text = "Polar Area Chart";
+            //chartControl1.Titles.Add(chartTitle1);
+            //chartControl1.Legend.Visible = true;
+            //chartControl1.Legend.
+            // Add the chart to the form.
+            //chartControl1.Dock = DockStyle.Fill;
+            //this.Controls.Add(chartControl1);
+
+        }
+
+        private void ExportXls1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                StaticTable.ExportToExcel(gridView1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void ExportXls2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StaticTable.ExportToExcel(gridView2);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
