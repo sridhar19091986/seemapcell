@@ -12,7 +12,7 @@ namespace CellLoadSharing
     {
         public static ComputeCell computecell;
 
-        public static void ExportToExcel(DevExpress.XtraGrid.Views.Grid.GridView DataGridView1)
+        public static void ExportToExcel(DevExpress.XtraGrid.Views.Grid.GridView gridview)
         {
 
             // creating Excel Application
@@ -26,65 +26,79 @@ namespace CellLoadSharing
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.
             // store its reference to worksheet
-            try
+            //try
+            //{
+            //Fixed:(Microsoft.Office.Interop.Excel.Worksheet)
+            string cellvalue = "";
+            worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+            //worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
+            // changing the name of active sheet
+            worksheet.Name = "Exported from CLS";
+            // storing header part in Excel
+            for (int i = 1; i < gridview.Columns.Count + 1; i++)
             {
-                //Fixed:(Microsoft.Office.Interop.Excel.Worksheet)
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.ActiveSheet;
-                // changing the name of active sheet
-                worksheet.Name = "Exported from CLS";
-                // storing header part in Excel
-                for (int i = 1; i < DataGridView1.Columns.Count + 1; i++)
+                worksheet.Cells[1, i] = gridview.Columns[i - 1].FieldName;
+            }
+            // storing Each row and column value to excel sheet
+            for (int i = 0; i < gridview.RowCount - 1; i++)
+            {
+                for (int j = 0; j < gridview.Columns.Count; j++)
                 {
-                    worksheet.Cells[1, i] = DataGridView1.Columns[i - 1].FieldName;
-                }
-                // storing Each row and column value to excel sheet
-                for (int i = 0; i < DataGridView1.RowCount - 1; i++)
-                {
-                    for (int j = 0; j < DataGridView1.Columns.Count; j++)
+
+                    cellvalue = gridview.GetRowCellValue(i, gridview.Columns[j]).ToString();
+
+
+                    //搞定，原来是excel的单元格的长度有限制
+                    //cellvalue = cellvalue.Length > 8 ? cellvalue.Substring(0, 8) : cellvalue;
+
+                    //强制出错继续运行
+                    try
                     {
-                        worksheet.Cells[i + 2, j + 1] =
-
-                            DataGridView1.GetRowCellValue(i, DataGridView1.Columns[j]).ToString();
-                        //DataGridView1.Rows[i].Cells[j].Value.ToString();
+                        worksheet.Cells[i + 2, j + 1] = cellvalue;
                     }
+                    catch { }
+
+
+                    //DataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
-
-                /*
-                // save the application
-                string fileName = String.Empty;
-                SaveFileDialog saveFileExcel = new SaveFileDialog();
-
-                saveFileExcel.Filter = "Excel files |*.xls|All files (*.*)|*.*";
-                saveFileExcel.FilterIndex = 2;
-                saveFileExcel.RestoreDirectory = true;
-
-                if (saveFileExcel.ShowDialog() == DialogResult.OK)
-                {
-                    fileName = saveFileExcel.FileName;
-                    //Fixed-old code :11 para->add 1:Type.Missing
-                    workbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-
-                }
-                else
-                    return;
-
-                // Exit from the application
-                //app.Quit();
-                 * */
             }
-            catch (System.Exception ex)
+
+            /*
+            // save the application
+            string fileName = String.Empty;
+            SaveFileDialog saveFileExcel = new SaveFileDialog();
+
+            saveFileExcel.Filter = "Excel files |*.xls|All files (*.*)|*.*";
+            saveFileExcel.FilterIndex = 2;
+            saveFileExcel.RestoreDirectory = true;
+
+            if (saveFileExcel.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(ex.ToString());
+                fileName = saveFileExcel.FileName;
+                //Fixed-old code :11 para->add 1:Type.Missing
+                workbook.SaveAs(fileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
             }
-            finally
-            {
-                /*
-                app.Quit();
-                workbook = null;
-                app = null;
-                 * */
-            }
+            else
+                return;
+
+            // Exit from the application
+            //app.Quit();
+                
+        }
+        catch (System.Exception ex)
+        {
+            MessageBox.Show(ex.ToString());
+        }
+        finally
+        {
+            /*
+            app.Quit();
+            workbook = null;
+            app = null;
+              
+        }
+         * */
         }
     }
 

@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraCharts.PolarDiagram polarDiagram1 = new DevExpress.XtraCharts.PolarDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel1 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
-            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView1 = new DevExpress.XtraCharts.PolarLineSeriesView();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel2 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
-            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView2 = new DevExpress.XtraCharts.PolarLineSeriesView();
-            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel3 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
-            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView3 = new DevExpress.XtraCharts.PolarLineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraCharts.PolarDiagram polarDiagram2 = new DevExpress.XtraCharts.PolarDiagram();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel4 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView4 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel5 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView5 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.RadarPointSeriesLabel radarPointSeriesLabel6 = new DevExpress.XtraCharts.RadarPointSeriesLabel();
+            DevExpress.XtraCharts.PolarLineSeriesView polarLineSeriesView6 = new DevExpress.XtraCharts.PolarLineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle3 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle4 = new DevExpress.XtraCharts.ChartTitle();
             this.btnImportCellGPRS = new System.Windows.Forms.Button();
             this.btnImportMRR = new System.Windows.Forms.Button();
             this.btnImportCDD = new System.Windows.Forms.Button();
@@ -96,15 +96,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(polarDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView6)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staticTableBindingSource)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -288,8 +288,8 @@
             this.Variance_H话务比,
             this.Variance_EDGE终端使用EDGE比例});
             this.gridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1,
-            styleFormatCondition2});
+            styleFormatCondition3,
+            styleFormatCondition4});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "", null, ""),
@@ -497,42 +497,42 @@
             // 
             // chartControl1
             // 
-            polarDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            polarDiagram1.AxisY.Range.SideMarginsEnabled = true;
-            this.chartControl1.Diagram = polarDiagram1;
+            polarDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            polarDiagram2.AxisY.Range.SideMarginsEnabled = true;
+            this.chartControl1.Diagram = polarDiagram2;
             this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl1.Legend.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartControl1.Legend.Visible = false;
             this.chartControl1.Location = new System.Drawing.Point(0, 0);
             this.chartControl1.Name = "chartControl1";
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
-            radarPointSeriesLabel1.LineVisible = true;
-            radarPointSeriesLabel1.OverlappingOptionsTypeName = "PointOverlappingOptions";
-            series1.Label = radarPointSeriesLabel1;
-            series1.Name = "H话务比";
-            series1.View = polarLineSeriesView1;
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
-            radarPointSeriesLabel2.LineVisible = true;
-            radarPointSeriesLabel2.OverlappingOptionsTypeName = "PointOverlappingOptions";
-            series2.Label = radarPointSeriesLabel2;
-            series2.Name = "PDCH复用度";
-            series2.View = polarLineSeriesView2;
+            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            radarPointSeriesLabel4.LineVisible = true;
+            radarPointSeriesLabel4.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            series3.Label = radarPointSeriesLabel4;
+            series3.Name = "H话务比";
+            series3.View = polarLineSeriesView4;
+            series4.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
+            radarPointSeriesLabel5.LineVisible = true;
+            radarPointSeriesLabel5.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            series4.Label = radarPointSeriesLabel5;
+            series4.Name = "PDCH复用度";
+            series4.View = polarLineSeriesView5;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2};
+        series3,
+        series4};
             this.chartControl1.SeriesTemplate.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Numerical;
-            radarPointSeriesLabel3.LineVisible = true;
-            radarPointSeriesLabel3.OverlappingOptionsTypeName = "PointOverlappingOptions";
-            this.chartControl1.SeriesTemplate.Label = radarPointSeriesLabel3;
-            this.chartControl1.SeriesTemplate.View = polarLineSeriesView3;
+            radarPointSeriesLabel6.LineVisible = true;
+            radarPointSeriesLabel6.OverlappingOptionsTypeName = "PointOverlappingOptions";
+            this.chartControl1.SeriesTemplate.Label = radarPointSeriesLabel6;
+            this.chartControl1.SeriesTemplate.View = polarLineSeriesView6;
             this.chartControl1.Size = new System.Drawing.Size(243, 192);
             this.chartControl1.TabIndex = 0;
-            chartTitle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartTitle1.Text = "同站小区负荷均衡";
-            chartTitle2.Text = "";
+            chartTitle3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle3.Text = "同站小区负荷均衡";
+            chartTitle4.Text = "";
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle1,
-            chartTitle2});
+            chartTitle3,
+            chartTitle4});
             // 
             // groupBox1
             // 
@@ -583,7 +583,7 @@
             this.ClientSize = new System.Drawing.Size(836, 447);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormCellLoadSharing";
-            this.Text = "CellLoadSharing";
+            this.Text = "CellLoadSharing.v1.0.2011.9.16";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormCellLoadSharing_Load);
             this.ImportAd.ResumeLayout(false);
@@ -600,15 +600,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(polarDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(radarPointSeriesLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(polarLineSeriesView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.staticTableBindingSource)).EndInit();
