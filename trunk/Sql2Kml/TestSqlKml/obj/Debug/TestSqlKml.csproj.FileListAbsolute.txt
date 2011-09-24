@@ -1,0 +1,11 @@
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\TestSqlKml.exe
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\TestSqlKml.pdb
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\SqlServerToKml.dll
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\Google.KML.dll
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\SqlServerToKml.pdb
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\Google.KML.pdb
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\bin\Debug\Google.KML.xml
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\obj\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\obj\Debug\TestSqlKml.exe
+G:\seemapcell\sqlservertokml-24538\TestSqlKml\obj\Debug\TestSqlKml.pdb

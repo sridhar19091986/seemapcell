@@ -1,0 +1,5 @@
+G:\seemapcell\SQLServerCLR\SqlServerProject2\SqlServerProject2\bin\Debug\SqlServerProject2.dll
+G:\seemapcell\SQLServerCLR\SqlServerProject2\SqlServerProject2\bin\Debug\SqlServerProject2.pdb
+G:\seemapcell\SQLServerCLR\SqlServerProject2\SqlServerProject2\obj\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\SQLServerCLR\SqlServerProject2\SqlServerProject2\obj\Debug\SqlServerProject2.dll
+G:\seemapcell\SQLServerCLR\SqlServerProject2\SqlServerProject2\obj\Debug\SqlServerProject2.pdb

@@ -1,0 +1,5 @@
+G:\seemapcell\SQLServerCLR\SQLServerCLRTest\SQLServerCLRTest\bin\Debug\SQLServerCLRTest.dll
+G:\seemapcell\SQLServerCLR\SQLServerCLRTest\SQLServerCLRTest\bin\Debug\SQLServerCLRTest.pdb
+G:\seemapcell\SQLServerCLR\SQLServerCLRTest\SQLServerCLRTest\obj\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\SQLServerCLR\SQLServerCLRTest\SQLServerCLRTest\obj\Debug\SQLServerCLRTest.dll
+G:\seemapcell\SQLServerCLR\SQLServerCLRTest\SQLServerCLRTest\obj\Debug\SQLServerCLRTest.pdb

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Google.KML">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Google.KML.sln">
+</Property><Property Name="Date" Value="Saturday, July 04, 2009">
+</Property><Property Name="Time" Value="11:53:19 AM">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="Google.KML" Source="Google.KML.csproj" Description="Project file successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\Google.KML.csproj">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geAltitudeModeEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geAltitudeModeEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geBaloonStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geBaloonStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geBoundaryIs.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geBoundaryIs.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geColorModeEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geColorModeEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geDocument.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geDocument.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geAngle180.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geAngle180.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geAngle360.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geAngle360.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geAngle90.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geAngle90.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geAnglePos90.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geAnglePos90.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geColor.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geColor.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geColorStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geColorStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geCoordinates.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geCoordinates.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geDateTime.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geDateTime.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geFolder.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geFolder.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geContainer.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geContainer.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geFeature.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geFeature.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geInnerBoundaryIs.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geInnerBoundaryIs.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geKML.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geKML.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geListItemTypeEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geListItemTypeEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geNetworkLinkControl.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geNetworkLinkControl.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geObjArrayField.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geObjArrayField.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geObject.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geObject.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geGeometry.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geGeometry.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geObjField.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geObjField.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geOverlay.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geOverlay.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geSchema.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geSchema.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geSchemaField.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geSchemaField.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geSimpleArrayField.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geSimpleArrayField.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geSimpleField.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geSimpleField.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geStyleSelector.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geStyleSelector.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geStyleStateEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geStyleStateEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geTimePrimitive.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geTimePrimitive.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geTimeSpan.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geTimeSpan.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geTimeStamp.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geTimeStamp.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geUnitsEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geUnitsEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geUpdate.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geUpdate.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geVec2.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geVec2.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geGroundOverlay.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geGroundOverlay.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geIcon.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geIcon.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geIconStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geIconStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLabelStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLabelStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLinearRing.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLinearRing.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLineString.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLineString.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLineStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLineStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLink.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLink.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geListStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geListStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLocation.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLocation.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geLookAt.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geLookAt.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geModel.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geModel.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geMultiGeometry.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geMultiGeometry.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geNetworkLink.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geNetworkLink.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geOrientation.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geOrientation.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geOuterBoundaryIs.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geOuterBoundaryIs.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="gePlacemark.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\gePlacemark.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="gePoint.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\gePoint.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="gePolygon.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\gePolygon.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="gePolyStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\gePolyStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geRefreshModeEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geRefreshModeEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geRegion.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geRegion.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geScale.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geScale.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geScreenOverlay.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geScreenOverlay.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geStyle.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geStyle.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geStyleMap.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geStyleMap.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="geViewRefreshEnum.cs" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\geViewRefreshEnum.cs">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="ge_ClassDiagram.cd" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\ge_ClassDiagram.cd">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="earth.ico" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\earth.ico">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="DeveloperNotes.htm" Description="File successfully backed up as C:\Documents and Settings\bobb\My Documents\ge-kml-2.1.0.10\KML\Backup\DeveloperNotes.htm">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="Google.KML.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Google.KML" Source="Google.KML.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Google.KML" Source="Google.KML.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

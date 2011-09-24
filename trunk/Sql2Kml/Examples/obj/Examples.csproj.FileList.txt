@@ -1,0 +1,16 @@
+bin\Debug\Examples.exe
+bin\Debug\Examples.pdb
+bin\Debug\Google.KML.dll
+bin\Debug\ICSharpCode.SharpZipLib.dll
+bin\Debug\Google.KML.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Examples.exe
+obj\Debug\Examples.pdb
+bin\Release\Examples.exe
+bin\Release\Examples.pdb
+bin\Release\Google.KML.dll
+bin\Release\ICSharpCode.SharpZipLib.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Examples.exe
+obj\Release\Examples.pdb
+bin\Debug\Google.KML.xml
