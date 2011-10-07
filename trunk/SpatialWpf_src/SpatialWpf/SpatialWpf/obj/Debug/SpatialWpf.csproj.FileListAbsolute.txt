@@ -1,0 +1,20 @@
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\bin\Debug\SpatialWpf.exe
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\bin\Debug\SpatialWpf.pdb
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\bin\Debug\WPFToolkit.dll
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\ConnectionDialog.baml
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\ConnectionDialog.g.cs
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\ShapeDesigner.g.cs
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\App.g.cs
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf_MarkupCompile.cache
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf_MarkupCompile.lref
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\ShapeDesigner.baml
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.g.resources
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.Properties.Resources.resources
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.exe
+D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.pdb
+G:\seemapcell\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.exe
+G:\seemapcell\SpatialWpf_src\SpatialWpf\SpatialWpf\obj\Debug\SpatialWpf.pdb

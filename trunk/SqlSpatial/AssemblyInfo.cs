@@ -1,0 +1,21 @@
+﻿// Assembly SqlSpatial, Version 1.3.3759.24822
+
+[assembly: System.Reflection.AssemblyVersion("1.3.3759.24822")]
+[assembly: System.Reflection.AssemblyCompany("Morten Nielsen - www.sharpgis.net")]
+[assembly: System.Reflection.AssemblyDescription("")]
+[assembly: System.Reflection.AssemblyProduct("SqlSpatial")]
+[assembly: System.Reflection.AssemblyCopyright("Copyright \x00a9 2008 - Morten Nielsen")]
+[assembly: System.Reflection.AssemblyConfiguration("")]
+[assembly: Dotfuscator("000:0:2:5.0.2300.0", 2)]
+[assembly: System.Reflection.AssemblyFileVersion("1.3.0.0")]
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.InteropServices.ComVisible(false)]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFile("map_icon.ico")]
+[assembly: System.Reflection.AssemblyTrademark("")]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)]
+[assembly: System.Runtime.CompilerServices.Extension]
+[assembly: System.Runtime.InteropServices.Guid("903673b4-ce1e-44ea-b5e7-62e216cfb9d6")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFile("map_icon16x16.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFile("readme.html")]
+[assembly: System.Reflection.AssemblyTitle("SqlSpatial")]
+

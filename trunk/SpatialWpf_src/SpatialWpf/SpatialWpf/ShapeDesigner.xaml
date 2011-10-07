@@ -1,0 +1,230 @@
+﻿<Window x:Class="SpatialWpf.ShapeDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dg="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:local="clr-namespace:SpatialWpf"
+    Title="Shape Designer" Height="600" Width="800">
+    
+    <Window.Resources>
+        <local:FormattingConverter x:Key="FormattingConverter" />
+        <local:GeometryCollection x:Key="GeometryCollection" />
+        
+        <Style TargetType="ItemsControl">
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform 
+                                        X="{Binding Path=TranslateX}" 
+                                        Y="{Binding Path=TranslateY}" />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Grid.LayoutTransform>
+                                <TransformGroup>
+                                    <ScaleTransform 
+                                        CenterX="0" CenterY="0" 
+                                        ScaleX="{Binding ElementName=sldZoom, Path=Value}" 
+                                        ScaleY="{Binding ElementName=sldZoom, Path=Value}" />
+                                </TransformGroup>
+                            </Grid.LayoutTransform>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <DataTemplate DataType="{x:Type local:GeometryInfo}">
+            <Path Data="{Binding Path=Geometry}" Stroke="Black" StrokeThickness="0.2" Fill="{Binding Path=Fill}">
+                <Path.ToolTip>
+                    <StackPanel Width="250" TextBlock.FontSize="12">
+                        <TextBlock FontWeight="Bold" Text="{Binding Path=Id}" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Area: " />
+                            <TextBlock Text="{Binding Path=Area}" />
+                            <TextBlock Text=" units" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Length: " />
+                            <TextBlock Text="{Binding Path=Length}" />
+                            <TextBlock Text=" units" />
+                        </StackPanel>
+                    </StackPanel>
+                </Path.ToolTip>
+            </Path>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Window.DataContext>
+        <Binding Source="{StaticResource GeometryCollection}" />
+    </Window.DataContext>
+    
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Label Margin="4,4,4,4" >Zoom Level:</Label>
+                <Slider Width="120" Margin="4,4,4,4" Name="sldZoom" Minimum="0.1" 
+                        Maximum="30" Value="1"
+                        SmallChange="0.1" LargeChange="1"
+                        IsSnapToTickEnabled="True" TickFrequency="0.05" />
+                <Label Margin="4,4,4,4" Name="txtZoom" 
+                       Content="{Binding ElementName=sldZoom, Path=Value, Converter={StaticResource FormattingConverter}, ConverterParameter=\{0:F2\}, Mode=Default}" />
+                <Separator />
+
+                <Button Margin="4,4,4,4" Name="btnClear" Click="btnClear_Click">Clear Canvas</Button>
+            </ToolBar>
+        </ToolBarTray>
+        
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Name="stConnectionStatus" Text="Not connected" />
+            </StatusBarItem>
+        </StatusBar>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Name="grid1" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Margin="4,0,4,4" BorderThickness="0.5,0.5,0.5,0.5" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Background="Transparent" Name="masterCanvas" PreviewMouseMove="masterCanvas_PreviewMouseMove" PreviewMouseDown="masterCanvas_PreviewMouseDown" PreviewMouseUp="masterCanvas_PreviewMouseUp">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <MatrixTransform Matrix="1,0,0,-1,0,0" />
+                            <TranslateTransform X="0" Y="{Binding ElementName=masterCanvas, Path=ActualHeight}" />
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Canvas ClipToBounds="True">
+                        <ItemsControl Name="drawingCanvas" IsTabStop="False" ItemsSource="{Binding Path=Geometries}">
+                            <ItemsControl.RenderTransform>
+                                <TranslateTransform X="{Binding Path=BoundingBox.X}"
+                                                Y="{Binding Path=BoundingBox.Y}" />
+                            </ItemsControl.RenderTransform>
+                        </ItemsControl>
+                    </Canvas>
+                </Border>
+
+                <dg:DataGrid Name="dGrid" Grid.Column="1" CanUserAddRows="False" Margin="0,0,4,4"
+                         CanUserSortColumns="True" AutoGenerateColumns="False"
+                         IsSynchronizedWithCurrentItem="True" 
+                         ItemsSource="{Binding Path=Geometries}"
+                         SelectionChanged="dGrid_SelectionChanged">
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridTemplateColumn Header="Id" Width="Auto">
+                            <dg:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Id}" />
+                                </DataTemplate>
+                            </dg:DataGridTemplateColumn.CellTemplate>
+                        </dg:DataGridTemplateColumn>
+                        <dg:DataGridTemplateColumn Header="Description" Width="*">
+                            <dg:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=WKT}" />
+                                </DataTemplate>
+                            </dg:DataGridTemplateColumn.CellTemplate>
+                        </dg:DataGridTemplateColumn>
+                        <dg:DataGridTemplateColumn Header="Area" Width="55">
+                            <dg:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Area}" />
+                                </DataTemplate>
+                            </dg:DataGridTemplateColumn.CellTemplate>
+                        </dg:DataGridTemplateColumn>
+                        <dg:DataGridTemplateColumn Header="Length" Width="55">
+                            <dg:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Length}" />
+                                </DataTemplate>
+                            </dg:DataGridTemplateColumn.CellTemplate>
+                        </dg:DataGridTemplateColumn>
+                        <dg:DataGridTemplateColumn Header="Valid?" Width="55">
+                            <dg:DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox HorizontalAlignment="Center" IsChecked="{Binding Path=IsValid, Mode=OneWay}" />
+                                </DataTemplate>
+                            </dg:DataGridTemplateColumn.CellTemplate>
+                        </dg:DataGridTemplateColumn>
+                    </dg:DataGrid.Columns>
+                </dg:DataGrid>
+                <GridSplitter HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="4"/>
+            </Grid>
+            
+            <TabControl Grid.Row="1" Margin="4,1,4,4">
+                <TabItem Name="tbUserInput" Header="User Input">
+                    <Grid Name="userGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Column="1" Grid.RowSpan="2" Name="stackPanel2">
+                            <Button Margin="4,4,4,4" Height="22.678" Name="btnAdd" Click="btnAdd_Click">Add</Button>
+                            <Button Margin="4,4,4,4" Height="22.678" Name="btnAddValid" IsEnabled="False" Click="btnAddValid_Click">Add Valid</Button>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Name="lblOGC" Grid.Row="0">Geometry:</Label>
+                            <TextBox Margin="4,4,4,4" Name="txtOGC" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" TextChanged="txtOGC_TextChanged" />
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Name="lblValidation" Grid.Row="0">Validation:</Label>
+                            <TextBlock Margin="4,4,4,4" Name="txtValidation" Grid.Row="1" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="tbDbInput" Header="Database">
+                    <Grid Name="dbGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Column="1" Grid.RowSpan="2" Name="stackPanel1">
+                            <Button Margin="4,4,4,4" Height="22.678" Name="btnConnect" Click="btnConnect_Click">Connect...</Button>
+                            <Button IsEnabled="False" Margin="4,4,4,4" Height="22.678" Name="btnDisconnect" Click="btnDisconnect_Click">Disconnect</Button>
+                            <Button IsEnabled="False" Margin="4,4,4,4" Height="22.678" Name="btnAddSQL" Click="btnAddSQL_Click">Add</Button>
+                        </StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Name="label1" Grid.Row="0">SQL:</Label>
+                            <TextBox Margin="4,4,4,4" Name="txtSQL" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" />
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Name="label2" Grid.Row="0">Status:</Label>
+                            <TextBlock Margin="4,4,4,4" Name="txtStatus" Grid.Row="1" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="4"/>
+        </Grid>
+    </DockPanel>
+</Window>
