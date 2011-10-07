@@ -1,5 +1,0 @@
-VSWIZARD 7.1
-Wizard=VsWizard.VsWizardEngine.7.1
-Param="WIZARD_NAME = MapXTremeWizards\6.2\MapXtremeVBAddWebFormWiz"
-Param="WIZARD_UI = FALSE"
-Param="PROJECT_TYPE = VBPROJ"

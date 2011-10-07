@@ -1,8 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\bin\Debug\PieThemeSample.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\bin\Debug\PieThemeSample.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\bin\Debug\PieThemeSample.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\obj\Debug\PieThemeSample.MapForm1.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\obj\Debug\PieTheme.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\obj\Debug\PieThemeSample.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\PieTheme\cs\obj\Debug\PieThemeSample.pdb

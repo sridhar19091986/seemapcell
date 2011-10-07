@@ -1,8 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\bin\Debug\IndividualValueThematic.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\bin\Debug\IndividualValueThematic.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\bin\Debug\IndividualValueThematic.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\obj\Debug\IndividualValueThematic.IndividualValueThematic.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\obj\Debug\IndividualValueThematic.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\obj\Debug\IndividualValueThematic.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\IndividualValueTheme\cs\obj\Debug\IndividualValueThematic.pdb

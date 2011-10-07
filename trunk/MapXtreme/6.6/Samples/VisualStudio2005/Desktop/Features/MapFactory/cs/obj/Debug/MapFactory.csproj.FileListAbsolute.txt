@@ -1,8 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\bin\Debug\MapFactory.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\bin\Debug\MapFactory.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\bin\Debug\MapFactory.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\obj\Debug\MapFactory.MapForm1.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\obj\Debug\MapFactory.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\obj\Debug\MapFactory.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\MapFactory\cs\obj\Debug\MapFactory.pdb

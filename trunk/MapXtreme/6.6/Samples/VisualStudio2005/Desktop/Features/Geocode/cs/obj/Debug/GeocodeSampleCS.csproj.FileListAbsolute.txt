@@ -1,8 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\bin\Debug\GeocodeSampleCS.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\bin\Debug\GeocodeSampleCS.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\bin\Debug\GeocodeSampleCS.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\obj\Debug\MapInfo.Samples.GeocodeSampleCS.FormGeocodeSample.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\obj\Debug\GeocodeSampleCS.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\obj\Debug\GeocodeSampleCS.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\Geocode\cs\obj\Debug\GeocodeSampleCS.pdb

@@ -1,9 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\bin\Debug\LayerControl.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\bin\Debug\LayerControl.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\bin\Debug\LayerControl.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\MapInfo.Samples.LayerControl.LayerControlDemoForm.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\MapInfo.Samples.LayerControl.MapBackgroundControl.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\LayerControl.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\LayerControl.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\LayerControl\cs\obj\Debug\LayerControl.pdb

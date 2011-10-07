@@ -1,8 +1,0 @@
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\bin\Debug\GraduatedSymbolTheme.exe.config
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\bin\Debug\GraduatedSymbolTheme.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\bin\Debug\GraduatedSymbolTheme.pdb
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\obj\Debug\ResolveAssemblyReference.cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\obj\Debug\GraduatedSymbolThemeSample.Form1.resources
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\obj\Debug\GraduatedSymbolTheme.csproj.GenerateResource.Cache
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\obj\Debug\GraduatedSymbolTheme.exe
-C:\Program Files\MapInfo\MapXtreme\6.6\Samples\VisualStudio2005\Desktop\Features\GraduatedSymbolTheme\cs\obj\Debug\GraduatedSymbolTheme.pdb
