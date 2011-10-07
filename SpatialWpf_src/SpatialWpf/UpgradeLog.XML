@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SpatialWpf">
+</Property><Property Name="Solution File" Value="D:\My Documents\桌面\SpatialWpf_src\SpatialWpf\SpatialWpf.sln">
+</Property><Property Name="Date" Value="2011年9月21日 星期三">
+</Property><Property Name="Time" Value="18:00">
+</Property></Properties><Event ErrorLevel="0" Project="SpatialWpf" Source="SpatialWpf\SpatialWpf.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SpatialWpf" Source="SpatialWpf\SpatialWpf.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SpatialWpf.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SpatialWpf.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SpatialWpf" Source="SpatialWpf\SpatialWpf.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

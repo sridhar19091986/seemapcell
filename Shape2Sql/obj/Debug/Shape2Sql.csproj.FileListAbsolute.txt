@@ -1,0 +1,2 @@
+G:\seemapcell\Shape2Sql\obj\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\Shape2Sql\bin\Debug\Shape2Sql.exe.config

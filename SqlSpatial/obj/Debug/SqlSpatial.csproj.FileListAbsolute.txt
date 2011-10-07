@@ -1,0 +1,2 @@
+G:\seemapcell\SqlSpatial\bin\Debug\SqlSpatial.exe.config
+G:\seemapcell\SqlSpatial\obj\Debug\ResolveAssemblyReference.cache
