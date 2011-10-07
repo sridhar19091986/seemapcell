@@ -1,3 +1,0 @@
-CSharpMapFormEXE.vsz|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|地图应用程序|20|包含 MapControl，用于创建地图化应用程序的项目。|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|4554| |MapFormApplication
-CSharpEmptyMapFormEXE.vsz|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|Windows 应用程序|21|用于创建地图化应用程序的项目。|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|4554| |MapFormApplication
-CSharpMapConsole.vsz|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|控制台应用程序|22|用于创建地图化控制台应用程序的项目。|{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}|4554| |MapConsoleApplication

@@ -1,7 +1,0 @@
-﻿<?xml version="1.0"?>
-<!DOCTYPE HelpAttributes>
-<HelpAttributes DTDVersion="1.0">
-<AttName Id="1" Name="mapinfo" Display="Yes" UIString="MapInfo" AttType="Enum">
-        <AttVal Id="1_1" Name="mapxtreme" Display="Yes" UIString="MapXtreme" />
-</AttName>
-</HelpAttributes>

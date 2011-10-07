@@ -1,8 +1,0 @@
-[!if NOT_ROOT_WEB_APP]
-DynamicDisco.disco
-[!endif]
-assemblyinfo.cs
-Web.config
-WebForm1.aspx
-WebForm1_temp.aspx.cs
-
