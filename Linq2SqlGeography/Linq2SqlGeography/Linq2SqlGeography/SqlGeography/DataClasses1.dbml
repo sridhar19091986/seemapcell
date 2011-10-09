@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialTest" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialTest;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.sqlspatial" Member="sqlspatial">
+    <Type Name="sqlspatial">
+      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Height" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Tilt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ground_Height" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Cell_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ant_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ant_BW" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Flag1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Flag2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Flag3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Flag4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Flag5" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
