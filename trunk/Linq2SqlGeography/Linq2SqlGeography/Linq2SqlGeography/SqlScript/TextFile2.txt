@@ -1,0 +1,65 @@
+﻿/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP 1000 [Cell]
+      ,[Site]
+      ,[Longitude]
+      ,[Latitude]
+      ,[Dir]
+      ,[Height]
+      ,[Tilt]
+      ,[Ground_Height]
+      ,[Cell_Type]
+      ,[Ant_Type]
+      ,[Ant_BW]
+      ,[Note]
+      ,[SiteName]
+      ,[Flag1]
+      ,[Flag2]
+      ,[Flag3]
+      ,[Flag4]
+      ,[Flag5]
+      ,[CI]
+      ,[BSC]
+      ,[Ant_size]
+      ,[MI_STYLE]
+      ,[MI_PRINX]
+      , CAST([SP_GEOMETRY] AS VARBINARY(MAX)) as SP_GEOMETRY
+
+
+	  --	[SP_GEOMETRY] [geometry] NULL,
+
+
+	 [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
+
+
+into sqlspatial
+
+  FROM [SqlSpatialTest].[dbo].[MCOMSITE1]
+  
+  where 1=2
+
+  #############################
+
+  1.不能生成linq,重定义geo字段类型
+
+  2.生成1个新表结构
+
+  3.生成linq
+
+  4.修改linq,去掉数据库的类型
+
+  5.可以正常使用
+
+
+  #############################
+
+
+  1.mapinfo->server->  
+
+  2.mrr->server->
+
+  3.(x,y),buffer  contain   mrr
+
+
+
+    #############################
+  

@@ -36,3 +36,6 @@ G:\seemapcell\sqlservertokml-24538\Examples\bin\Debug\ICSharpCode.SharpZipLib.dl
 G:\seemapcell\sqlservertokml-24538\Examples\bin\Debug\Google.KML.pdb
 G:\seemapcell\sqlservertokml-24538\Examples\bin\Debug\Google.KML.xml
 G:\seemapcell\sqlservertokml-24538\Examples\bin\Debug\SqlServerToKml.pdb
+G:\seemapcell\Sql2Kml\Examples\bin\Debug\Examples.exe.config
+G:\seemapcell\Sql2Kml\Examples\obj\Debug\Examples.exe
+G:\seemapcell\Sql2Kml\Examples\obj\Debug\Examples.pdb
