@@ -25,10 +25,10 @@ SELECT TOP 1000 [Cell]
       , CAST([SP_GEOMETRY] AS VARBINARY(MAX)) as SP_GEOMETRY
 
 
-	  --	[SP_GEOMETRY] [geometry] NULL,
+	 --	 [SP_GEOMETRY] [geometry] NULL,
 
-
-	 [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
+	 --  去掉类型
+	 --  [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
 
 
 into sqlspatial
@@ -42,6 +42,8 @@ into sqlspatial
   1.不能生成linq,重定义geo字段类型
 
   2.生成1个新表结构
+
+     ？？？直接复制表结构，只修改 表明和字段名即可：表名后加q，类型由 geometry 修改成varbinary
 
   3.生成linq
 
@@ -62,4 +64,11 @@ into sqlspatial
 
 
     #############################
+
+
+要改变表中列的数据类型，请使用下列语法：
+
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype
+
   
