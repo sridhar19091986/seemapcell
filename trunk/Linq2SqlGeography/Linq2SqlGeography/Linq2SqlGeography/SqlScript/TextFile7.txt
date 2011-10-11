@@ -1,0 +1,29 @@
+﻿    #region 从google maps的脚本里扒了段代码，没准啥时会用上。大家一块看看是怎么算的。
+
+        //declare @p1 geometry = 'POINT (0 10)';
+        //declare @p2 geometry = 'POINT (0 20)';
+        //select @p1.STDistance (@p2);
+        //If you are doing this for points on the earths surface then you need to use the geography type.
+        //declare @p1 geography = 'POINT (-80 100)';
+        //declare @p2 geography = 'POINT (-80 110)';
+        //select @p1.STDistance (@p2)
+
+        private const double EARTH_RADIUS = 6378.137;
+        private static double rad(double d)
+        {
+            return d * Math.PI / 180.0;
+        }
+
+        public static double GetDistance(double lat1, double lng1, double lat2, double lng2)
+        {
+            double radLat1 = rad(lat1);
+            double radLat2 = rad(lat2);
+            double a = radLat1 - radLat2;
+            double b = rad(lng1) - rad(lng2);
+            double s = 2 * Math.Asin(Math.Sqrt(Math.Pow(Math.Sin(a / 2), 2) +
+             Math.Cos(radLat1) * Math.Cos(radLat2) * Math.Pow(Math.Sin(b / 2), 2)));
+            s = s * EARTH_RADIUS;
+            s = Math.Round(s * 10000) / 10000;
+            return s;
+        }
+        #endregion

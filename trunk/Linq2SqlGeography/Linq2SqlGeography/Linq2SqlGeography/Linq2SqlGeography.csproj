@@ -57,6 +57,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SectorCoverage.cs" />
     <Compile Include="SqlGeography\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,9 +65,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="OkumuraHata.m" />
     <Content Include="SqlScript\TextFile1.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
+    <Content Include="SqlScript\TextFile4.txt" />
+    <Content Include="SqlScript\TextFile5.txt" />
+    <Content Include="SqlScript\TextFile6.txt" />
+    <Content Include="SqlScript\TextFile7.txt" />
+    <Content Include="SqlScript\TextFile8.txt" />
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +88,11 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlGeography\DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
