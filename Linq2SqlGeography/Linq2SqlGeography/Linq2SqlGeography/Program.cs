@@ -25,38 +25,10 @@ namespace Linq2SqlGeography
             dc.ExecuteCommand("delete  from  CELLTRACING");
             List<LiJiaoSite> lijiaosites = new List<LiJiaoSite>();
             Console.WriteLine(dc.MCOMSITE.Count());
-            foreach (var site in dc.MCOMSITE.Take(3))
+            foreach (var site in dc.MCOMSITE)
             {
-                //SectorCovarage(6, (double)site.Height, (double)site.Tilt);
-                if (site.SP_GEOMETRY != null)
-                {
-                //基站覆盖范围的计算？？？？？
-                //Enter Antenna Vertical (3dB) Beamwidth (? =6 °)
-                SectorCoverage sc = new SectorCoverage(900, (double)site.Height, 1.5, 150);
-                Console.WriteLine("{0}...", sc.DistanceOkumuraHata);
-                //sc.SectorPoint = SqlGeometry.Point(0, 0, 4326);
-                sc.lat = (double)site.Latitude;
-                sc.lon =(double) site.Longitude;
-                //Console.WriteLine("{0}...", sc.SectorPoint.Long);
-                sc.AntennaAngle =(double) site.Dir;
-                sc.AntennaDownTilt = (double)site.Tilt;
-                //sc.SectorPoint = SqlGeography.STGeomFromWKB(site.SP_GEOMETRY.STAsBinary(), 4326);
-                sc.HorizontalBeamwidth = (double)site.Ant_BW;
-                sc.VerticalBeamwidth = 6;
-                sc.getSectorRadius();
-                sc.getSectorCoveragePoint();
-
-                SqlGeography sgeo = SqlGeography.Point(sc.lat, sc.lon, 4326);
-                //SqlGeometry sgeo = new SqlGeometry();
-                Console.WriteLine("{0}...{1}...", site.Latitude,site.Longitude);
-                foreach (var m in sc.STSectorCoverageRegion)
-                {
-                    //Console.WriteLine("{0}...{1}", m.Lat, m.Long);
-                    //SqlGeometry mgeo=SqlGeometry.STPointFromWKB(m.STAsBinary(),4326);
-                    sgeo=sgeo.STUnion(m);
-                    
-                }
-
+                CellCoverage cc=new CellCoverage ();
+                var sgeo=cc.MergePoint(site);
                 SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326).STConvexHull();
 
                 Console.WriteLine("SqlGeometry   {0}        mgeo.STEnvelope();",
@@ -77,8 +49,8 @@ namespace Linq2SqlGeography
                 //dc.CELLTRACING.InsertOnSubmit(ct);
                // dc.SubmitChanges();
           
-                    var geo = SqlGeography.STGeomFromWKB(site.SP_GEOMETRY.STAsBinary(), 4326);
-                    Console.WriteLine(geo.Lat);
+                    //var geo = SqlGeography.STGeomFromWKB(site.SP_GEOMETRY.STAsBinary(), 4326);
+                    //Console.WriteLine(geo.Lat);
                     //SqlGeometry ->SqlGeography
                     var sp = SqlGeography.Point((double)site.Latitude, (double)site.Longitude, 4326);
                     var sitebuffer = sp.STBuffer(50);   //类型转换以后没有问题，单位是米
@@ -120,7 +92,7 @@ namespace Linq2SqlGeography
                     Console.WriteLine(lijiaosites.Count());
                     WriteConsoleLine(lijiaosites);
                 }
-            }
+            
             Console.WriteLine(lijiaosites.Count());
             WriteConsoleLine(lijiaosites);
         }

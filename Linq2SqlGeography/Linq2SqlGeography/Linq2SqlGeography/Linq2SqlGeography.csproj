@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellCoverage.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="OkumuraHata.cs" />
     <Compile Include="Program.cs" />
@@ -69,7 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OkumuraHata.m" />
+    <Content Include="SqlScript\OkumuraHata.m" />
     <Content Include="SqlScript\TextFile1.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
@@ -78,6 +79,7 @@
     <Content Include="SqlScript\TextFile6.txt" />
     <Content Include="SqlScript\TextFile7.txt" />
     <Content Include="SqlScript\TextFile8.txt" />
+    <Content Include="SqlScript\TextFile9.txt" />
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
