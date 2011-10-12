@@ -2,10 +2,11 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialTest;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CELLTRACING" Member="CELLTRACING">
     <Type Name="CELLTRACING">
-      <Column Name="idx" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Longitude" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.MCOMCARRIER" Member="MCOMCARRIER">
@@ -19,14 +20,14 @@
       <Column Name="TCH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="HOP" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Column Name="HSN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" CanBeNull="true" />
       <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
       <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="Font_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.MCOMSITE" Member="MCOMSITE">
@@ -54,7 +55,7 @@
       <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.MCOMTEM" Member="MCOMTEM">
@@ -79,7 +80,7 @@
       <Column Name="Lbl_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.MOBILEPOINTS" Member="MOBILEPOINTS">
@@ -90,7 +91,7 @@
       <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.次要街道" Member="次要街道">
@@ -102,7 +103,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.高速公路" Member="高速公路">
@@ -114,7 +115,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.规划路" Member="规划路">
@@ -122,7 +123,7 @@
       <Column Name="roadname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.国道" Member="国道">
@@ -134,7 +135,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.立交ABC" Member="立交ABC">
@@ -156,7 +157,7 @@
       <Column Name="TYPE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.省道" Member="省道">
@@ -168,7 +169,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.铁路" Member="铁路">
@@ -180,7 +181,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.县市界" Member="县市界">
@@ -188,7 +189,7 @@
       <Column Name="名称" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.县乡道路" Member="县乡道路">
@@ -200,7 +201,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.一般道路" Member="一般道路">
@@ -212,7 +213,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.镇界" Member="镇界">
@@ -220,7 +221,7 @@
       <Column Name="名称" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.主要道路" Member="主要道路">
@@ -232,7 +233,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.主要街道" Member="主要街道">
@@ -244,7 +245,7 @@
       <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

@@ -27,3 +27,5 @@
             return s;
         }
         #endregion
+
+		         //Console.WriteLine("{0}...{1}...{2}...{3}...{4}", ah, at, Dmain, Dmin, Dmax);
