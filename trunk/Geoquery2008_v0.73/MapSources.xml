@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MapSources>
+
+  <Item Url="ImageCache\bm\{z}-r{y}-c{x}.jpg">
+    <Title>Blue Marble (local)</Title>
+  </Item>
+
+
+  <Item Url="http://a.tile.openstreetmap.org/{z}/{x}/{y}.png">
+    <Title>OpenStreetMap.org</Title>
+  </Item>
+
+
+  <Item Url="http://r{qn}.ortho.tiles.virtualearth.net/tiles/r{kn}?g=73">
+    <Title>Virtual Earth (road)</Title>
+  </Item>
+  <Item Url="http://r{qn}.ortho.tiles.virtualearth.net/tiles/r{kn}?g=90&amp;shading=hill">
+    <Title>Virtual Earth (shaded road)</Title>
+  </Item>
+  <Item Url="http://a{qn}.ortho.tiles.virtualearth.net/tiles/a{kn}?g=73">
+    <Title>Virtual Earth (satellite)</Title>
+  </Item>
+  <Item Url="http://h{qn}.ortho.tiles.virtualearth.net/tiles/h{kn}?g=73">
+    <Title>Virtual Earth (hybrid)</Title>
+  </Item>
+  <Item Url="http://hotmap.msresearch.us/GetTile.aspx?tile={kn}&amp;datalevel=11 ">
+    <Title>Hotmap (Microsoft Research)</Title>
+  </Item>
+  <Item Url="http://mt{qn}.google.com/mt?n=404&amp;v=w2.63&amp;x={x}&amp;y={y}&amp;zoom={zr}">
+    <Title>Google (road)</Title>
+  </Item>
+  <Item Url="http://kh{qn}.google.com/kh?n=404&amp;v=20&amp;t=t{ka}">
+    <Title>Google (satellite)</Title>
+  </Item>
+  <Item Url="http://mt{qn}.google.com/mt?n=404&amp;v=w2p.63&amp;x={x}&amp;y={y}&amp;zoom={zr}">
+    <Title>Google (topo)</Title>
+  </Item>
+  <Item Url="http://s3.amazonaws.com/com.modestmaps.bluemarble/{z}-r{y}-c{x}.jpg">
+    <Title>NASA Blue Marble</Title>
+  </Item>
+  <!-- Other heavenly bodies, just for fun -->
+  <Item Url="http://mw1.google.com/mw-planetary/moon/t{ka}.jpg">
+    <Title>Google Moon</Title>
+  </Item>
+  <Item Url="http://mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw/{z}/{x}/{y}.jpg">
+    <Title>Google Moon (visible)</Title>
+  </Item>
+  <Item Url="http://mw1.google.com/mw-planetary/lunar/lunarmaps_v1/terrain/{z}/{x}/{y}.jpg">
+    <Title>Google Moon (elevation)</Title>
+  </Item>
+  <!-- Mars coordinates aren't measured by the same +/-180 longitude as Earth/Moon -->
+  <Item Url="http://mw1.google.com/mw-planetary/mars/visible/t{ka}.jpg">
+    <Title>Google Mars (visible)</Title>
+  </Item>
+  <Item Url="http://mw1.google.com/mw-planetary/mars/elevation/t{ka}.jpg">
+    <Title>Google Mars (elevation)</Title>
+  </Item>
+  <Item Url="http://mw1.google.com/mw-planetary/mars/infrared/t{ka}.jpg">
+    <Title>Google Mars (infrared)</Title>
+  </Item>
+</MapSources>
