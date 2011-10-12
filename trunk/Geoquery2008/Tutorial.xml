@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tutorial>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933923(SQL.100).aspx">
+    <Title>STArea</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g, @g.STArea() as [AreaInUnits], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933881(SQL.100).aspx">
+    <Title>STAsBinary</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 3)', 0);
+SELECT @g, @g.STAsBinary(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933977(SQL.100).aspx">
+    <Title>STAsText</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 3)', 0);
+SELECT @g, @g.STAsText() as [WellKnownText], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933985(SQL.100).aspx">
+    <Title>STBoundary</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 0 2, 2 0)', 0);
+SELECT @g, @g.STBoundary(), 0.1 as [Thickness];
+/*
+Boundary is defined by the OGC as follows:
+- Point and MultiPoint instances do not have a boundary.
+- LineString and MultiLineString boundaries are formed by the start points and end points, removing those that occur an even number of times.
+http://msdn2.microsoft.com/en-us/library/bb964708(SQL.100).aspx
+*/]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933963(SQL.100).aspx">
+    <Title>STBuffer</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 4 0)', 0);
+SELECT @g, @g.STBuffer(1), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933847(SQL.100).aspx">
+    <Title>STCentroid</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g, @g.STCentroid(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933904(SQL.100).aspx">
+    <Title>STContains</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POINT(1 1)', 0);
+SELECT @g, @h, @g.STContains(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933878(SQL.100).aspx">
+    <Title>STConvexHull</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 0 2, 1 1, 2 2, 2 0, 0 0))', 0);
+SELECT @g, 'Original' AS [Display], 'Blue' as [Color], 0.2 as [Thickness]
+UNION ALL
+SELECT @g.STConvexHull(), 'Hull', 'Green' as [Color], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933838(SQL.100).aspx">
+    <Title>STCrosses</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0)', 0);
+SET @h = geometry::STGeomFromText('LINESTRING(0 0, 2 2)', 0);
+SELECT @g, @h, @g.STCrosses(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933893(SQL.100).aspx">
+    <Title>STDifference</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT 'Original Polygons' as [Display], @g, @h, 'Green' as [Color],  0.2 as [Thickness]
+UNION ALL
+SELECT 'First minus second', null, @g.STDifference(@h), 'Blue' as [Color], 0.1 as [Thickness]
+UNION ALL
+SELECT 'Second minus first', null, @h.STDifference(@g), 'Orange' as [Color], 0.05 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933848(SQL.100).aspx">
+    <Title>STDimension</Title>
+    <Sql>
+      <![CDATA[DECLARE @temp table ([name] varchar(10), [geom] geometry);
+INSERT INTO @temp values ('LineString', geometry::STGeomFromText('LINESTRING(0 0, 3 3)', 0));
+INSERT INTO @temp values ('Polygon', geometry::STGeomFromText('POLYGON((0 0, 3 0, 0 3, 0 0))', 0));
+INSERT INTO @temp values ('Point', geometry::STGeomFromText('POINT(3 3)', 0));
+SELECT [name], [geom], [geom].STDimension() as [dim], 0.1 as [Thickness]
+FROM @temp;]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933909(SQL.100).aspx">
+    <Title>STDisjoint</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0, 4 2)', 0);
+SET @h = geometry::STGeomFromText('POINT(1 1)', 0);
+SELECT @g, @h, @g.STDisjoint(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+
+
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933952(SQL.100).aspx">
+    <Title>STDistance</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+DECLARE @i geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POINT(10 10)', 0);
+SET @i = geometry::STGeomFromText('LINESTRING(2 2,10 10)', 0);
+SELECT @g, @g.STDistance(@h), 0.1 as [Thickness], 'Green' as [Color]
+UNION ALL
+SELECT @i, @i.STLength(), 0.1 as [Thickness], 'Gray' as [Color] -- demonstration line
+UNION ALL 
+SELECT @h, null, 0.3 as [Thickness], 'Red' as [Color];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933879(SQL.100).aspx">
+    <Title>STEndPoint</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STEndPoint(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933896(SQL.100).aspx">
+    <Title>STEnvelope</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 3)', 0);
+SELECT @g, @g.STEnvelope(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933902(SQL.100).aspx">
+    <Title>STEquals</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0, 4 2)', 0);
+SET @h = geometry::STGeomFromText('MULTILINESTRING((4 2, 2 0), (0 2, 2 0))', 0);
+SELECT @h, @h.STEquals(@g), 'Blue' as [Color], 0.2 as [Thickness]
+UNION ALL
+SELECT @g, @g.STEquals(@h), 'Orange' as [Color], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933955(SQL.100).aspx">
+    <Title>STExteriorRing</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g, 0.2 as [Thickness]
+UNION ALL
+SELECT @g.STExteriorRing(), 0.1 as [Thickness];]]>
+</Sql>
+</Item>
+<Item Url="http://msdn2.microsoft.com/en-us/library/bb933831(SQL.100).aspx">
+<Title>STGeometryN</Title>
+<Sql>
+<![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('MULTIPOINT(0 0, 13.5 2, 7 19)', 0);
+SELECT @g, 'Red' AS [Color], 1.5 as [Thickness]
+UNION ALL
+SELECT @g.STGeometryN(2), 'Yellow' AS [Color], 0.75 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933825(SQL.100).aspx">
+    <Title>STGeometryType</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0))', 0);
+SELECT @g, @g.STGeometryType() as [GeometryType], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933843(SQL.100).aspx">
+    <Title>STInteriorRing</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g, @g.STInteriorRingN(1) AS [FirstInteriorRing], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933832(SQL.100).aspx">
+    <Title>STIntersection</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT @g, 'Blue' as [Color], 0.3 as [Thickness]
+UNION ALL
+SELECT @h, 'Green' as [Color], 0.2 as [Thickness]
+UNION ALL
+SELECT @g.STIntersection(@h), 'Orange' as [Color], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933899(SQL.100).aspx">
+    <Title>STIntersects</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0, 4 2)', 0);
+SET @h = geometry::STGeomFromText('POINT(1 1)', 0);
+SELECT @g, @h, @g.STIntersects(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933815(SQL.100).aspx">
+    <Title>STIsClosed</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STIsClosed() AS [IsClosed], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933975(SQL.100).aspx">
+    <Title>STIsEmpty</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON EMPTY', 0);
+SELECT @g, @g.STIsEmpty(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933982(SQL.100).aspx">
+    <Title>STIsRing</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0, 0 0)', 0);
+SELECT @g, @g.STIsRing(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933974(SQL.100).aspx">
+    <Title>STIsSimple</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 0 2, 2 0)', 0);
+SELECT @g, @g.STIsSimple(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933890(SQL.100).aspx">
+    <Title>STIsValid</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STIsValid(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933978(SQL.100).aspx">
+    <Title>STLength</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STLength(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933910(SQL.100).aspx">
+    <Title>STNumGeometries</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('MULTIPOINT(0 0, 13.5 2, 7 19)', 0);
+SELECT @g.STNumGeometries() as [NumberOfGeometries], @g, 1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933845(SQL.100).aspx">
+    <Title>STNumInteriorRing</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g.STNumInteriorRing() as [NumberOfInteriorRings], @g, 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933916(SQL.100).aspx">
+    <Title>STNumPoints</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g.STNumPoints() as [NumberOfPoints], @g, 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933817(SQL.100).aspx">
+    <Title>STOverlaps</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT @g, @h, @g.STOverlaps(@h) as [DoesItOverlap], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933908(SQL.100).aspx">
+    <Title>STPointN</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STPointN(2), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933826(SQL.100).aspx">
+    <Title>STPointOnSurface</Title>
+    <Sql>
+      <![CDATA[-- Returns an arbitrary point located within the interior of a geometry instance
+DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0),(2 2, 2 1, 1 1, 1 2, 2 2))', 0);
+SELECT @g, @g.STPointOnSurface(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933915(SQL.100).aspx">
+    <Title>STRelate</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0, 4 2)', 0);
+SET @h = geometry::STGeomFromText('POINT(5 5)', 0);
+SELECT @g, @h, @g.STRelate(@h, 'FF*FF****'), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933851(SQL.100).aspx">
+    <Title>STSrid</Title>
+    <Sql>
+      <![CDATA[--The first example creates a geometry instance with the SRID value 13 and uses STSrid to confirm the SRID.
+DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 3 0, 3 3, 0 3, 0 0))', 13);
+SELECT @g.STSrid
+/*
+--The second example uses STSrid to change the SRID value of the instance to 23 and then confirms the modified SRID value.
+SET @g.STSrid = 23;
+SELECT @g.STSrid;
+*/]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933804(SQL.100).aspx">
+    <Title>STStartPoint</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 2 2, 1 0)', 0);
+SELECT @g, @g.STStartPoint(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933820(SQL.100).aspx">
+    <Title>STSymDifference</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT @g, 'Green' as [Color], 0.2 as [Thickness]
+UNION ALL
+SELECT @h, 'Green' as [Color], 0.2 as [Thickness]
+UNION ALL
+SELECT @g.STSymDifference(@h).STGeometryN(1), 'Blue' as [Color], 0.1 as [Thickness]
+UNION ALL
+SELECT @g.STSymDifference(@h).STGeometryN(2), 'DarkBlue' as [Color], 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933953(SQL.100).aspx">
+    <Title>STTouches</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 2, 2 0, 4 2)', 0);
+SET @h = geometry::STGeomFromText('POINT(1 1)', 0);
+SELECT @g.STTouches(@h) as [DoesItTouch]
+     , @g.STIntersects(@h) as [DoesItIntersect]
+     , @g, @h, 0.1 as [Thickness];
+--Two geometry instances touch if their point sets intersect, but their interiors do not intersect.]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933850(SQL.100).aspx">
+    <Title>STUnion</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 0 2, 2 2, 2 0, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT @g, @h, @g.STUnion(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933991(SQL.100).aspx">
+    <Title>STWithin</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+DECLARE @h geometry;
+SET @g = geometry::STGeomFromText('POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))', 0);
+SET @h = geometry::STGeomFromText('POLYGON((1 1, 3 1, 3 3, 1 3, 1 1))', 0);
+SELECT @g, @h, @g.STWithin(@h), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+
+
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933828(SQL.100).aspx">
+    <Title>STX</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POINT(3 8)', 0);
+SELECT @g.STX, 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933990(SQL.100).aspx">
+    <Title>STY</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POINT(3 8)', 0);
+SELECT @g.STY, 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+  
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933892(SQL.100).aspx">
+    <Title>BufferWithTolerance</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('POINT(3 3)', 0);
+SELECT @g, 0.1 as [Thickness], 'Red' as [Color]
+UNION ALL
+SELECT @g.BufferWithTolerance(1, .5, 0), 0.1 as [Thickness], 'Green' as [Color]
+UNION ALL
+SELECT @g.BufferWithTolerance(2, .5, 0), 0.05 as [Thickness], 'Blue' as [Color]
+UNION ALL
+SELECT @g.BufferWithTolerance(2, .2, 0), 0.05 as [Thickness], 'Orange' as [Color];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933996(SQL.100).aspx">
+    <Title>InstanceOf</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('MULTIPOINT(0 0, 13.5 2, 7 19)', 0);
+SELECT @g, @g.InstanceOf('GEOMETRYCOLLECTION'), 2 as [Thickness];]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933814(SQL.100).aspx">
+    <Title>Reduce</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 0 1, 1 0, 2 1, 3 0, 4 1)', 0);
+SELECT @g, 'Original' as [Display], 'Blue' AS [Color], 0.2 AS [Thickness]
+UNION ALL
+SELECT @g.Reduce(.75), 'Reduced' as [Display], 'Red' AS [Color], 0.1 AS [Thickness]]]>
+    </Sql>
+  </Item>
+  <Item Url="http://msdn2.microsoft.com/en-us/library/bb933829(SQL.100).aspx">
+    <Title>ToString</Title>
+    <Sql>
+      <![CDATA[DECLARE @g geometry;
+SET @g = geometry::STGeomFromText('LINESTRING(0 0, 0 1, 1 0)', 0);
+SELECT @g, @g.ToString(), 0.1 as [Thickness];]]>
+    </Sql>
+  </Item>
+</Tutorial>
