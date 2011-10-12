@@ -278,51 +278,35 @@ namespace Linq2SqlGeography
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<int> _idx;
-		
 		private string _MI_STYLE;
 		
 		private int _MI_PRINX;
 		
 		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
 		
+		private System.Nullable<decimal> _Longitude;
+		
+		private System.Nullable<decimal> _Latitude;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidxChanging(System.Nullable<int> value);
-    partial void OnidxChanged();
     partial void OnMI_STYLEChanging(string value);
     partial void OnMI_STYLEChanged();
     partial void OnMI_PRINXChanging(int value);
     partial void OnMI_PRINXChanged();
     partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
     partial void OnSP_GEOMETRYChanged();
+    partial void OnLongitudeChanging(System.Nullable<decimal> value);
+    partial void OnLongitudeChanged();
+    partial void OnLatitudeChanging(System.Nullable<decimal> value);
+    partial void OnLatitudeChanged();
     #endregion
 		
 		public CELLTRACING()
 		{
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idx", DbType="Int")]
-		public System.Nullable<int> idx
-		{
-			get
-			{
-				return this._idx;
-			}
-			set
-			{
-				if ((this._idx != value))
-				{
-					this.OnidxChanging(value);
-					this.SendPropertyChanging();
-					this._idx = value;
-					this.SendPropertyChanged("idx");
-					this.OnidxChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
@@ -381,6 +365,46 @@ namespace Linq2SqlGeography
 					this._SP_GEOMETRY = value;
 					this.SendPropertyChanged("SP_GEOMETRY");
 					this.OnSP_GEOMETRYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude")]
+		public System.Nullable<decimal> Longitude
+		{
+			get
+			{
+				return this._Longitude;
+			}
+			set
+			{
+				if ((this._Longitude != value))
+				{
+					this.OnLongitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Longitude = value;
+					this.SendPropertyChanged("Longitude");
+					this.OnLongitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(10,6)")]
+		public System.Nullable<decimal> Latitude
+		{
+			get
+			{
+				return this._Latitude;
+			}
+			set
+			{
+				if ((this._Latitude != value))
+				{
+					this.OnLatitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Latitude = value;
+					this.SendPropertyChanged("Latitude");
+					this.OnLatitudeChanged();
 				}
 			}
 		}
@@ -671,7 +695,7 @@ namespace Linq2SqlGeography
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(10,6)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude")]
 		public System.Nullable<decimal> Longitude
 		{
 			get

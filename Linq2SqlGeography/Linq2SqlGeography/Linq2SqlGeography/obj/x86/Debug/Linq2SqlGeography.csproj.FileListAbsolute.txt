@@ -4,3 +4,5 @@ G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\bin\Debug\Li
 G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\bin\Debug\Linq2SqlGeography.pdb
 G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\obj\x86\Debug\Linq2SqlGeography.exe
 G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\obj\x86\Debug\Linq2SqlGeography.pdb
+G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\bin\Debug\Geography.dll
+G:\seemapcell\Linq2SqlGeography\Linq2SqlGeography\Linq2SqlGeography\bin\Debug\Geography.pdb

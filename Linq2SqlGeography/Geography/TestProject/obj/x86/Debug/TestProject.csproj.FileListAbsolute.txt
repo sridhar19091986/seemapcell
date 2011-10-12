@@ -1,0 +1,14 @@
+D:\工作\个人\xgluxv\Geography\TestProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\工作\个人\xgluxv\Geography\TestProject\bin\Debug\TestProject.exe
+D:\工作\个人\xgluxv\Geography\TestProject\bin\Debug\TestProject.pdb
+D:\工作\个人\xgluxv\Geography\TestProject\bin\Debug\Geography.dll
+D:\工作\个人\xgluxv\Geography\TestProject\bin\Debug\Geography.pdb
+D:\工作\个人\xgluxv\Geography\TestProject\obj\x86\Debug\TestProject.exe
+D:\工作\个人\xgluxv\Geography\TestProject\obj\x86\Debug\TestProject.pdb
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\bin\Debug\TestProject.exe
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\bin\Debug\TestProject.pdb
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\bin\Debug\Geography.dll
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\bin\Debug\Geography.pdb
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\obj\x86\Debug\TestProject.exe
+G:\seemapcell\Linq2SqlGeography\Geography\TestProject\obj\x86\Debug\TestProject.pdb

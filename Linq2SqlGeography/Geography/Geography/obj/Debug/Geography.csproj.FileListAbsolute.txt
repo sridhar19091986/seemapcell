@@ -1,0 +1,10 @@
+D:\工作\个人\xgluxv\Geography\Geography\obj\Debug\ResolveAssemblyReference.cache
+D:\工作\个人\xgluxv\Geography\Geography\bin\Debug\Geography.dll
+D:\工作\个人\xgluxv\Geography\Geography\bin\Debug\Geography.pdb
+D:\工作\个人\xgluxv\Geography\Geography\obj\Debug\Geography.dll
+D:\工作\个人\xgluxv\Geography\Geography\obj\Debug\Geography.pdb
+G:\seemapcell\Linq2SqlGeography\Geography\Geography\bin\Debug\Geography.dll
+G:\seemapcell\Linq2SqlGeography\Geography\Geography\bin\Debug\Geography.pdb
+G:\seemapcell\Linq2SqlGeography\Geography\Geography\obj\Debug\ResolveAssemblyReference.cache
+G:\seemapcell\Linq2SqlGeography\Geography\Geography\obj\Debug\Geography.dll
+G:\seemapcell\Linq2SqlGeography\Geography\Geography\obj\Debug\Geography.pdb
