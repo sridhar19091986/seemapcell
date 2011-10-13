@@ -1,251 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialTest" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialTest;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialJiangmeng" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialJiangmeng;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SITE" Member="SITE">
+    <Type Name="SITE">
+      <Column Name="msc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="bsc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="bts" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="lac" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ci" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cell_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="bts_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="dir" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tilt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ground_height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ant_bw" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ant_size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="band" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="power" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="half_power" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="active_balist" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="idle_balist" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.CELLTRACING" Member="CELLTRACING">
     <Type Name="CELLTRACING">
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Longitude" Type="System.Decimal" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MCOMCARRIER" Member="MCOMCARRIER">
-    <Type Name="MCOMCARRIER">
-      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="LAI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="BCCH" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="BSIC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="TCH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="HOP" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="HSN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="Longitude" Type="System.Decimal" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
-      <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Font_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MCOMSITE" Member="MCOMSITE">
-    <Type Name="MCOMSITE">
-      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Site" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
-      <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Height" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Tilt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Ground_Height" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Cell_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Ant_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Ant_BW" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag5" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MCOMTEM" Member="MCOMTEM">
-    <Type Name="MCOMTEM">
-      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Site" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Height" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Tilt" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Ground_Height" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Cell_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Ant_Type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Flag5" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Lbl_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MOBILEPOINTS" Member="MOBILEPOINTS">
-    <Type Name="MOBILEPOINTS">
-      <Column Name="idx" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="lon" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="lat" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.次要街道" Member="次要街道">
-    <Type Name="次要街道">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.高速公路" Member="高速公路">
-    <Type Name="高速公路">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.规划路" Member="规划路">
-    <Type Name="规划路">
-      <Column Name="roadname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.国道" Member="国道">
-    <Type Name="国道">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.立交ABC" Member="立交ABC">
-    <Type Name="立交ABC">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="高架桥ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="名称" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.桥梁" Member="桥梁">
-    <Type Name="桥梁">
-      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TYPE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.省道" Member="省道">
-    <Type Name="省道">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.铁路" Member="铁路">
-    <Type Name="铁路">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.县市界" Member="县市界">
-    <Type Name="县市界">
-      <Column Name="名称" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.县乡道路" Member="县乡道路">
-    <Type Name="县乡道路">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.一般道路" Member="一般道路">
-    <Type Name="一般道路">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.镇界" Member="镇界">
-    <Type Name="镇界">
-      <Column Name="名称" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.主要道路" Member="主要道路">
-    <Type Name="主要道路">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="dbo.主要街道" Member="主要街道">
-    <Type Name="主要街道">
-      <Column Name="FID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OBJECTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NAME" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="长度" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
-      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry"  CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

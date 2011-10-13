@@ -52,9 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CellCoverage.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="OkumuraHata.cs" />
+    <Compile Include="DataLayer\CellCoverage.cs" />
+    <Compile Include="DataLayer\LijiaoSite.cs" />
+    <Compile Include="DataLayer\HandleTable.cs" />
+    <Compile Include="DataLayer\OkumuraHata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -62,7 +63,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SectorCoverage.cs" />
+    <Compile Include="DataLayer\SectorCoverage.cs" />
     <Compile Include="SqlGeography\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +73,7 @@
   <ItemGroup>
     <Content Include="SqlScript\OkumuraHata.m" />
     <Content Include="SqlScript\TextFile1.txt" />
+    <Content Include="SqlScript\TextFile10.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
     <Content Include="SqlScript\TextFile4.txt" />
