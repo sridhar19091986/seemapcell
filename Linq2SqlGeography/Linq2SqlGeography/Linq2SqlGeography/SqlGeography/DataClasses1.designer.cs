@@ -22,7 +22,7 @@ namespace Linq2SqlGeography
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SqlSpatialTest")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SqlSpatialJiangmeng")]
 	public partial class DataClasses2DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,63 +30,9 @@ namespace Linq2SqlGeography
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCELLTRACING(CELLTRACING instance);
-    partial void UpdateCELLTRACING(CELLTRACING instance);
-    partial void DeleteCELLTRACING(CELLTRACING instance);
-    partial void InsertMCOMCARRIER(MCOMCARRIER instance);
-    partial void UpdateMCOMCARRIER(MCOMCARRIER instance);
-    partial void DeleteMCOMCARRIER(MCOMCARRIER instance);
-    partial void InsertMCOMSITE(MCOMSITE instance);
-    partial void UpdateMCOMSITE(MCOMSITE instance);
-    partial void DeleteMCOMSITE(MCOMSITE instance);
-    partial void InsertMCOMTEM(MCOMTEM instance);
-    partial void UpdateMCOMTEM(MCOMTEM instance);
-    partial void DeleteMCOMTEM(MCOMTEM instance);
-    partial void InsertMOBILEPOINTS(MOBILEPOINTS instance);
-    partial void UpdateMOBILEPOINTS(MOBILEPOINTS instance);
-    partial void DeleteMOBILEPOINTS(MOBILEPOINTS instance);
-    partial void Insert次要街道(次要街道 instance);
-    partial void Update次要街道(次要街道 instance);
-    partial void Delete次要街道(次要街道 instance);
-    partial void Insert高速公路(高速公路 instance);
-    partial void Update高速公路(高速公路 instance);
-    partial void Delete高速公路(高速公路 instance);
-    partial void Insert规划路(规划路 instance);
-    partial void Update规划路(规划路 instance);
-    partial void Delete规划路(规划路 instance);
-    partial void Insert国道(国道 instance);
-    partial void Update国道(国道 instance);
-    partial void Delete国道(国道 instance);
-    partial void Insert立交ABC(立交ABC instance);
-    partial void Update立交ABC(立交ABC instance);
-    partial void Delete立交ABC(立交ABC instance);
-    partial void Insert桥梁(桥梁 instance);
-    partial void Update桥梁(桥梁 instance);
-    partial void Delete桥梁(桥梁 instance);
-    partial void Insert省道(省道 instance);
-    partial void Update省道(省道 instance);
-    partial void Delete省道(省道 instance);
-    partial void Insert铁路(铁路 instance);
-    partial void Update铁路(铁路 instance);
-    partial void Delete铁路(铁路 instance);
-    partial void Insert县市界(县市界 instance);
-    partial void Update县市界(县市界 instance);
-    partial void Delete县市界(县市界 instance);
-    partial void Insert县乡道路(县乡道路 instance);
-    partial void Update县乡道路(县乡道路 instance);
-    partial void Delete县乡道路(县乡道路 instance);
-    partial void Insert一般道路(一般道路 instance);
-    partial void Update一般道路(一般道路 instance);
-    partial void Delete一般道路(一般道路 instance);
-    partial void Insert镇界(镇界 instance);
-    partial void Update镇界(镇界 instance);
-    partial void Delete镇界(镇界 instance);
-    partial void Insert主要道路(主要道路 instance);
-    partial void Update主要道路(主要道路 instance);
-    partial void Delete主要道路(主要道路 instance);
-    partial void Insert主要街道(主要街道 instance);
-    partial void Update主要街道(主要街道 instance);
-    partial void Delete主要街道(主要街道 instance);
+    partial void InsertSITE(SITE instance);
+    partial void UpdateSITE(SITE instance);
+    partial void DeleteSITE(SITE instance);
     #endregion
 		
 		public DataClasses2DataContext() : 
@@ -119,6 +65,14 @@ namespace Linq2SqlGeography
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<SITE> SITE
+		{
+			get
+			{
+				return this.GetTable<SITE>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CELLTRACING> CELLTRACING
 		{
 			get
@@ -126,1107 +80,684 @@ namespace Linq2SqlGeography
 				return this.GetTable<CELLTRACING>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SITE")]
+	public partial class SITE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<MCOMCARRIER> MCOMCARRIER
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _msc;
+		
+		private string _bsc;
+		
+		private string _cell;
+		
+		private string _bts;
+		
+		private System.Nullable<int> _lac;
+		
+		private System.Nullable<int> _ci;
+		
+		private System.Nullable<int> _bcch;
+		
+		private System.Nullable<int> _bsic;
+		
+		private string _cell_name;
+		
+		private string _bts_name;
+		
+		private System.Nullable<decimal> _longitude;
+		
+		private System.Nullable<decimal> _latitude;
+		
+		private System.Nullable<int> _dir;
+		
+		private System.Nullable<int> _height;
+		
+		private System.Nullable<int> _tilt;
+		
+		private System.Nullable<int> _ground_height;
+		
+		private System.Nullable<int> _ant_bw;
+		
+		private System.Nullable<int> _ant_size;
+		
+		private string _band;
+		
+		private System.Nullable<int> _power;
+		
+		private System.Nullable<int> _half_power;
+		
+		private string _active_balist;
+		
+		private string _idle_balist;
+		
+		private string _MI_STYLE;
+		
+		private int _MI_PRINX;
+		
+		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmscChanging(string value);
+    partial void OnmscChanged();
+    partial void OnbscChanging(string value);
+    partial void OnbscChanged();
+    partial void OncellChanging(string value);
+    partial void OncellChanged();
+    partial void OnbtsChanging(string value);
+    partial void OnbtsChanged();
+    partial void OnlacChanging(System.Nullable<int> value);
+    partial void OnlacChanged();
+    partial void OnciChanging(System.Nullable<int> value);
+    partial void OnciChanged();
+    partial void OnbcchChanging(System.Nullable<int> value);
+    partial void OnbcchChanged();
+    partial void OnbsicChanging(System.Nullable<int> value);
+    partial void OnbsicChanged();
+    partial void Oncell_nameChanging(string value);
+    partial void Oncell_nameChanged();
+    partial void Onbts_nameChanging(string value);
+    partial void Onbts_nameChanged();
+    partial void OnlongitudeChanging(System.Nullable<decimal> value);
+    partial void OnlongitudeChanged();
+    partial void OnlatitudeChanging(System.Nullable<decimal> value);
+    partial void OnlatitudeChanged();
+    partial void OndirChanging(System.Nullable<int> value);
+    partial void OndirChanged();
+    partial void OnheightChanging(System.Nullable<int> value);
+    partial void OnheightChanged();
+    partial void OntiltChanging(System.Nullable<int> value);
+    partial void OntiltChanged();
+    partial void Onground_heightChanging(System.Nullable<int> value);
+    partial void Onground_heightChanged();
+    partial void Onant_bwChanging(System.Nullable<int> value);
+    partial void Onant_bwChanged();
+    partial void Onant_sizeChanging(System.Nullable<int> value);
+    partial void Onant_sizeChanged();
+    partial void OnbandChanging(string value);
+    partial void OnbandChanged();
+    partial void OnpowerChanging(System.Nullable<int> value);
+    partial void OnpowerChanged();
+    partial void Onhalf_powerChanging(System.Nullable<int> value);
+    partial void Onhalf_powerChanged();
+    partial void Onactive_balistChanging(string value);
+    partial void Onactive_balistChanged();
+    partial void Onidle_balistChanging(string value);
+    partial void Onidle_balistChanged();
+    partial void OnMI_STYLEChanging(string value);
+    partial void OnMI_STYLEChanged();
+    partial void OnMI_PRINXChanging(int value);
+    partial void OnMI_PRINXChanged();
+    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
+    partial void OnSP_GEOMETRYChanged();
+    #endregion
+		
+		public SITE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_msc", DbType="VarChar(10)")]
+		public string msc
 		{
 			get
 			{
-				return this.GetTable<MCOMCARRIER>();
+				return this._msc;
+			}
+			set
+			{
+				if ((this._msc != value))
+				{
+					this.OnmscChanging(value);
+					this.SendPropertyChanging();
+					this._msc = value;
+					this.SendPropertyChanged("msc");
+					this.OnmscChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<MCOMSITE> MCOMSITE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsc", DbType="VarChar(10)")]
+		public string bsc
 		{
 			get
 			{
-				return this.GetTable<MCOMSITE>();
+				return this._bsc;
+			}
+			set
+			{
+				if ((this._bsc != value))
+				{
+					this.OnbscChanging(value);
+					this.SendPropertyChanging();
+					this._bsc = value;
+					this.SendPropertyChanged("bsc");
+					this.OnbscChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<MCOMTEM> MCOMTEM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell", DbType="VarChar(10)")]
+		public string cell
 		{
 			get
 			{
-				return this.GetTable<MCOMTEM>();
+				return this._cell;
+			}
+			set
+			{
+				if ((this._cell != value))
+				{
+					this.OncellChanging(value);
+					this.SendPropertyChanging();
+					this._cell = value;
+					this.SendPropertyChanged("cell");
+					this.OncellChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<MOBILEPOINTS> MOBILEPOINTS
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bts", DbType="VarChar(10)")]
+		public string bts
 		{
 			get
 			{
-				return this.GetTable<MOBILEPOINTS>();
+				return this._bts;
+			}
+			set
+			{
+				if ((this._bts != value))
+				{
+					this.OnbtsChanging(value);
+					this.SendPropertyChanging();
+					this._bts = value;
+					this.SendPropertyChanged("bts");
+					this.OnbtsChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<次要街道> 次要街道
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lac", DbType="Int")]
+		public System.Nullable<int> lac
 		{
 			get
 			{
-				return this.GetTable<次要街道>();
+				return this._lac;
+			}
+			set
+			{
+				if ((this._lac != value))
+				{
+					this.OnlacChanging(value);
+					this.SendPropertyChanging();
+					this._lac = value;
+					this.SendPropertyChanged("lac");
+					this.OnlacChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<高速公路> 高速公路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ci", DbType="Int")]
+		public System.Nullable<int> ci
 		{
 			get
 			{
-				return this.GetTable<高速公路>();
+				return this._ci;
+			}
+			set
+			{
+				if ((this._ci != value))
+				{
+					this.OnciChanging(value);
+					this.SendPropertyChanging();
+					this._ci = value;
+					this.SendPropertyChanged("ci");
+					this.OnciChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<规划路> 规划路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch", DbType="Int")]
+		public System.Nullable<int> bcch
 		{
 			get
 			{
-				return this.GetTable<规划路>();
+				return this._bcch;
+			}
+			set
+			{
+				if ((this._bcch != value))
+				{
+					this.OnbcchChanging(value);
+					this.SendPropertyChanging();
+					this._bcch = value;
+					this.SendPropertyChanged("bcch");
+					this.OnbcchChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<国道> 国道
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic", DbType="Int")]
+		public System.Nullable<int> bsic
 		{
 			get
 			{
-				return this.GetTable<国道>();
+				return this._bsic;
+			}
+			set
+			{
+				if ((this._bsic != value))
+				{
+					this.OnbsicChanging(value);
+					this.SendPropertyChanging();
+					this._bsic = value;
+					this.SendPropertyChanged("bsic");
+					this.OnbsicChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<立交ABC> 立交ABC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell_name", DbType="VarChar(30)")]
+		public string cell_name
 		{
 			get
 			{
-				return this.GetTable<立交ABC>();
+				return this._cell_name;
+			}
+			set
+			{
+				if ((this._cell_name != value))
+				{
+					this.Oncell_nameChanging(value);
+					this.SendPropertyChanging();
+					this._cell_name = value;
+					this.SendPropertyChanged("cell_name");
+					this.Oncell_nameChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<桥梁> 桥梁
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bts_name", DbType="VarChar(30)")]
+		public string bts_name
 		{
 			get
 			{
-				return this.GetTable<桥梁>();
+				return this._bts_name;
+			}
+			set
+			{
+				if ((this._bts_name != value))
+				{
+					this.Onbts_nameChanging(value);
+					this.SendPropertyChanging();
+					this._bts_name = value;
+					this.SendPropertyChanged("bts_name");
+					this.Onbts_nameChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<省道> 省道
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_longitude", DbType="Decimal(9,6)")]
+		public System.Nullable<decimal> longitude
 		{
 			get
 			{
-				return this.GetTable<省道>();
+				return this._longitude;
+			}
+			set
+			{
+				if ((this._longitude != value))
+				{
+					this.OnlongitudeChanging(value);
+					this.SendPropertyChanging();
+					this._longitude = value;
+					this.SendPropertyChanged("longitude");
+					this.OnlongitudeChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<铁路> 铁路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_latitude", DbType="Decimal(9,6)")]
+		public System.Nullable<decimal> latitude
 		{
 			get
 			{
-				return this.GetTable<铁路>();
+				return this._latitude;
+			}
+			set
+			{
+				if ((this._latitude != value))
+				{
+					this.OnlatitudeChanging(value);
+					this.SendPropertyChanging();
+					this._latitude = value;
+					this.SendPropertyChanged("latitude");
+					this.OnlatitudeChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<县市界> 县市界
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dir", DbType="Int")]
+		public System.Nullable<int> dir
 		{
 			get
 			{
-				return this.GetTable<县市界>();
+				return this._dir;
+			}
+			set
+			{
+				if ((this._dir != value))
+				{
+					this.OndirChanging(value);
+					this.SendPropertyChanging();
+					this._dir = value;
+					this.SendPropertyChanged("dir");
+					this.OndirChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<县乡道路> 县乡道路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_height", DbType="Int")]
+		public System.Nullable<int> height
 		{
 			get
 			{
-				return this.GetTable<县乡道路>();
+				return this._height;
+			}
+			set
+			{
+				if ((this._height != value))
+				{
+					this.OnheightChanging(value);
+					this.SendPropertyChanging();
+					this._height = value;
+					this.SendPropertyChanged("height");
+					this.OnheightChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<一般道路> 一般道路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tilt", DbType="Int")]
+		public System.Nullable<int> tilt
 		{
 			get
 			{
-				return this.GetTable<一般道路>();
+				return this._tilt;
+			}
+			set
+			{
+				if ((this._tilt != value))
+				{
+					this.OntiltChanging(value);
+					this.SendPropertyChanging();
+					this._tilt = value;
+					this.SendPropertyChanged("tilt");
+					this.OntiltChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<镇界> 镇界
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ground_height", DbType="Int")]
+		public System.Nullable<int> ground_height
 		{
 			get
 			{
-				return this.GetTable<镇界>();
+				return this._ground_height;
+			}
+			set
+			{
+				if ((this._ground_height != value))
+				{
+					this.Onground_heightChanging(value);
+					this.SendPropertyChanging();
+					this._ground_height = value;
+					this.SendPropertyChanged("ground_height");
+					this.Onground_heightChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<主要道路> 主要道路
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_bw", DbType="Int")]
+		public System.Nullable<int> ant_bw
 		{
 			get
 			{
-				return this.GetTable<主要道路>();
+				return this._ant_bw;
+			}
+			set
+			{
+				if ((this._ant_bw != value))
+				{
+					this.Onant_bwChanging(value);
+					this.SendPropertyChanging();
+					this._ant_bw = value;
+					this.SendPropertyChanged("ant_bw");
+					this.Onant_bwChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<主要街道> 主要街道
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_size", DbType="Int")]
+		public System.Nullable<int> ant_size
 		{
 			get
 			{
-				return this.GetTable<主要街道>();
+				return this._ant_size;
+			}
+			set
+			{
+				if ((this._ant_size != value))
+				{
+					this.Onant_sizeChanging(value);
+					this.SendPropertyChanging();
+					this._ant_size = value;
+					this.SendPropertyChanged("ant_size");
+					this.Onant_sizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_band", DbType="VarChar(10)")]
+		public string band
+		{
+			get
+			{
+				return this._band;
+			}
+			set
+			{
+				if ((this._band != value))
+				{
+					this.OnbandChanging(value);
+					this.SendPropertyChanging();
+					this._band = value;
+					this.SendPropertyChanged("band");
+					this.OnbandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_power", DbType="Int")]
+		public System.Nullable<int> power
+		{
+			get
+			{
+				return this._power;
+			}
+			set
+			{
+				if ((this._power != value))
+				{
+					this.OnpowerChanging(value);
+					this.SendPropertyChanging();
+					this._power = value;
+					this.SendPropertyChanged("power");
+					this.OnpowerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_half_power", DbType="Int")]
+		public System.Nullable<int> half_power
+		{
+			get
+			{
+				return this._half_power;
+			}
+			set
+			{
+				if ((this._half_power != value))
+				{
+					this.Onhalf_powerChanging(value);
+					this.SendPropertyChanging();
+					this._half_power = value;
+					this.SendPropertyChanged("half_power");
+					this.Onhalf_powerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_active_balist", DbType="VarChar(254)")]
+		public string active_balist
+		{
+			get
+			{
+				return this._active_balist;
+			}
+			set
+			{
+				if ((this._active_balist != value))
+				{
+					this.Onactive_balistChanging(value);
+					this.SendPropertyChanging();
+					this._active_balist = value;
+					this.SendPropertyChanged("active_balist");
+					this.Onactive_balistChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idle_balist", DbType="VarChar(254)")]
+		public string idle_balist
+		{
+			get
+			{
+				return this._idle_balist;
+			}
+			set
+			{
+				if ((this._idle_balist != value))
+				{
+					this.Onidle_balistChanging(value);
+					this.SendPropertyChanging();
+					this._idle_balist = value;
+					this.SendPropertyChanged("idle_balist");
+					this.Onidle_balistChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
+		public string MI_STYLE
+		{
+			get
+			{
+				return this._MI_STYLE;
+			}
+			set
+			{
+				if ((this._MI_STYLE != value))
+				{
+					this.OnMI_STYLEChanging(value);
+					this.SendPropertyChanging();
+					this._MI_STYLE = value;
+					this.SendPropertyChanged("MI_STYLE");
+					this.OnMI_STYLEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MI_PRINX
+		{
+			get
+			{
+				return this._MI_PRINX;
+			}
+			set
+			{
+				if ((this._MI_PRINX != value))
+				{
+					this.OnMI_PRINXChanging(value);
+					this.SendPropertyChanging();
+					this._MI_PRINX = value;
+					this.SendPropertyChanged("MI_PRINX");
+					this.OnMI_PRINXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
+		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
+		{
+			get
+			{
+				return this._SP_GEOMETRY;
+			}
+			set
+			{
+				if ((this._SP_GEOMETRY != value))
+				{
+					this.OnSP_GEOMETRYChanging(value);
+					this.SendPropertyChanging();
+					this._SP_GEOMETRY = value;
+					this.SendPropertyChanged("SP_GEOMETRY");
+					this.OnSP_GEOMETRYChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CELLTRACING")]
-	public partial class CELLTRACING : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class CELLTRACING
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private string _SiteName;
 		
 		private string _MI_STYLE;
 		
 		private int _MI_PRINX;
 		
 		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-		private System.Nullable<decimal> _Longitude;
-		
-		private System.Nullable<decimal> _Latitude;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    partial void OnLongitudeChanging(System.Nullable<decimal> value);
-    partial void OnLongitudeChanged();
-    partial void OnLatitudeChanging(System.Nullable<decimal> value);
-    partial void OnLatitudeChanged();
-    #endregion
 		
 		public CELLTRACING()
 		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude")]
-		public System.Nullable<decimal> Longitude
-		{
-			get
-			{
-				return this._Longitude;
-			}
-			set
-			{
-				if ((this._Longitude != value))
-				{
-					this.OnLongitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Longitude = value;
-					this.SendPropertyChanged("Longitude");
-					this.OnLongitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(10,6)")]
-		public System.Nullable<decimal> Latitude
-		{
-			get
-			{
-				return this._Latitude;
-			}
-			set
-			{
-				if ((this._Latitude != value))
-				{
-					this.OnLatitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Latitude = value;
-					this.SendPropertyChanged("Latitude");
-					this.OnLatitudeChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MCOMCARRIER")]
-	public partial class MCOMCARRIER : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Cell;
-		
-		private string _BSC;
-		
-		private string _LAI;
-		
-		private string _CI;
-		
-		private System.Nullable<short> _BCCH;
-		
-		private string _BSIC;
-		
-		private string _TCH;
-		
-		private string _HOP;
-		
-		private string _HSN;
-		
-		private System.Nullable<decimal> _Longitude;
-		
-		private System.Nullable<decimal> _Latitude;
-		
-		private System.Nullable<short> _Dir;
-		
-		private System.Nullable<short> _Ant_size;
-		
-		private System.Nullable<short> _Font_size;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCellChanging(string value);
-    partial void OnCellChanged();
-    partial void OnBSCChanging(string value);
-    partial void OnBSCChanged();
-    partial void OnLAIChanging(string value);
-    partial void OnLAIChanged();
-    partial void OnCIChanging(string value);
-    partial void OnCIChanged();
-    partial void OnBCCHChanging(System.Nullable<short> value);
-    partial void OnBCCHChanged();
-    partial void OnBSICChanging(string value);
-    partial void OnBSICChanged();
-    partial void OnTCHChanging(string value);
-    partial void OnTCHChanged();
-    partial void OnHOPChanging(string value);
-    partial void OnHOPChanged();
-    partial void OnHSNChanging(string value);
-    partial void OnHSNChanged();
-    partial void OnLongitudeChanging(System.Nullable<decimal> value);
-    partial void OnLongitudeChanged();
-    partial void OnLatitudeChanging(System.Nullable<decimal> value);
-    partial void OnLatitudeChanged();
-    partial void OnDirChanging(System.Nullable<short> value);
-    partial void OnDirChanged();
-    partial void OnAnt_sizeChanging(System.Nullable<short> value);
-    partial void OnAnt_sizeChanged();
-    partial void OnFont_sizeChanging(System.Nullable<short> value);
-    partial void OnFont_sizeChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public MCOMCARRIER()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell", DbType="VarChar(10)")]
-		public string Cell
-		{
-			get
-			{
-				return this._Cell;
-			}
-			set
-			{
-				if ((this._Cell != value))
-				{
-					this.OnCellChanging(value);
-					this.SendPropertyChanging();
-					this._Cell = value;
-					this.SendPropertyChanged("Cell");
-					this.OnCellChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BSC", DbType="VarChar(10)")]
-		public string BSC
-		{
-			get
-			{
-				return this._BSC;
-			}
-			set
-			{
-				if ((this._BSC != value))
-				{
-					this.OnBSCChanging(value);
-					this.SendPropertyChanging();
-					this._BSC = value;
-					this.SendPropertyChanged("BSC");
-					this.OnBSCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LAI", DbType="VarChar(6)")]
-		public string LAI
-		{
-			get
-			{
-				return this._LAI;
-			}
-			set
-			{
-				if ((this._LAI != value))
-				{
-					this.OnLAIChanging(value);
-					this.SendPropertyChanging();
-					this._LAI = value;
-					this.SendPropertyChanged("LAI");
-					this.OnLAIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CI", DbType="VarChar(6)")]
-		public string CI
-		{
-			get
-			{
-				return this._CI;
-			}
-			set
-			{
-				if ((this._CI != value))
-				{
-					this.OnCIChanging(value);
-					this.SendPropertyChanging();
-					this._CI = value;
-					this.SendPropertyChanged("CI");
-					this.OnCIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BCCH", DbType="SmallInt")]
-		public System.Nullable<short> BCCH
-		{
-			get
-			{
-				return this._BCCH;
-			}
-			set
-			{
-				if ((this._BCCH != value))
-				{
-					this.OnBCCHChanging(value);
-					this.SendPropertyChanging();
-					this._BCCH = value;
-					this.SendPropertyChanged("BCCH");
-					this.OnBCCHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BSIC", DbType="VarChar(4)")]
-		public string BSIC
-		{
-			get
-			{
-				return this._BSIC;
-			}
-			set
-			{
-				if ((this._BSIC != value))
-				{
-					this.OnBSICChanging(value);
-					this.SendPropertyChanging();
-					this._BSIC = value;
-					this.SendPropertyChanged("BSIC");
-					this.OnBSICChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TCH", DbType="VarChar(200)")]
-		public string TCH
-		{
-			get
-			{
-				return this._TCH;
-			}
-			set
-			{
-				if ((this._TCH != value))
-				{
-					this.OnTCHChanging(value);
-					this.SendPropertyChanging();
-					this._TCH = value;
-					this.SendPropertyChanged("TCH");
-					this.OnTCHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOP", DbType="VarChar(40)")]
-		public string HOP
-		{
-			get
-			{
-				return this._HOP;
-			}
-			set
-			{
-				if ((this._HOP != value))
-				{
-					this.OnHOPChanging(value);
-					this.SendPropertyChanging();
-					this._HOP = value;
-					this.SendPropertyChanged("HOP");
-					this.OnHOPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HSN", DbType="VarChar(40)")]
-		public string HSN
-		{
-			get
-			{
-				return this._HSN;
-			}
-			set
-			{
-				if ((this._HSN != value))
-				{
-					this.OnHSNChanging(value);
-					this.SendPropertyChanging();
-					this._HSN = value;
-					this.SendPropertyChanged("HSN");
-					this.OnHSNChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude")]
-		public System.Nullable<decimal> Longitude
-		{
-			get
-			{
-				return this._Longitude;
-			}
-			set
-			{
-				if ((this._Longitude != value))
-				{
-					this.OnLongitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Longitude = value;
-					this.SendPropertyChanged("Longitude");
-					this.OnLongitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(10,6)")]
-		public System.Nullable<decimal> Latitude
-		{
-			get
-			{
-				return this._Latitude;
-			}
-			set
-			{
-				if ((this._Latitude != value))
-				{
-					this.OnLatitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Latitude = value;
-					this.SendPropertyChanged("Latitude");
-					this.OnLatitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dir", DbType="SmallInt")]
-		public System.Nullable<short> Dir
-		{
-			get
-			{
-				return this._Dir;
-			}
-			set
-			{
-				if ((this._Dir != value))
-				{
-					this.OnDirChanging(value);
-					this.SendPropertyChanging();
-					this._Dir = value;
-					this.SendPropertyChanged("Dir");
-					this.OnDirChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_size", DbType="SmallInt")]
-		public System.Nullable<short> Ant_size
-		{
-			get
-			{
-				return this._Ant_size;
-			}
-			set
-			{
-				if ((this._Ant_size != value))
-				{
-					this.OnAnt_sizeChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_size = value;
-					this.SendPropertyChanged("Ant_size");
-					this.OnAnt_sizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Font_size", DbType="SmallInt")]
-		public System.Nullable<short> Font_size
-		{
-			get
-			{
-				return this._Font_size;
-			}
-			set
-			{
-				if ((this._Font_size != value))
-				{
-					this.OnFont_sizeChanging(value);
-					this.SendPropertyChanging();
-					this._Font_size = value;
-					this.SendPropertyChanged("Font_size");
-					this.OnFont_sizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MCOMSITE")]
-	public partial class MCOMSITE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Cell;
-		
-		private string _Site;
-		
-		private System.Nullable<decimal> _Longitude;
-		
-		private System.Nullable<decimal> _Latitude;
-		
-		private System.Nullable<short> _Dir;
-		
-		private System.Nullable<double> _Height;
-		
-		private System.Nullable<short> _Tilt;
-		
-		private System.Nullable<double> _Ground_Height;
-		
-		private string _Cell_Type;
-		
-		private string _Ant_Type;
-		
-		private System.Nullable<short> _Ant_BW;
-		
-		private string _Note;
-		
-		private string _SiteName;
-		
-		private string _Flag1;
-		
-		private string _Flag2;
-		
-		private string _Flag3;
-		
-		private string _Flag4;
-		
-		private string _Flag5;
-		
-		private string _CI;
-		
-		private string _BSC;
-		
-		private System.Nullable<short> _Ant_size;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCellChanging(string value);
-    partial void OnCellChanged();
-    partial void OnSiteChanging(string value);
-    partial void OnSiteChanged();
-    partial void OnLongitudeChanging(System.Nullable<decimal> value);
-    partial void OnLongitudeChanged();
-    partial void OnLatitudeChanging(System.Nullable<decimal> value);
-    partial void OnLatitudeChanged();
-    partial void OnDirChanging(System.Nullable<short> value);
-    partial void OnDirChanged();
-    partial void OnHeightChanging(System.Nullable<double> value);
-    partial void OnHeightChanged();
-    partial void OnTiltChanging(System.Nullable<short> value);
-    partial void OnTiltChanged();
-    partial void OnGround_HeightChanging(System.Nullable<double> value);
-    partial void OnGround_HeightChanged();
-    partial void OnCell_TypeChanging(string value);
-    partial void OnCell_TypeChanged();
-    partial void OnAnt_TypeChanging(string value);
-    partial void OnAnt_TypeChanged();
-    partial void OnAnt_BWChanging(System.Nullable<short> value);
-    partial void OnAnt_BWChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    partial void OnSiteNameChanging(string value);
-    partial void OnSiteNameChanged();
-    partial void OnFlag1Changing(string value);
-    partial void OnFlag1Changed();
-    partial void OnFlag2Changing(string value);
-    partial void OnFlag2Changed();
-    partial void OnFlag3Changing(string value);
-    partial void OnFlag3Changed();
-    partial void OnFlag4Changing(string value);
-    partial void OnFlag4Changed();
-    partial void OnFlag5Changing(string value);
-    partial void OnFlag5Changed();
-    partial void OnCIChanging(string value);
-    partial void OnCIChanged();
-    partial void OnBSCChanging(string value);
-    partial void OnBSCChanged();
-    partial void OnAnt_sizeChanging(System.Nullable<short> value);
-    partial void OnAnt_sizeChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public MCOMSITE()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell", DbType="VarChar(10)")]
-		public string Cell
-		{
-			get
-			{
-				return this._Cell;
-			}
-			set
-			{
-				if ((this._Cell != value))
-				{
-					this.OnCellChanging(value);
-					this.SendPropertyChanging();
-					this._Cell = value;
-					this.SendPropertyChanged("Cell");
-					this.OnCellChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site", DbType="VarChar(20)")]
-		public string Site
-		{
-			get
-			{
-				return this._Site;
-			}
-			set
-			{
-				if ((this._Site != value))
-				{
-					this.OnSiteChanging(value);
-					this.SendPropertyChanging();
-					this._Site = value;
-					this.SendPropertyChanged("Site");
-					this.OnSiteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(10,6)")]
-		public System.Nullable<decimal> Longitude
-		{
-			get
-			{
-				return this._Longitude;
-			}
-			set
-			{
-				if ((this._Longitude != value))
-				{
-					this.OnLongitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Longitude = value;
-					this.SendPropertyChanged("Longitude");
-					this.OnLongitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Decimal(10,6)")]
-		public System.Nullable<decimal> Latitude
-		{
-			get
-			{
-				return this._Latitude;
-			}
-			set
-			{
-				if ((this._Latitude != value))
-				{
-					this.OnLatitudeChanging(value);
-					this.SendPropertyChanging();
-					this._Latitude = value;
-					this.SendPropertyChanged("Latitude");
-					this.OnLatitudeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dir", DbType="SmallInt")]
-		public System.Nullable<short> Dir
-		{
-			get
-			{
-				return this._Dir;
-			}
-			set
-			{
-				if ((this._Dir != value))
-				{
-					this.OnDirChanging(value);
-					this.SendPropertyChanging();
-					this._Dir = value;
-					this.SendPropertyChanged("Dir");
-					this.OnDirChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="Float")]
-		public System.Nullable<double> Height
-		{
-			get
-			{
-				return this._Height;
-			}
-			set
-			{
-				if ((this._Height != value))
-				{
-					this.OnHeightChanging(value);
-					this.SendPropertyChanging();
-					this._Height = value;
-					this.SendPropertyChanged("Height");
-					this.OnHeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tilt", DbType="SmallInt")]
-		public System.Nullable<short> Tilt
-		{
-			get
-			{
-				return this._Tilt;
-			}
-			set
-			{
-				if ((this._Tilt != value))
-				{
-					this.OnTiltChanging(value);
-					this.SendPropertyChanging();
-					this._Tilt = value;
-					this.SendPropertyChanged("Tilt");
-					this.OnTiltChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ground_Height", DbType="Float")]
-		public System.Nullable<double> Ground_Height
-		{
-			get
-			{
-				return this._Ground_Height;
-			}
-			set
-			{
-				if ((this._Ground_Height != value))
-				{
-					this.OnGround_HeightChanging(value);
-					this.SendPropertyChanging();
-					this._Ground_Height = value;
-					this.SendPropertyChanged("Ground_Height");
-					this.OnGround_HeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell_Type", DbType="VarChar(20)")]
-		public string Cell_Type
-		{
-			get
-			{
-				return this._Cell_Type;
-			}
-			set
-			{
-				if ((this._Cell_Type != value))
-				{
-					this.OnCell_TypeChanging(value);
-					this.SendPropertyChanging();
-					this._Cell_Type = value;
-					this.SendPropertyChanged("Cell_Type");
-					this.OnCell_TypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_Type", DbType="VarChar(20)")]
-		public string Ant_Type
-		{
-			get
-			{
-				return this._Ant_Type;
-			}
-			set
-			{
-				if ((this._Ant_Type != value))
-				{
-					this.OnAnt_TypeChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_Type = value;
-					this.SendPropertyChanged("Ant_Type");
-					this.OnAnt_TypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_BW", DbType="SmallInt")]
-		public System.Nullable<short> Ant_BW
-		{
-			get
-			{
-				return this._Ant_BW;
-			}
-			set
-			{
-				if ((this._Ant_BW != value))
-				{
-					this.OnAnt_BWChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_BW = value;
-					this.SendPropertyChanged("Ant_BW");
-					this.OnAnt_BWChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="VarChar(30)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SiteName", DbType="VarChar(30)")]
@@ -1240,171 +771,7 @@ namespace Linq2SqlGeography
 			{
 				if ((this._SiteName != value))
 				{
-					this.OnSiteNameChanging(value);
-					this.SendPropertyChanging();
 					this._SiteName = value;
-					this.SendPropertyChanged("SiteName");
-					this.OnSiteNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag1", DbType="VarChar(30)")]
-		public string Flag1
-		{
-			get
-			{
-				return this._Flag1;
-			}
-			set
-			{
-				if ((this._Flag1 != value))
-				{
-					this.OnFlag1Changing(value);
-					this.SendPropertyChanging();
-					this._Flag1 = value;
-					this.SendPropertyChanged("Flag1");
-					this.OnFlag1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag2", DbType="VarChar(30)")]
-		public string Flag2
-		{
-			get
-			{
-				return this._Flag2;
-			}
-			set
-			{
-				if ((this._Flag2 != value))
-				{
-					this.OnFlag2Changing(value);
-					this.SendPropertyChanging();
-					this._Flag2 = value;
-					this.SendPropertyChanged("Flag2");
-					this.OnFlag2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag3", DbType="VarChar(30)")]
-		public string Flag3
-		{
-			get
-			{
-				return this._Flag3;
-			}
-			set
-			{
-				if ((this._Flag3 != value))
-				{
-					this.OnFlag3Changing(value);
-					this.SendPropertyChanging();
-					this._Flag3 = value;
-					this.SendPropertyChanged("Flag3");
-					this.OnFlag3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag4", DbType="VarChar(30)")]
-		public string Flag4
-		{
-			get
-			{
-				return this._Flag4;
-			}
-			set
-			{
-				if ((this._Flag4 != value))
-				{
-					this.OnFlag4Changing(value);
-					this.SendPropertyChanging();
-					this._Flag4 = value;
-					this.SendPropertyChanged("Flag4");
-					this.OnFlag4Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag5", DbType="VarChar(30)")]
-		public string Flag5
-		{
-			get
-			{
-				return this._Flag5;
-			}
-			set
-			{
-				if ((this._Flag5 != value))
-				{
-					this.OnFlag5Changing(value);
-					this.SendPropertyChanging();
-					this._Flag5 = value;
-					this.SendPropertyChanged("Flag5");
-					this.OnFlag5Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CI", DbType="VarChar(6)")]
-		public string CI
-		{
-			get
-			{
-				return this._CI;
-			}
-			set
-			{
-				if ((this._CI != value))
-				{
-					this.OnCIChanging(value);
-					this.SendPropertyChanging();
-					this._CI = value;
-					this.SendPropertyChanged("CI");
-					this.OnCIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BSC", DbType="VarChar(10)")]
-		public string BSC
-		{
-			get
-			{
-				return this._BSC;
-			}
-			set
-			{
-				if ((this._BSC != value))
-				{
-					this.OnBSCChanging(value);
-					this.SendPropertyChanging();
-					this._BSC = value;
-					this.SendPropertyChanged("BSC");
-					this.OnBSCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_size", DbType="SmallInt")]
-		public System.Nullable<short> Ant_size
-		{
-			get
-			{
-				return this._Ant_size;
-			}
-			set
-			{
-				if ((this._Ant_size != value))
-				{
-					this.OnAnt_sizeChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_size = value;
-					this.SendPropertyChanged("Ant_size");
-					this.OnAnt_sizeChanged();
 				}
 			}
 		}
@@ -1420,16 +787,12 @@ namespace Linq2SqlGeography
 			{
 				if ((this._MI_STYLE != value))
 				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
 					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
 		public int MI_PRINX
 		{
 			get
@@ -1440,11 +803,7 @@ namespace Linq2SqlGeography
 			{
 				if ((this._MI_PRINX != value))
 				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
 					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
 				}
 			}
 		}
@@ -1460,3664 +819,8 @@ namespace Linq2SqlGeography
 			{
 				if ((this._SP_GEOMETRY != value))
 				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
 					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
 				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MCOMTEM")]
-	public partial class MCOMTEM : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Cell;
-		
-		private string _Site;
-		
-		private System.Nullable<double> _Height;
-		
-		private System.Nullable<short> _Tilt;
-		
-		private System.Nullable<double> _Ground_Height;
-		
-		private string _Cell_Type;
-		
-		private string _Ant_Type;
-		
-		private string _Note;
-		
-		private string _SiteName;
-		
-		private string _Flag1;
-		
-		private string _Flag2;
-		
-		private string _Flag3;
-		
-		private string _Flag4;
-		
-		private string _Flag5;
-		
-		private string _CI;
-		
-		private string _BSC;
-		
-		private System.Nullable<short> _Ant_size;
-		
-		private System.Nullable<short> _Lbl_size;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCellChanging(string value);
-    partial void OnCellChanged();
-    partial void OnSiteChanging(string value);
-    partial void OnSiteChanged();
-    partial void OnHeightChanging(System.Nullable<double> value);
-    partial void OnHeightChanged();
-    partial void OnTiltChanging(System.Nullable<short> value);
-    partial void OnTiltChanged();
-    partial void OnGround_HeightChanging(System.Nullable<double> value);
-    partial void OnGround_HeightChanged();
-    partial void OnCell_TypeChanging(string value);
-    partial void OnCell_TypeChanged();
-    partial void OnAnt_TypeChanging(string value);
-    partial void OnAnt_TypeChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    partial void OnSiteNameChanging(string value);
-    partial void OnSiteNameChanged();
-    partial void OnFlag1Changing(string value);
-    partial void OnFlag1Changed();
-    partial void OnFlag2Changing(string value);
-    partial void OnFlag2Changed();
-    partial void OnFlag3Changing(string value);
-    partial void OnFlag3Changed();
-    partial void OnFlag4Changing(string value);
-    partial void OnFlag4Changed();
-    partial void OnFlag5Changing(string value);
-    partial void OnFlag5Changed();
-    partial void OnCIChanging(string value);
-    partial void OnCIChanged();
-    partial void OnBSCChanging(string value);
-    partial void OnBSCChanged();
-    partial void OnAnt_sizeChanging(System.Nullable<short> value);
-    partial void OnAnt_sizeChanged();
-    partial void OnLbl_sizeChanging(System.Nullable<short> value);
-    partial void OnLbl_sizeChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public MCOMTEM()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell", DbType="VarChar(10)")]
-		public string Cell
-		{
-			get
-			{
-				return this._Cell;
-			}
-			set
-			{
-				if ((this._Cell != value))
-				{
-					this.OnCellChanging(value);
-					this.SendPropertyChanging();
-					this._Cell = value;
-					this.SendPropertyChanged("Cell");
-					this.OnCellChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site", DbType="VarChar(20)")]
-		public string Site
-		{
-			get
-			{
-				return this._Site;
-			}
-			set
-			{
-				if ((this._Site != value))
-				{
-					this.OnSiteChanging(value);
-					this.SendPropertyChanging();
-					this._Site = value;
-					this.SendPropertyChanged("Site");
-					this.OnSiteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Height", DbType="Float")]
-		public System.Nullable<double> Height
-		{
-			get
-			{
-				return this._Height;
-			}
-			set
-			{
-				if ((this._Height != value))
-				{
-					this.OnHeightChanging(value);
-					this.SendPropertyChanging();
-					this._Height = value;
-					this.SendPropertyChanged("Height");
-					this.OnHeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tilt", DbType="SmallInt")]
-		public System.Nullable<short> Tilt
-		{
-			get
-			{
-				return this._Tilt;
-			}
-			set
-			{
-				if ((this._Tilt != value))
-				{
-					this.OnTiltChanging(value);
-					this.SendPropertyChanging();
-					this._Tilt = value;
-					this.SendPropertyChanged("Tilt");
-					this.OnTiltChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ground_Height", DbType="Float")]
-		public System.Nullable<double> Ground_Height
-		{
-			get
-			{
-				return this._Ground_Height;
-			}
-			set
-			{
-				if ((this._Ground_Height != value))
-				{
-					this.OnGround_HeightChanging(value);
-					this.SendPropertyChanging();
-					this._Ground_Height = value;
-					this.SendPropertyChanged("Ground_Height");
-					this.OnGround_HeightChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cell_Type", DbType="VarChar(20)")]
-		public string Cell_Type
-		{
-			get
-			{
-				return this._Cell_Type;
-			}
-			set
-			{
-				if ((this._Cell_Type != value))
-				{
-					this.OnCell_TypeChanging(value);
-					this.SendPropertyChanging();
-					this._Cell_Type = value;
-					this.SendPropertyChanged("Cell_Type");
-					this.OnCell_TypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_Type", DbType="VarChar(20)")]
-		public string Ant_Type
-		{
-			get
-			{
-				return this._Ant_Type;
-			}
-			set
-			{
-				if ((this._Ant_Type != value))
-				{
-					this.OnAnt_TypeChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_Type = value;
-					this.SendPropertyChanged("Ant_Type");
-					this.OnAnt_TypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="VarChar(30)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SiteName", DbType="VarChar(30)")]
-		public string SiteName
-		{
-			get
-			{
-				return this._SiteName;
-			}
-			set
-			{
-				if ((this._SiteName != value))
-				{
-					this.OnSiteNameChanging(value);
-					this.SendPropertyChanging();
-					this._SiteName = value;
-					this.SendPropertyChanged("SiteName");
-					this.OnSiteNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag1", DbType="VarChar(30)")]
-		public string Flag1
-		{
-			get
-			{
-				return this._Flag1;
-			}
-			set
-			{
-				if ((this._Flag1 != value))
-				{
-					this.OnFlag1Changing(value);
-					this.SendPropertyChanging();
-					this._Flag1 = value;
-					this.SendPropertyChanged("Flag1");
-					this.OnFlag1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag2", DbType="VarChar(30)")]
-		public string Flag2
-		{
-			get
-			{
-				return this._Flag2;
-			}
-			set
-			{
-				if ((this._Flag2 != value))
-				{
-					this.OnFlag2Changing(value);
-					this.SendPropertyChanging();
-					this._Flag2 = value;
-					this.SendPropertyChanged("Flag2");
-					this.OnFlag2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag3", DbType="VarChar(30)")]
-		public string Flag3
-		{
-			get
-			{
-				return this._Flag3;
-			}
-			set
-			{
-				if ((this._Flag3 != value))
-				{
-					this.OnFlag3Changing(value);
-					this.SendPropertyChanging();
-					this._Flag3 = value;
-					this.SendPropertyChanged("Flag3");
-					this.OnFlag3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag4", DbType="VarChar(30)")]
-		public string Flag4
-		{
-			get
-			{
-				return this._Flag4;
-			}
-			set
-			{
-				if ((this._Flag4 != value))
-				{
-					this.OnFlag4Changing(value);
-					this.SendPropertyChanging();
-					this._Flag4 = value;
-					this.SendPropertyChanged("Flag4");
-					this.OnFlag4Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flag5", DbType="VarChar(30)")]
-		public string Flag5
-		{
-			get
-			{
-				return this._Flag5;
-			}
-			set
-			{
-				if ((this._Flag5 != value))
-				{
-					this.OnFlag5Changing(value);
-					this.SendPropertyChanging();
-					this._Flag5 = value;
-					this.SendPropertyChanged("Flag5");
-					this.OnFlag5Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CI", DbType="VarChar(6)")]
-		public string CI
-		{
-			get
-			{
-				return this._CI;
-			}
-			set
-			{
-				if ((this._CI != value))
-				{
-					this.OnCIChanging(value);
-					this.SendPropertyChanging();
-					this._CI = value;
-					this.SendPropertyChanged("CI");
-					this.OnCIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BSC", DbType="VarChar(10)")]
-		public string BSC
-		{
-			get
-			{
-				return this._BSC;
-			}
-			set
-			{
-				if ((this._BSC != value))
-				{
-					this.OnBSCChanging(value);
-					this.SendPropertyChanging();
-					this._BSC = value;
-					this.SendPropertyChanged("BSC");
-					this.OnBSCChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ant_size", DbType="SmallInt")]
-		public System.Nullable<short> Ant_size
-		{
-			get
-			{
-				return this._Ant_size;
-			}
-			set
-			{
-				if ((this._Ant_size != value))
-				{
-					this.OnAnt_sizeChanging(value);
-					this.SendPropertyChanging();
-					this._Ant_size = value;
-					this.SendPropertyChanged("Ant_size");
-					this.OnAnt_sizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lbl_size", DbType="SmallInt")]
-		public System.Nullable<short> Lbl_size
-		{
-			get
-			{
-				return this._Lbl_size;
-			}
-			set
-			{
-				if ((this._Lbl_size != value))
-				{
-					this.OnLbl_sizeChanging(value);
-					this.SendPropertyChanging();
-					this._Lbl_size = value;
-					this.SendPropertyChanged("Lbl_size");
-					this.OnLbl_sizeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MOBILEPOINTS")]
-	public partial class MOBILEPOINTS : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _idx;
-		
-		private System.Nullable<double> _lon;
-		
-		private System.Nullable<double> _lat;
-		
-		private System.Nullable<int> _level;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidxChanging(System.Nullable<int> value);
-    partial void OnidxChanged();
-    partial void OnlonChanging(System.Nullable<double> value);
-    partial void OnlonChanged();
-    partial void OnlatChanging(System.Nullable<double> value);
-    partial void OnlatChanged();
-    partial void OnlevelChanging(System.Nullable<int> value);
-    partial void OnlevelChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public MOBILEPOINTS()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idx", DbType="Int")]
-		public System.Nullable<int> idx
-		{
-			get
-			{
-				return this._idx;
-			}
-			set
-			{
-				if ((this._idx != value))
-				{
-					this.OnidxChanging(value);
-					this.SendPropertyChanging();
-					this._idx = value;
-					this.SendPropertyChanged("idx");
-					this.OnidxChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lon", DbType="Float")]
-		public System.Nullable<double> lon
-		{
-			get
-			{
-				return this._lon;
-			}
-			set
-			{
-				if ((this._lon != value))
-				{
-					this.OnlonChanging(value);
-					this.SendPropertyChanging();
-					this._lon = value;
-					this.SendPropertyChanged("lon");
-					this.OnlonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lat", DbType="Float")]
-		public System.Nullable<double> lat
-		{
-			get
-			{
-				return this._lat;
-			}
-			set
-			{
-				if ((this._lat != value))
-				{
-					this.OnlatChanging(value);
-					this.SendPropertyChanging();
-					this._lat = value;
-					this.SendPropertyChanged("lat");
-					this.OnlatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[level]", Storage="_level", DbType="Int")]
-		public System.Nullable<int> level
-		{
-			get
-			{
-				return this._level;
-			}
-			set
-			{
-				if ((this._level != value))
-				{
-					this.OnlevelChanging(value);
-					this.SendPropertyChanging();
-					this._level = value;
-					this.SendPropertyChanged("level");
-					this.OnlevelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.次要街道")]
-	public partial class 次要街道 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 次要街道()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.高速公路")]
-	public partial class 高速公路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 高速公路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.规划路")]
-	public partial class 规划路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _roadname;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnroadnameChanging(string value);
-    partial void OnroadnameChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 规划路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roadname", DbType="VarChar(20)")]
-		public string roadname
-		{
-			get
-			{
-				return this._roadname;
-			}
-			set
-			{
-				if ((this._roadname != value))
-				{
-					this.OnroadnameChanging(value);
-					this.SendPropertyChanging();
-					this._roadname = value;
-					this.SendPropertyChanged("roadname");
-					this.OnroadnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.国道")]
-	public partial class 国道 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 国道()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.立交ABC")]
-	public partial class 立交ABC : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<int> _高架桥ID;
-		
-		private string _名称;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void On高架桥IDChanging(System.Nullable<int> value);
-    partial void On高架桥IDChanged();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 立交ABC()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_高架桥ID", DbType="Int")]
-		public System.Nullable<int> 高架桥ID
-		{
-			get
-			{
-				return this._高架桥ID;
-			}
-			set
-			{
-				if ((this._高架桥ID != value))
-				{
-					this.On高架桥IDChanging(value);
-					this.SendPropertyChanging();
-					this._高架桥ID = value;
-					this.SendPropertyChanged("高架桥ID");
-					this.On高架桥IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_名称", DbType="VarChar(50)")]
-		public string 名称
-		{
-			get
-			{
-				return this._名称;
-			}
-			set
-			{
-				if ((this._名称 != value))
-				{
-					this.On名称Changing(value);
-					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.桥梁")]
-	public partial class 桥梁 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _ID;
-		
-		private string _NAME;
-		
-		private string _TYPE;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(System.Nullable<int> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void OnTYPEChanging(string value);
-    partial void OnTYPEChanged();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 桥梁()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int")]
-		public System.Nullable<int> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(10)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE", DbType="VarChar(10)")]
-		public string TYPE
-		{
-			get
-			{
-				return this._TYPE;
-			}
-			set
-			{
-				if ((this._TYPE != value))
-				{
-					this.OnTYPEChanging(value);
-					this.SendPropertyChanging();
-					this._TYPE = value;
-					this.SendPropertyChanged("TYPE");
-					this.OnTYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.省道")]
-	public partial class 省道 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 省道()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.铁路")]
-	public partial class 铁路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 铁路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.县市界")]
-	public partial class 县市界 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _名称;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 县市界()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_名称", DbType="VarChar(20)")]
-		public string 名称
-		{
-			get
-			{
-				return this._名称;
-			}
-			set
-			{
-				if ((this._名称 != value))
-				{
-					this.On名称Changing(value);
-					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.县乡道路")]
-	public partial class 县乡道路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 县乡道路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.一般道路")]
-	public partial class 一般道路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 一般道路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.镇界")]
-	public partial class 镇界 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _名称;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void On名称Changing(string value);
-    partial void On名称Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 镇界()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_名称", DbType="VarChar(30)")]
-		public string 名称
-		{
-			get
-			{
-				return this._名称;
-			}
-			set
-			{
-				if ((this._名称 != value))
-				{
-					this.On名称Changing(value);
-					this.SendPropertyChanging();
-					this._名称 = value;
-					this.SendPropertyChanged("名称");
-					this.On名称Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.主要道路")]
-	public partial class 主要道路 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 主要道路()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.主要街道")]
-	public partial class 主要街道 : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _FID;
-		
-		private System.Nullable<int> _OBJECTID;
-		
-		private System.Nullable<double> _ID;
-		
-		private string _NAME;
-		
-		private System.Nullable<double> _长度;
-		
-		private string _MI_STYLE;
-		
-		private int _MI_PRINX;
-		
-		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnFIDChanging(System.Nullable<int> value);
-    partial void OnFIDChanged();
-    partial void OnOBJECTIDChanging(System.Nullable<int> value);
-    partial void OnOBJECTIDChanged();
-    partial void OnIDChanging(System.Nullable<double> value);
-    partial void OnIDChanged();
-    partial void OnNAMEChanging(string value);
-    partial void OnNAMEChanged();
-    partial void On长度Changing(System.Nullable<double> value);
-    partial void On长度Changed();
-    partial void OnMI_STYLEChanging(string value);
-    partial void OnMI_STYLEChanged();
-    partial void OnMI_PRINXChanging(int value);
-    partial void OnMI_PRINXChanged();
-    partial void OnSP_GEOMETRYChanging(Microsoft.SqlServer.Types.SqlGeometry value);
-    partial void OnSP_GEOMETRYChanged();
-    #endregion
-		
-		public 主要街道()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FID", DbType="Int")]
-		public System.Nullable<int> FID
-		{
-			get
-			{
-				return this._FID;
-			}
-			set
-			{
-				if ((this._FID != value))
-				{
-					this.OnFIDChanging(value);
-					this.SendPropertyChanging();
-					this._FID = value;
-					this.SendPropertyChanged("FID");
-					this.OnFIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBJECTID", DbType="Int")]
-		public System.Nullable<int> OBJECTID
-		{
-			get
-			{
-				return this._OBJECTID;
-			}
-			set
-			{
-				if ((this._OBJECTID != value))
-				{
-					this.OnOBJECTIDChanging(value);
-					this.SendPropertyChanging();
-					this._OBJECTID = value;
-					this.SendPropertyChanged("OBJECTID");
-					this.OnOBJECTIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Float")]
-		public System.Nullable<double> ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(254)")]
-		public string NAME
-		{
-			get
-			{
-				return this._NAME;
-			}
-			set
-			{
-				if ((this._NAME != value))
-				{
-					this.OnNAMEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME = value;
-					this.SendPropertyChanged("NAME");
-					this.OnNAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_长度", DbType="Float")]
-		public System.Nullable<double> 长度
-		{
-			get
-			{
-				return this._长度;
-			}
-			set
-			{
-				if ((this._长度 != value))
-				{
-					this.On长度Changing(value);
-					this.SendPropertyChanging();
-					this._长度 = value;
-					this.SendPropertyChanged("长度");
-					this.On长度Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
-		public string MI_STYLE
-		{
-			get
-			{
-				return this._MI_STYLE;
-			}
-			set
-			{
-				if ((this._MI_STYLE != value))
-				{
-					this.OnMI_STYLEChanging(value);
-					this.SendPropertyChanging();
-					this._MI_STYLE = value;
-					this.SendPropertyChanged("MI_STYLE");
-					this.OnMI_STYLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MI_PRINX
-		{
-			get
-			{
-				return this._MI_PRINX;
-			}
-			set
-			{
-				if ((this._MI_PRINX != value))
-				{
-					this.OnMI_PRINXChanging(value);
-					this.SendPropertyChanging();
-					this._MI_PRINX = value;
-					this.SendPropertyChanged("MI_PRINX");
-					this.OnMI_PRINXChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
-		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
-		{
-			get
-			{
-				return this._SP_GEOMETRY;
-			}
-			set
-			{
-				if ((this._SP_GEOMETRY != value))
-				{
-					this.OnSP_GEOMETRYChanging(value);
-					this.SendPropertyChanging();
-					this._SP_GEOMETRY = value;
-					this.SendPropertyChanged("SP_GEOMETRY");
-					this.OnSP_GEOMETRYChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
