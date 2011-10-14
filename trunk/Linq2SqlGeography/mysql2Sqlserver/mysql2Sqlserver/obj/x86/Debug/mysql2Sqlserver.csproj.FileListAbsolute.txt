@@ -1,0 +1,1 @@
+G:\seemapcell\Linq2SqlGeography\mysql2Sqlserver\mysql2Sqlserver\bin\Debug\mysql2Sqlserver.exe.config

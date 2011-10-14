@@ -1,0 +1,62 @@
+﻿/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  [msc]
+      ,[bsc]
+      ,[cell]
+      ,[cell_name]
+      ,[ant_bw]
+      ,[ant_size]
+      ,[band]
+      ,[power]
+FROM [SqlSpatialJiangmeng].[dbo].[cdd]
+
+SELECT  [Cell_name]
+      ,[Bs_no]
+      ,[Arfcn]
+      ,[Bearing]
+      ,[Downtilt]
+      ,[Ant_heigh]
+      ,[Ant_gain]
+      ,[Ant_type]
+      ,[Lon]
+      ,[Lat]
+      ,[SP_GEOMETRY]
+  FROM [SqlSpatialJiangmeng].[dbo].[CELL1] as b
+
+
+
+
+
+
+
+  /****** Script for SelectTopNRows command from SSMS  ******/
+USE [SqlSpatialJiangmeng]
+GO
+
+/****** Object:  Table [dbo].[SITEqqq]    Script Date: 10/14/2011 13:07:54 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SITE]') AND type in (N'U'))
+DROP TABLE [dbo].[SITE]
+GO
+
+
+select 
+       a.[msc] as msc
+      ,a.[bsc] as bsc
+	   ,a.[cell] as cell
+      ,a.[cell_name] as cell_name
+           ,b.[Lon] as longitude
+      ,b.[Lat] as latitude
+       ,case when charindex('D',a.[cell_name])>0 then 1800 else 900 end as band 
+           ,b.[Arfcn] as [arfcn]
+       ,b.[Ant_heigh] as height
+          ,b.[Bearing] as [dir]
+      ,b.[Downtilt] as tilt
+      ,a.[ant_bw] as ant_bw
+        ,a.[power] as [power]
+            ,b.[Ant_gain] as ant_gain
+      ,b.[Ant_type] as ant_type
+      ,a.[ant_size] as [ant_size]
+into [SITE]
+FROM [SqlSpatialJiangmeng].[dbo].[cdd] as a
+left join  [SqlSpatialJiangmeng].[dbo].[CELL1] as b
+on a.[cell]=b.[Bs_no]
+
