@@ -4,11 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 using System.Reflection;
+using Linq2SqlGeography.LinqSql;
+
 
 namespace Linq2SqlGeography
 {
     public static class HandleTable
     {
+        public static string crcelltracing
+                        = @"
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CELLTRACING]') AND type in (N'U'))
+DROP TABLE [dbo].[CELLTRACING]
+;
+CREATE TABLE [dbo].[CELLTRACING](
+	[cell] [varchar](30) NULL,
+	[MI_STYLE] [varchar](254) NULL,
+	[MI_PRINX] [int] IDENTITY(1,1) NOT NULL,
+	[SP_GEOMETRY] [geometry] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MI_PRINX] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+";
+        public static string creventlocating
+                = @"
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EventLocating]') AND type in (N'U'))
+DROP TABLE [dbo].[EventLocating]
+;
+CREATE TABLE [dbo].[EventLocating](
+	[events] [varchar](30) NULL,
+	[MI_STYLE] [varchar](254) NULL,
+	[MI_PRINX] [int] IDENTITY(1,1) NOT NULL,
+	[SP_GEOMETRY] [geometry] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[MI_PRINX] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+";
         public static bool CreateTable(Type linqTableClass)
         {
             //handleTable.CreateTable(typeof(OpCiPDCH));

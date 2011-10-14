@@ -1,0 +1,38 @@
+﻿        private static void getSectorCoverage()
+        {
+            DataClasses2DataContext dc = new DataClasses2DataContext();
+            //dc.ExecuteCommand("delete  from  CELLTRACING");
+            //HandleTable.CreateTable(typeof(CELLTRACING));
+            dc.ExecuteCommand(HandleTable.crcelltracing);
+            //Console.ReadKey();
+            Random r = new Random();
+            int i = 1;
+            Console.WriteLine(dc.SITE.Count());
+            foreach (var site in dc.SITE)
+            {
+                if (site.latitude == null) continue;
+
+                CellCoverage cc = new CellCoverage();
+                var sgeo = cc.MergePoint(site);
+                SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326).STConvexHull();
+
+                //Console.WriteLine("SqlGeometry {0} mgeo.STEnvelope();",mgeo.STAsBinary());
+
+                i++;
+                i = i % 255;
+               
+                CELLTRACING ct = new CELLTRACING();
+                ct.cell= site.cell;
+                ct.MI_STYLE = "Pen (1, 60, "+ i.ToString()+")";
+                ct.SP_GEOMETRY = mgeo;
+                //ct.Latitude = site.Latitude;
+                //ct.Longitude = site.Longitude;
+
+                string sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
+                    + ct.cell + "','" + ct.MI_STYLE + "','" + ct.SP_GEOMETRY+ "')";
+
+                dc.ExecuteCommand(sql);
+                //dc.CELLTRACING.InsertOnSubmit(ct);
+                // dc.SubmitChanges();
+            }
+        }

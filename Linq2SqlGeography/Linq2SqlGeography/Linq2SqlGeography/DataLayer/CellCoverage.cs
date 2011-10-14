@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
+using Linq2SqlGeography.LinqSql;
+
 
 namespace Linq2SqlGeography
 {
@@ -12,8 +14,10 @@ namespace Linq2SqlGeography
         private double frequency = 900;
         private double mobileHight = 1.5;    //移动台高度
         private double verticalBeamwidth = 6;  //垂直波瓣
-        private double power;
+        private double power=0;
+        private double antGain=0;
         private double minrxlev = -94;
+        private double height = 0;
 
         public CellCoverage() { }
         public SqlGeography MergePoint(SITE site)
@@ -23,11 +27,15 @@ namespace Linq2SqlGeography
             //{
             //基站覆盖范围的计算？？？？？
             //Enter Antenna Vertical (3dB) Beamwidth (? =6 °)
-            double.TryParse(site.band, out frequency);
+            //double.TryParse(site.band, out frequency);
+            this.frequency = (double)site.band;
             this.power = (double)site.power;
-            pathLoss = this.power - this.minrxlev;
+            double.TryParse(site.ant_gain, out antGain);
+            double.TryParse(site.height, out height);
+            //this.antGain = (double)site.ant_gain;
+            pathLoss = this.power+this.antGain - this.minrxlev;
 
-            SectorCoverage sc = new SectorCoverage(frequency, (double)site.height, mobileHight, pathLoss);
+            SectorCoverage sc = new SectorCoverage(frequency, this.height, mobileHight, pathLoss);
             
             Console.WriteLine("{0}...{1}...",frequency, sc.DistanceOkumuraHata);
             //sc.SectorPoint = SqlGeometry.Point(0, 0, 4326);
