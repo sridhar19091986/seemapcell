@@ -21,7 +21,9 @@ namespace Linq2SqlGeography
             Console.ReadKey();
         }
 
-        private static int colorValue = 0;
+  
+        private static int pencolor = 0;
+    
 
         private static void getSectorCoverage()
         {
@@ -32,13 +34,21 @@ namespace Linq2SqlGeography
             {
                 if (site.latitude == null) continue;
                 CellCoverage cc = new CellCoverage();
+
+                #region 这里的算法复杂度高，仿真的过程比较复杂
+
+                cc.pre_rxlev = -94;
+
+                #endregion
+
                 var sgeo = cc.MergePoint(site);
                 SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326).STConvexHull();
-                colorValue++;
-                colorValue = colorValue % 255;
+
+                pencolor = HandleTable.getRandomPenColor();
+
                 CELLTRACING ct = new CELLTRACING();
                 ct.cell = site.cell;
-                ct.MI_STYLE = "Pen (1, 60," + colorValue.ToString() + ")";
+                ct.MI_STYLE = "Pen (1, 60," +pencolor.ToString() + ")";
                 ct.SP_GEOMETRY = mgeo;
                 string sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                     + ct.cell + "','" + ct.MI_STYLE + "','" + ct.SP_GEOMETRY + "')";

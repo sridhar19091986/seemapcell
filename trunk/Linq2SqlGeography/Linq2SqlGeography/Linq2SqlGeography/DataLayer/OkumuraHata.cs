@@ -11,6 +11,8 @@ namespace Linq2SqlGeography
         private double frequency;       
         //f(MHz):工作频率,  hb(m):基站天线有效高度, 
         //hm(m):移动台天线高度, d(km):收发天线之间的距离 
+
+        //逆向计算，采用迭代算法
         public double PathLoss2Distance(double f, double hb, double hm, double pl)
         {
             double distance = 0;
@@ -24,6 +26,7 @@ namespace Linq2SqlGeography
             return distance;
         }
 
+        //正向计算，oh模型
         public double City_Lb(double f, double hb, double hm, double d)//市区传播损耗中值函数，单位为dB 
         {
             this.frequency = f;  //在这个中间函数给频率赋值
