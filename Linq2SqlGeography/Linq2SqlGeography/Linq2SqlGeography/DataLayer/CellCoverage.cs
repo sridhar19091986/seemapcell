@@ -16,7 +16,16 @@ namespace Linq2SqlGeography
         private double verticalBeamwidth = 6;  //垂直波瓣
         private double power=0;
         private double antGain=0;
-        private double minrxlev = -94;
+
+        //这里做预测、-75、-85、、-90、-94
+        //灵活生成各种图层
+        //默认生成-94的覆盖范围 ？
+
+        //cro ,pt 参数仿真时，则需要调用其他 电平图层？
+
+        public double pre_rxlev = -94;  
+
+
         private double height = 0;
 
         public CellCoverage() { }
@@ -33,7 +42,7 @@ namespace Linq2SqlGeography
             double.TryParse(site.ant_gain, out antGain);
             double.TryParse(site.height, out height);
             //this.antGain = (double)site.ant_gain;
-            pathLoss = this.power+this.antGain - this.minrxlev;
+            pathLoss = this.power + this.antGain - this.pre_rxlev;
 
             SectorCoverage sc = new SectorCoverage(frequency, this.height, mobileHight, pathLoss);
             

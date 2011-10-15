@@ -76,5 +76,16 @@ PRIMARY KEY CLUSTERED
             }
             return suc;
         }
+        private static int red = 0;
+        private static int green = 0;
+        private static int blue = 0;
+        private static Random random = new Random();
+        public static int getRandomPenColor()
+        {
+            red = random.Next() % 255;
+            green = random.Next() % 255;
+            blue = random.Next() % 255;
+            return red * 65535 + green * 256 + blue;
+        }
     }
 }
