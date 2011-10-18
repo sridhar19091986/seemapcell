@@ -44,4 +44,32 @@
       <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.MCOMNEIGH" Member="MCOMNEIGH">
+    <Type Name="MCOMNEIGH">
+      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ncell" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MCOMCARRIER" Member="MCOMCARRIER">
+    <Type Name="MCOMCARRIER">
+      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LAI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="BCCH" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BSIC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="TCH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="HOP" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="HSN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Font_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
 </Database>
