@@ -17,14 +17,10 @@ namespace Linq2SqlGeography
         static void Main(string[] args)
         {
             getLocating();
-            getSectorCoverage();
+            //getSectorCoverage();
             Console.ReadKey();
         }
-
-  
         private static int pencolor = 0;
-    
-
         private static void getSectorCoverage()
         {
             DataClasses2DataContext dc = new DataClasses2DataContext();
@@ -48,7 +44,7 @@ namespace Linq2SqlGeography
 
                 CELLTRACING ct = new CELLTRACING();
                 ct.cell = site.cell;
-                ct.MI_STYLE = "Pen (1, 60," +pencolor.ToString() + ")";
+                ct.MI_STYLE = "Pen (1, 60," + pencolor.ToString() + ")";
                 ct.SP_GEOMETRY = mgeo;
                 string sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                     + ct.cell + "','" + ct.MI_STYLE + "','" + ct.SP_GEOMETRY + "')";
@@ -61,25 +57,44 @@ namespace Linq2SqlGeography
             DataClasses2DataContext dc = new DataClasses2DataContext();
             dc.ExecuteCommand(HandleTable.creventlocating);
 
+            HandleNeighbour hn = new HandleNeighbour();
+            List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
+            mrneighsNew=hn.getNeighList(hn.setNeighList());
+
             mrLocating mrl = new mrLocating();
-            mrl.sLocating("", 0, 0);
-            mrl.nLocating("", 0, 0);
-            mrl.nLocating("", 0, 0);
-            mrl.nLocating("", 0, 0);
-            mrl.nLocating("", 0, 0);
-            mrl.nLocating("", 0, 0);
+
+            foreach (var n in mrneighsNew)
+            {
+                if (n.nBCCH == null && n.nBSIC == null)
+                {
+                    mrl.sLocating(n.ServiceCell, n.rxLev, n.powerControl); //服务小区
+                    Console.WriteLine("服务小区：{0}...{1}...{2}", n.ServiceCell, n.rxLev, n.powerControl);
+                }
+                else
+                {
+                    if(n.NeighCell !=null)
+                    mrl.nLocating(n.NeighCell, n.rxLev, n.powerControl); //邻小区
+                    Console.WriteLine("邻小区：{0}...{1}...{2}", n.NeighCell, n.rxLev, n.powerControl);
+                }
+            }
+           
+
+            string events = "";
+            string pen = "Pen (6, 2," + 255*65536 + ")";
+
+            //这里要执行 locating 算法
             mrl.getLocating();
-
-            Console.WriteLine("{0}...{1}",mrl.sgeo.Long,mrl.sgeo.Lat);
-            Console.ReadKey();
-
-            string events="";
-            string pen = "Pen (6, 60," + 65536 + ")";
-            SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(mrl.sgeo.STAsBinary(), 4326).STConvexHull();
+            SqlGeography sgeo = mrl.sgeo;
+            SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
             string sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
-                + events + "','" + pen + "','" + mgeo + "')";
+                + events + "','" + pen + "','" + mgeo+ "')";
+
+           // Console.WriteLine(mgeo.STArea());
 
             dc.ExecuteCommand(sql);
+
+            //Console.WriteLine("{0}...{1}", mrl.sgeo.Long, mrl.sgeo.Lat);
+            Console.ReadKey();
 
         }
     }

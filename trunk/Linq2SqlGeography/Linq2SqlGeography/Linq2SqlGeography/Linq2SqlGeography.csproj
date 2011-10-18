@@ -57,6 +57,7 @@
     <Compile Include="DataLayer\HandleTable.cs" />
     <Compile Include="DataLayer\mrLocating.cs" />
     <Compile Include="DataLayer\OkumuraHata.cs" />
+    <Compile Include="DataLayer\Text2Class.cs" />
     <Compile Include="LinqSql\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
