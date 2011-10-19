@@ -79,6 +79,7 @@
     <Content Include="SqlScript\TextFile11.txt" />
     <Content Include="SqlScript\TextFile12.txt" />
     <Content Include="SqlScript\TextFile13.txt" />
+    <Content Include="SqlScript\TextFile14.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
     <Content Include="SqlScript\TextFile4.txt" />
