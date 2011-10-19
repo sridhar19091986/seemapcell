@@ -72,4 +72,55 @@
       <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
+  <Table Name="dbo.MR表格" Member="MR表格">
+    <Type Name="MR表格">
+      <Column Name="时间点" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="LAC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TRX" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CALLID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bsic5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bcch5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ARFCN5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev_full_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev_sub_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxqual_full_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxqual_sub_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev_full_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxlev_sub_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxqual_full_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="rxqual_sub_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DTX" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Channel_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="raster_grid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Event1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Event2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="powercontrol" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -48,9 +48,8 @@ namespace Linq2SqlGeography
             Console.WriteLine(ngeo.STArea());
             Console.WriteLine(cgeo.STArea());
 
-            if(cgeo.STArea()>0)
-
-            return ngeo.STIntersection(cgeo);
+            if (cgeo.STArea() > 0)
+                return ngeo.STIntersection(cgeo);
             else
                 return ngeo;
 
@@ -64,18 +63,22 @@ namespace Linq2SqlGeography
     {
         private List<SqlGeography> lgeo = new List<SqlGeography>();
         public SqlGeography sgeo = new SqlGeography();
+        public SqlGeography ngeo = new SqlGeography();
         public mrLocating()
         {
         }
-        public void sLocating(string serviceCell, double rxlev, double powerControl)
+        public SqlGeography sLocating(string serviceCell, double rxlev, double powerControl)
         {
             LocatingCellBuffer s = new LocatingCellBuffer(serviceCell, rxlev, powerControl);
             sgeo = s.getCellGeo();
+            return sgeo;
         }
-        public void nLocating(string neighCell, double rxlev, double powerControl)
+        public SqlGeography nLocating(string neighCell, double rxlev, double powerControl)
         {
             LocatingCellBuffer lc2 = new LocatingCellBuffer(neighCell, rxlev, powerControl);
-            lgeo.Add(lc2.getCellGeo());
+            ngeo = lc2.getCellGeo();
+            return ngeo;
+            //lgeo.Add(lc2.getCellGeo());
         }
         public void getLocating()
         {
@@ -85,6 +88,7 @@ namespace Linq2SqlGeography
                 //if (sgeo.STIntersects(geo))
                 //   sgeo = sgeo.STIntersection(geo);
                 sgeo = sgeo.STUnion(geo);
+                
             }
             //Console.WriteLine(sgeo.STArea());
             //sgeo = sgeo.EnvelopeCenter();
@@ -192,27 +196,81 @@ namespace Linq2SqlGeography
             return mrNeighsNew;
         }
 
-        //直接从数据库提取下述数据生成事件的GIS定位？
+       
         //如何生成单个用户的下属信息？
         //生成连线的问题？
 
         public List<mrNeighbour> setNeighList()
         {
             List<mrNeighbour> mrneighs = new List<mrNeighbour>();
-            mrNeighbour scell = new mrNeighbour("JMJDEY1", -61, null, null, 0); //服务小区只记录功率控制和由dtx转换的接受电平
+            mrNeighbour scell = new mrNeighbour("JMJDEY1", -97, null, null, 0); //服务小区只记录功率控制和由dtx转换的接受电平
             mrneighs.Add(scell);
-            mrNeighbour n0 = new mrNeighbour("JMJDEY1", -74, "9", "30", 0);
+            mrNeighbour n0 = new mrNeighbour("JMJDEY1", -103, "9", "30", 0);
             mrneighs.Add(n0);
-            mrNeighbour n1 = new mrNeighbour("JMJDEY1", -77, "1", "53", 0);
+            mrNeighbour n1 = new mrNeighbour("JMJDEY1", -106, "1", "53", 0);
             mrneighs.Add(n1);
-            mrNeighbour n2 = new mrNeighbour("JMJDEY1", -82, "6", "14", 0);
+            mrNeighbour n2 = new mrNeighbour("JMJDEY1", -110, "6", "14", 0);
             mrneighs.Add(n2);
-            mrNeighbour n3 = new mrNeighbour("JMJDEY1", -87, "7", "70", 0);
+            mrNeighbour n3 = new mrNeighbour("JMJDEY1", -110, "4", "43", 0);
             mrneighs.Add(n3);
-            //mrNeighbour n4 = new mrNeighbour("JMJDEY1", null, -74, "9", "30", 0);
-            //mrneighs.Add(n4);
-            //mrNeighbour n5 = new mrNeighbour("JMJDEY1", null, -74, "9", "30", 0);
-            //mrneighs.Add(n5);
+            mrNeighbour n4 = new mrNeighbour("JMJDEY1", -110, "0", "65", 0);
+            mrneighs.Add(n4);
+            mrNeighbour n5 = new mrNeighbour("JMJDEY1", -110, "11", "62", 0);
+            mrneighs.Add(n5);
+            return mrneighs;
+        }
+
+        //直接从数据库提取下述数据生成事件的GIS定位？
+
+        public List<mrNeighbour> setNeighList(MR表格 mr)
+        {
+            List<mrNeighbour> mrneighs = new List<mrNeighbour>();
+            double powercontrol = 0;
+            //服务小区只记录功率控制和由dtx转换的接受电平
+            if (mr.rxlev_sub_serv_cell != null)
+            {
+                double.TryParse(mr.powercontrol, out powercontrol);
+                if (mr.DTX == null)
+                {
+                    mrNeighbour scell = new mrNeighbour(
+                        mr.cell,
+                        double.Parse(mr.rxlev_sub_serv_cell),
+                        null, null,
+                        powercontrol);
+                    mrneighs.Add(scell);
+                }
+            }
+            //邻小区不需要记录功率控制值，只需要测量的电平值即可
+            if (mr.rxlev0 != null)
+            {
+                mrNeighbour n0 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev0), mr.bcch0, mr.bsic0, 0);
+                mrneighs.Add(n0);
+            }
+            if (mr.rxlev1 != null)
+            {
+                mrNeighbour n1 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev1), mr.bcch1, mr.bsic1, 0);
+                mrneighs.Add(n1);
+            }
+            if (mr.rxlev2 != null)
+            {
+                mrNeighbour n2 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev2), mr.bcch2, mr.bsic2, 0);
+                mrneighs.Add(n2);
+            }
+            if (mr.rxlev3 != null)
+            {
+                mrNeighbour n3 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev3), mr.bcch3, mr.bsic3, 0);
+                mrneighs.Add(n3);
+            }
+            if (mr.rxlev4 != null)
+            {
+                mrNeighbour n4 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev4), mr.bcch4, mr.bsic4, 0);
+                mrneighs.Add(n4);
+            }
+            if (mr.rxlev5 != null)
+            {
+                mrNeighbour n5 = new mrNeighbour(mr.cell, double.Parse(mr.rxlev5), mr.bcch5, mr.bsic5, 0);
+                mrneighs.Add(n5);
+            }
             return mrneighs;
         }
     }

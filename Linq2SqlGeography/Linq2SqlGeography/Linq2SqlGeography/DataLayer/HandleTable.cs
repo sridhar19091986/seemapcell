@@ -80,11 +80,15 @@ PRIMARY KEY CLUSTERED
         private static int green = 0;
         private static int blue = 0;
         private static Random random = new Random();
-        public static int getRandomPenColor()
+        public static int getRandomPenColor(bool r, bool g, bool b)
         {
-            red = random.Next() % 255;
+            while (red < 200)
+                red = random.Next() % 255;
             green = random.Next() % 255;
             blue = random.Next() % 255;
+            if (r) red = 0;
+            if (g) green = 0;
+            if (b) blue = 0;
             return red * 65535 + green * 256 + blue;
         }
     }
