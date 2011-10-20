@@ -1,9 +1,0 @@
-﻿sql2008  unable create layer  to mapinfo 的问题。
-
-
-需要在[MAPINFO].[MAPINFO_MAPCATALOG]中定义地图类型、样式，等等。
-
-具体可以直接copy ，修改新增加的表名称即可
-
-
-2011.10.13 日 ，星期四
