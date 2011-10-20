@@ -14,11 +14,11 @@ namespace Linq2SqlGeography
         private int pencolor = 0;
         private int[] pencolors = { 16711680, 65280, 255, 65535, 16711935, 16776960, 0 };
         private int pencolorindex = 0;
-        IEnumerable<Abis_MR> mrr;
+        private IEnumerable<Abis_MR> abis_mrr;
         private string events;
         private string pen;
-        private SqlGeography sgeo;
-        private SqlGeometry mgeo;
+        //private SqlGeography sgeog;
+        private SqlGeometry sgeom;
         private string sql;
         private DataClasses2DataContext dc = new DataClasses2DataContext();
 
@@ -29,7 +29,7 @@ namespace Linq2SqlGeography
         private void getLocating()
         {
 
-            dc.ExecuteCommand(HandleTable.creventlocating);
+            dc.ExecuteCommand(HandleTable.createEventLocating);
             //HandleNeighbour hn = new HandleNeighbour();
             //List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
             //mrneighsNew = hn.getNeighList(hn.setNeighList());
@@ -44,24 +44,26 @@ namespace Linq2SqlGeography
             Black: 0 
               * */
 
-            HandleNeighbour hn = new HandleNeighbour();
-            List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
+            HandleNeighbour handleNeigh = new HandleNeighbour();
+            List<mrNeighbour> mrNeighsNew = new List<mrNeighbour>();
 
-            mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
+            //？？？？？这里的颜色的调整  ？？？？？
+
+            abis_mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
 
             //var mrr = dc.Abis_MR;
 
-            foreach (var mr in mrr)
+            foreach (var mr in abis_mrr)
             {
                 pencolor = pencolors[0];
                 pencolorindex++;
                 if (pencolorindex >= pencolors.Length - 1)
                     pencolorindex = 0;
 
-                mrneighsNew = hn.getNeighList(hn.setNeighList(mr));
-                mrLocating mrl = new mrLocating();
+                mrNeighsNew = handleNeigh.getNeighList(handleNeigh.setNeighList(mr));
+                mrLocating mrlocating = new mrLocating();
                 //pencolor = HandleTable.getRandomPenColor(false,false,false);
-                SqlGeography tgeo = new SqlGeography();
+                SqlGeography tempgeog = new SqlGeography();
 
                 //以时间点做索引比较妥当？
                 events = mr.Measurement_Report_time.ToString();
@@ -77,20 +79,20 @@ namespace Linq2SqlGeography
                 pen = "Pen (" + (1 + 2 * pencolorindex).ToString() + ", 2," + pencolor.ToString() + ")";
                 //var mrnews=mrneighsNew.Take(1);
 
-                foreach (var n in mrneighsNew)
+                foreach (var n in mrNeighsNew)
                 {
                     if (n.nBaIndex == -1 && n.nBSIC == -1)
                     {
-                        tgeo = mrl.sLocating(n.ServiceCell, n.rxLev, n.powerControl); //服务小区
-                        insertLocatingGeo(events, pen, tgeo);
+                        tempgeog = mrlocating.sLocating(n.ServiceCell, n.rxLev, n.powerControl); //服务小区
+                        insertLocatingGeo(events, pen, tempgeog);
                         Console.WriteLine("服务小区：{0}...{1}...{2}", n.ServiceCell, n.rxLev, n.powerControl);
                     }
                     else
                     {
                         if (n.NeighCell != null)
                         {
-                            tgeo = mrl.nLocating(n.NeighCell, n.rxLev, n.powerControl); //邻小区
-                            insertLocatingGeo(events, pen, tgeo);
+                            tempgeog = mrlocating.nLocating(n.NeighCell, n.rxLev, n.powerControl); //邻小区
+                            insertLocatingGeo(events, pen, tempgeog);
                         }
                         Console.WriteLine("邻小区：{0}...{1}...{2}", n.NeighCell, n.rxLev, n.powerControl);
                     }
@@ -101,8 +103,11 @@ namespace Linq2SqlGeography
 
                 //这里做成一个再处理的过程 ？？？？？？？？？扩展？？？？
 
-                mrl.getLocating();
-                sgeo = mrl.sgeo;
+                //这里的方法不需要了，每个小区都单独1行，不需要合并
+
+                //mrlocating.getLocating();
+                //sgeog = mrlocating.servicecellgeog;
+
                 //Console.WriteLine(mgeo.STArea());
                 //Console.WriteLine("{0}...{1}", mrl.sgeo.Long, mrl.sgeo.Lat);
             }
@@ -110,11 +115,11 @@ namespace Linq2SqlGeography
             // Console.ReadKey();
         }
 
-        private void insertLocatingGeo(string events, string pen, SqlGeography sgeo)
+        private void insertLocatingGeo(string events, string pen, SqlGeography sgeog)
         {
-            mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
+            sgeom = SqlGeometry.STGeomFromWKB(sgeog.STAsBinary(), 4326);
             sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
-                + events + "','" + pen + "','" + mgeo + "')";
+                + events + "','" + pen + "','" + sgeom + "')";
             dc.ExecuteCommand(sql);
         }
     }

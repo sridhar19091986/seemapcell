@@ -12,33 +12,33 @@ namespace Linq2SqlGeography
 
     public class mrLocating
     {
-        private List<SqlGeography> lgeo = new List<SqlGeography>();
-        public SqlGeography sgeo = new SqlGeography();
-        public SqlGeography ngeo = new SqlGeography();
+        private List<SqlGeography> listgeog = new List<SqlGeography>();
+        public SqlGeography servicecellgeog = new SqlGeography();
+        public SqlGeography neighcellgeog = new SqlGeography();
         public mrLocating()
         {
         }
         public SqlGeography sLocating(string serviceCell, double rxlev, double powerControl)
         {
-            LocatingCellBuffer s = new LocatingCellBuffer(serviceCell, rxlev, powerControl);
-            sgeo = s.getCellGeo();
-            return sgeo;
+            LocatingCellBuffer ser = new LocatingCellBuffer(serviceCell, rxlev, powerControl);
+            servicecellgeog = ser.getCellGeo();
+            return servicecellgeog;
         }
         public SqlGeography nLocating(string neighCell, double rxlev, double powerControl)
         {
-            LocatingCellBuffer lc2 = new LocatingCellBuffer(neighCell, rxlev, powerControl);
-            ngeo = lc2.getCellGeo();
-            return ngeo;
+            LocatingCellBuffer neigh = new LocatingCellBuffer(neighCell, rxlev, powerControl);
+            neighcellgeog = neigh.getCellGeo();
+            return neighcellgeog;
             //lgeo.Add(lc2.getCellGeo());
         }
         public void getLocating()
         {
-            foreach (var geo in lgeo)
+            foreach (var geog in listgeog)
             {
                 // Console.WriteLine(sgeo.STIntersects(geo));
                 //if (sgeo.STIntersects(geo))
                 //   sgeo = sgeo.STIntersection(geo);
-                sgeo = sgeo.STUnion(geo);
+                servicecellgeog = servicecellgeog.STUnion(geog);
 
             }
             //Console.WriteLine(sgeo.STArea());

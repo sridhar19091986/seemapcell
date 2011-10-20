@@ -39,16 +39,16 @@ namespace Linq2SqlGeography
         1.You need to convert lat1 and lon1 to radians before calling your function.
          * */
         //距离和经纬度换算
-        private double x;
-        private double y;
-        private SqlGeography p;
+        private double px;
+        private double py;
+        private SqlGeography psgeog;
 
         private SqlGeography getPoint(double angle, double distance)
         {
-            x = Latitude + distance * Math.Cos(angle * Math.PI / 180) / (111 * 1000);
-            y = Longtitude + distance * Math.Sin(angle * Math.PI / 180) / (111 * 1000);
-            p = SqlGeography.Point(x, y, 4326);
-            return p;
+            px = Latitude + distance * Math.Cos(angle * Math.PI / 180) / (111 * 1000);
+            py = Longtitude + distance * Math.Sin(angle * Math.PI / 180) / (111 * 1000);
+            psgeog = SqlGeography.Point(px, py, 4326);
+            return psgeog;
         }
 
         //半径、生成覆盖半径三元组（点位置，覆盖)  STSectorCoverageRadius
