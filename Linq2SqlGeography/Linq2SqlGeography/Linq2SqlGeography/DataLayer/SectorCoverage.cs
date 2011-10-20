@@ -13,13 +13,13 @@ namespace Linq2SqlGeography
 
         //public SqlGeometry SectorPoint;  //基站位置 天线位置
         public double Latitude { get; set; }
-        public double Longtitude { get; set; } 
+        public double Longtitude { get; set; }
         public double Hight { get; set; }  // 天线高度 
         public double Direction { get; set; }  // 天线方向角
         public double DownTilt { get; set; } //下倾角
         public double VerticalBeamwidth { get; set; }  //垂直半功率角
         public double HorizontalBeamwidth { get; set; } //水平半功率角
-       
+
 
         public List<SqlGeography> STSectorCoverageRegion;  //扇区覆盖区域
         public List<double> STSectorCoverageRadius;  //扇区覆盖区域主要位置
@@ -39,23 +39,35 @@ namespace Linq2SqlGeography
         1.You need to convert lat1 and lon1 to radians before calling your function.
          * */
         //距离和经纬度换算
+        private double x;
+        private double y;
+        private SqlGeography p;
+
         private SqlGeography getPoint(double angle, double distance)
-        {      
-            double x = Latitude + distance * Math.Cos(angle * Math.PI / 180) / (111 * 1000);
-            double y = Longtitude + distance * Math.Sin(angle * Math.PI / 180) / (111 * 1000);
-            var p = SqlGeography.Point(x, y, 4326);
+        {
+            x = Latitude + distance * Math.Cos(angle * Math.PI / 180) / (111 * 1000);
+            y = Longtitude + distance * Math.Sin(angle * Math.PI / 180) / (111 * 1000);
+            p = SqlGeography.Point(x, y, 4326);
             return p;
         }
+
         //半径、生成覆盖半径三元组（点位置，覆盖)  STSectorCoverageRadius
+        private double vb;
+        private double ah;
+        private double at;
+        private double dmain;
+        private double dmin;
+        private double dmax;
+
         public void getSectorRadius()
         {
-            var vb = this.VerticalBeamwidth;
-            var ah = this.Hight;
-            var at = this.DownTilt;
+            vb = this.VerticalBeamwidth;
+            ah = this.Hight;
+            at = this.DownTilt;
 
-            var dmain = ah / Math.Tan((at) * Math.PI / 180);
-            var dmin = ah / Math.Tan((at + 0.5 * vb) * Math.PI / 180);
-            var dmax = ah / Math.Tan((at - 0.5 * vb) * Math.PI / 180);
+            dmain = ah / Math.Tan((at) * Math.PI / 180);
+            dmin = ah / Math.Tan((at + 0.5 * vb) * Math.PI / 180);
+            dmax = ah / Math.Tan((at - 0.5 * vb) * Math.PI / 180);
 
             //由传播模型生成点
             if (dmain > 0)
@@ -70,7 +82,7 @@ namespace Linq2SqlGeography
         {
             //由3个点生成
             foreach (var d in STSectorCoverageRadius)
-            {            
+            {
                 //一次生成3个点
                 STSectorCoverageRegion.Add(getPoint(Direction + HorizontalBeamwidth / 2, d));
                 STSectorCoverageRegion.Add(getPoint(Direction, d));

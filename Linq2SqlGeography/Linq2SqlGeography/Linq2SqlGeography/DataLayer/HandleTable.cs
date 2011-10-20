@@ -14,10 +14,10 @@ namespace Linq2SqlGeography
         public static string crcelltracing
                         = @"
 
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CELLTRACING]') AND type in (N'U'))
-DROP TABLE [dbo].[CELLTRACING]
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CellTracing]') AND type in (N'U'))
+DROP TABLE [dbo].[CellTracing]
 ;
-CREATE TABLE [dbo].[CELLTRACING](
+CREATE TABLE [dbo].[CellTracing](
 	[cell] [varchar](30) NULL,
 	[MI_STYLE] [varchar](254) NULL,
 	[MI_PRINX] [int] IDENTITY(1,1) NOT NULL,

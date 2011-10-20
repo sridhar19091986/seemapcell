@@ -10,14 +10,25 @@ namespace Linq2SqlGeography
 {
     public class pointLocating
     {
-        private static int pencolor = 0;
+
+        private int pencolor = 0;
+        private int[] pencolors = { 16711680, 65280, 255, 65535, 16711935, 16776960, 0 };
+        private int pencolorindex = 0;
+        IEnumerable<Abis_MR> mrr;
+        private string events;
+        private string pen;
+        private SqlGeography sgeo;
+        private SqlGeometry mgeo;
+        private string sql;
+        private DataClasses2DataContext dc = new DataClasses2DataContext();
+
         public pointLocating()
         {
             getLocating();
         }
-        private  void getLocating()
+        private void getLocating()
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+
             dc.ExecuteCommand(HandleTable.creventlocating);
             //HandleNeighbour hn = new HandleNeighbour();
             //List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
@@ -33,14 +44,14 @@ namespace Linq2SqlGeography
             Black: 0 
               * */
 
-            int[] pencolors = { 16711680, 65280, 255, 65535, 16711935, 16776960, 0 };
-            int pencolorindex = 0;
-
-
             HandleNeighbour hn = new HandleNeighbour();
             List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
-            var mrr = dc.MR表格;
-            foreach (var mr in mrr.Skip(0).Take(1))
+
+            mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
+
+            //var mrr = dc.Abis_MR;
+
+            foreach (var mr in mrr)
             {
                 pencolor = pencolors[0];
                 pencolorindex++;
@@ -53,7 +64,7 @@ namespace Linq2SqlGeography
                 SqlGeography tgeo = new SqlGeography();
 
                 //以时间点做索引比较妥当？
-                string events = mr.时间点;
+                events = mr.Measurement_Report_time.ToString();
 
                 //string pen = "Pen (6, 2," + pencolor.ToString() + ")";
 
@@ -63,11 +74,12 @@ namespace Linq2SqlGeography
 
                 //生成覆盖连线也需要再做一个图层
 
-                string pen = "Pen (" + (1 + 2 * pencolorindex).ToString() + ", 2," + pencolor.ToString() + ")";
+                pen = "Pen (" + (1 + 2 * pencolorindex).ToString() + ", 2," + pencolor.ToString() + ")";
+                //var mrnews=mrneighsNew.Take(1);
 
                 foreach (var n in mrneighsNew)
                 {
-                    if (n.nBCCH == null && n.nBSIC == null)
+                    if (n.nBaIndex == -1 && n.nBSIC == -1)
                     {
                         tgeo = mrl.sLocating(n.ServiceCell, n.rxLev, n.powerControl); //服务小区
                         insertLocatingGeo(events, pen, tgeo);
@@ -90,7 +102,7 @@ namespace Linq2SqlGeography
                 //这里做成一个再处理的过程 ？？？？？？？？？扩展？？？？
 
                 mrl.getLocating();
-                SqlGeography sgeo = mrl.sgeo;
+                sgeo = mrl.sgeo;
                 //Console.WriteLine(mgeo.STArea());
                 //Console.WriteLine("{0}...{1}", mrl.sgeo.Long, mrl.sgeo.Lat);
             }
@@ -98,11 +110,10 @@ namespace Linq2SqlGeography
             // Console.ReadKey();
         }
 
-        private  void insertLocatingGeo(string events, string pen, SqlGeography sgeo)
+        private void insertLocatingGeo(string events, string pen, SqlGeography sgeo)
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
-            SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
-            string sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
+            mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
+            sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                 + events + "','" + pen + "','" + mgeo + "')";
             dc.ExecuteCommand(sql);
         }

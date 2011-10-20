@@ -8,21 +8,30 @@ using System.Text.RegularExpressions;
 
 namespace Linq2SqlGeography
 {
-   public class cellLocating
+    public class cellLocating
     {
-       public cellLocating()
-       {
-           getSectorCoverage();
-       }
+        public cellLocating()
+        {
+            getSectorCoverage();
+        }
+
         private static int pencolor = 0;
+        private SqlGeometry mgeo = new SqlGeometry();
+        private SqlGeography sgeo = new SqlGeography();
+        private string sql = null;
+        private DataClasses2DataContext dc = new DataClasses2DataContext();
+
         private void getSectorCoverage()
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+
             dc.ExecuteCommand(HandleTable.crcelltracing);
             Console.WriteLine(dc.SITE.Count());
+
             foreach (var site in dc.SITE)
             {
+
                 if (site.latitude == null) continue;
+
                 CellCoverage cc = new CellCoverage();
 
                 #region 这里的算法复杂度高，仿真的过程比较复杂
@@ -31,18 +40,19 @@ namespace Linq2SqlGeography
 
                 #endregion
 
-                var sgeo = cc.MergePoint(site);
-                SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326).STConvexHull();
+                sgeo = cc.MergePoint(site);
+                mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326).STConvexHull();
 
                 pencolor = HandleTable.getRandomPenColor(false, false, false);
 
-                CELLTRACING ct = new CELLTRACING();
+                CellTracing ct = new CellTracing();
                 ct.cell = site.cell;
                 ct.MI_STYLE = "Pen (1, 60," + pencolor.ToString() + ")";
                 ct.SP_GEOMETRY = mgeo;
-                string sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
+                sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                     + ct.cell + "','" + ct.MI_STYLE + "','" + ct.SP_GEOMETRY + "')";
                 dc.ExecuteCommand(sql);
+
             }
         }
     }

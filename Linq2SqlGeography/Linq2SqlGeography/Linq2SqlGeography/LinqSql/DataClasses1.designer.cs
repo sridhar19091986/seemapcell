@@ -71,11 +71,11 @@ namespace Linq2SqlGeography.LinqSql
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<CELLTRACING> CELLTRACING
+		public System.Data.Linq.Table<CellTracing> CellTracing
 		{
 			get
 			{
-				return this.GetTable<CELLTRACING>();
+				return this.GetTable<CellTracing>();
 			}
 		}
 		
@@ -119,17 +119,17 @@ namespace Linq2SqlGeography.LinqSql
 			}
 		}
 		
-		public System.Data.Linq.Table<MR表格> MR表格
+		public System.Data.Linq.Table<Abis_MR> Abis_MR
 		{
 			get
 			{
-				return this.GetTable<MR表格>();
+				return this.GetTable<Abis_MR>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CELLTRACING")]
-	public partial class CELLTRACING
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CellTracing")]
+	public partial class CellTracing
 	{
 		
 		private string _SiteName;
@@ -140,7 +140,7 @@ namespace Linq2SqlGeography.LinqSql
 		
 		private Microsoft.SqlServer.Types.SqlGeometry _SP_GEOMETRY;
 		
-		public CELLTRACING()
+		public CellTracing()
 		{
 		}
 		
@@ -1277,654 +1277,290 @@ namespace Linq2SqlGeography.LinqSql
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MR表格")]
-	public partial class MR表格
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Abis_MR")]
+	public partial class Abis_MR
 	{
 		
-		private string _时间点;
+		private System.Nullable<int> _FileNum;
 		
-		private string _LAC;
+		private System.Nullable<int> _PacketNum;
 		
-		private string _CI;
+		private System.Nullable<int> _BeginFrameNum;
 		
-		private string _TRX;
+		private System.Nullable<System.DateTime> _PacketTime;
 		
-		private string _TS;
+		private System.Nullable<int> _PacketTime_ms_;
 		
-		private string _CALLID;
+		private string _DumpFor;
 		
-		private string _bsic0;
+		private System.Nullable<int> _Measurement_Report;
 		
-		private string _bsic1;
-		
-		private string _bsic2;
-		
-		private string _bsic3;
-		
-		private string _bsic4;
-		
-		private string _bsic5;
-		
-		private string _bcch0;
-		
-		private string _bcch1;
-		
-		private string _bcch2;
-		
-		private string _bcch3;
-		
-		private string _bcch4;
-		
-		private string _bcch5;
-		
-		private string _rxlev0;
-		
-		private string _rxlev1;
-		
-		private string _rxlev2;
-		
-		private string _rxlev3;
-		
-		private string _rxlev4;
-		
-		private string _rxlev5;
-		
-		private string _ARFCN0;
-		
-		private string _ARFCN1;
-		
-		private string _ARFCN2;
-		
-		private string _ARFCN3;
-		
-		private string _ARFCN4;
-		
-		private string _ARFCN5;
-		
-		private string _rxlev_full_up;
-		
-		private string _rxlev_sub_up;
-		
-		private string _rxqual_full_up;
-		
-		private string _rxqual_sub_up;
-		
-		private string _rxlev_full_serv_cell;
-		
-		private string _rxlev_sub_serv_cell;
-		
-		private string _rxqual_full_serv_cell;
-		
-		private string _rxqual_sub_serv_cell;
-		
-		private string _DTX;
-		
-		private string _Channel_Type;
-		
-		private string _Longitude;
-		
-		private string _Latitude;
-		
-		private string _raster_grid;
-		
-		private string _Event1;
-		
-		private string _Event2;
-		
-		private string _powercontrol;
+		private string _Measurement_Report_time;
 		
 		private string _cell;
 		
-		public MR表格()
+		private string _bs_power;
+		
+		private string _ms_power;
+		
+		private System.Nullable<int> _act_ta;
+		
+		private string _dtx_used;
+		
+		private System.Nullable<int> _rxlev_full_serv_cell;
+		
+		private System.Nullable<int> _rxlev_sub_serv_cell;
+		
+		private System.Nullable<int> _bsic0;
+		
+		private System.Nullable<int> _bsic1;
+		
+		private System.Nullable<int> _bsic2;
+		
+		private System.Nullable<int> _bsic3;
+		
+		private System.Nullable<int> _bsic4;
+		
+		private System.Nullable<int> _bsic5;
+		
+		private System.Nullable<int> _bcch0;
+		
+		private System.Nullable<int> _bcch1;
+		
+		private System.Nullable<int> _bcch2;
+		
+		private System.Nullable<int> _bcch3;
+		
+		private System.Nullable<int> _bcch4;
+		
+		private System.Nullable<int> _bcch5;
+		
+		private System.Nullable<int> _rxlev0;
+		
+		private System.Nullable<int> _rxlev1;
+		
+		private System.Nullable<int> _rxlev2;
+		
+		private System.Nullable<int> _rxlev3;
+		
+		private System.Nullable<int> _rxlev4;
+		
+		private System.Nullable<int> _rxlev5;
+		
+		public Abis_MR()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_时间点", DbType="NVarChar(255)")]
-		public string 时间点
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileNum", DbType="Int")]
+		public System.Nullable<int> FileNum
 		{
 			get
 			{
-				return this._时间点;
+				return this._FileNum;
 			}
 			set
 			{
-				if ((this._时间点 != value))
+				if ((this._FileNum != value))
 				{
-					this._时间点 = value;
+					this._FileNum = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LAC", DbType="NVarChar(255)")]
-		public string LAC
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacketNum", DbType="Int")]
+		public System.Nullable<int> PacketNum
 		{
 			get
 			{
-				return this._LAC;
+				return this._PacketNum;
 			}
 			set
 			{
-				if ((this._LAC != value))
+				if ((this._PacketNum != value))
 				{
-					this._LAC = value;
+					this._PacketNum = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CI", DbType="NVarChar(255)")]
-		public string CI
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeginFrameNum", DbType="Int")]
+		public System.Nullable<int> BeginFrameNum
 		{
 			get
 			{
-				return this._CI;
+				return this._BeginFrameNum;
 			}
 			set
 			{
-				if ((this._CI != value))
+				if ((this._BeginFrameNum != value))
 				{
-					this._CI = value;
+					this._BeginFrameNum = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRX", DbType="NVarChar(255)")]
-		public string TRX
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacketTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PacketTime
 		{
 			get
 			{
-				return this._TRX;
+				return this._PacketTime;
 			}
 			set
 			{
-				if ((this._TRX != value))
+				if ((this._PacketTime != value))
 				{
-					this._TRX = value;
+					this._PacketTime = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TS", DbType="NVarChar(255)")]
-		public string TS
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PacketTime(ms)]", Storage="_PacketTime_ms_", DbType="Int")]
+		public System.Nullable<int> PacketTime_ms_
 		{
 			get
 			{
-				return this._TS;
+				return this._PacketTime_ms_;
 			}
 			set
 			{
-				if ((this._TS != value))
+				if ((this._PacketTime_ms_ != value))
 				{
-					this._TS = value;
+					this._PacketTime_ms_ = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CALLID", DbType="NVarChar(255)")]
-		public string CALLID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DumpFor", DbType="NVarChar(30)")]
+		public string DumpFor
 		{
 			get
 			{
-				return this._CALLID;
+				return this._DumpFor;
 			}
 			set
 			{
-				if ((this._CALLID != value))
+				if ((this._DumpFor != value))
 				{
-					this._CALLID = value;
+					this._DumpFor = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic0", DbType="NVarChar(255)")]
-		public string bsic0
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Measurement_Report", DbType="Int")]
+		public System.Nullable<int> Measurement_Report
 		{
 			get
 			{
-				return this._bsic0;
+				return this._Measurement_Report;
 			}
 			set
 			{
-				if ((this._bsic0 != value))
+				if ((this._Measurement_Report != value))
 				{
-					this._bsic0 = value;
+					this._Measurement_Report = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic1", DbType="NVarChar(255)")]
-		public string bsic1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Measurement_Report_time", DbType="NVarChar(200)")]
+		public string Measurement_Report_time
 		{
 			get
 			{
-				return this._bsic1;
+				return this._Measurement_Report_time;
 			}
 			set
 			{
-				if ((this._bsic1 != value))
+				if ((this._Measurement_Report_time != value))
 				{
-					this._bsic1 = value;
+					this._Measurement_Report_time = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic2", DbType="NVarChar(255)")]
-		public string bsic2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell", DbType="NVarChar(200)")]
+		public string cell
 		{
 			get
 			{
-				return this._bsic2;
+				return this._cell;
 			}
 			set
 			{
-				if ((this._bsic2 != value))
+				if ((this._cell != value))
 				{
-					this._bsic2 = value;
+					this._cell = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic3", DbType="NVarChar(255)")]
-		public string bsic3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bs_power", DbType="NVarChar(200)")]
+		public string bs_power
 		{
 			get
 			{
-				return this._bsic3;
+				return this._bs_power;
 			}
 			set
 			{
-				if ((this._bsic3 != value))
+				if ((this._bs_power != value))
 				{
-					this._bsic3 = value;
+					this._bs_power = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic4", DbType="NVarChar(255)")]
-		public string bsic4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ms_power", DbType="NVarChar(200)")]
+		public string ms_power
 		{
 			get
 			{
-				return this._bsic4;
+				return this._ms_power;
 			}
 			set
 			{
-				if ((this._bsic4 != value))
+				if ((this._ms_power != value))
 				{
-					this._bsic4 = value;
+					this._ms_power = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic5", DbType="NVarChar(255)")]
-		public string bsic5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_act_ta", DbType="Int")]
+		public System.Nullable<int> act_ta
 		{
 			get
 			{
-				return this._bsic5;
+				return this._act_ta;
 			}
 			set
 			{
-				if ((this._bsic5 != value))
+				if ((this._act_ta != value))
 				{
-					this._bsic5 = value;
+					this._act_ta = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch0", DbType="NVarChar(255)")]
-		public string bcch0
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dtx_used", DbType="NVarChar(200)")]
+		public string dtx_used
 		{
 			get
 			{
-				return this._bcch0;
+				return this._dtx_used;
 			}
 			set
 			{
-				if ((this._bcch0 != value))
+				if ((this._dtx_used != value))
 				{
-					this._bcch0 = value;
+					this._dtx_used = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch1", DbType="NVarChar(255)")]
-		public string bcch1
-		{
-			get
-			{
-				return this._bcch1;
-			}
-			set
-			{
-				if ((this._bcch1 != value))
-				{
-					this._bcch1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch2", DbType="NVarChar(255)")]
-		public string bcch2
-		{
-			get
-			{
-				return this._bcch2;
-			}
-			set
-			{
-				if ((this._bcch2 != value))
-				{
-					this._bcch2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch3", DbType="NVarChar(255)")]
-		public string bcch3
-		{
-			get
-			{
-				return this._bcch3;
-			}
-			set
-			{
-				if ((this._bcch3 != value))
-				{
-					this._bcch3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch4", DbType="NVarChar(255)")]
-		public string bcch4
-		{
-			get
-			{
-				return this._bcch4;
-			}
-			set
-			{
-				if ((this._bcch4 != value))
-				{
-					this._bcch4 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch5", DbType="NVarChar(255)")]
-		public string bcch5
-		{
-			get
-			{
-				return this._bcch5;
-			}
-			set
-			{
-				if ((this._bcch5 != value))
-				{
-					this._bcch5 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev0", DbType="NVarChar(255)")]
-		public string rxlev0
-		{
-			get
-			{
-				return this._rxlev0;
-			}
-			set
-			{
-				if ((this._rxlev0 != value))
-				{
-					this._rxlev0 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev1", DbType="NVarChar(255)")]
-		public string rxlev1
-		{
-			get
-			{
-				return this._rxlev1;
-			}
-			set
-			{
-				if ((this._rxlev1 != value))
-				{
-					this._rxlev1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev2", DbType="NVarChar(255)")]
-		public string rxlev2
-		{
-			get
-			{
-				return this._rxlev2;
-			}
-			set
-			{
-				if ((this._rxlev2 != value))
-				{
-					this._rxlev2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev3", DbType="NVarChar(255)")]
-		public string rxlev3
-		{
-			get
-			{
-				return this._rxlev3;
-			}
-			set
-			{
-				if ((this._rxlev3 != value))
-				{
-					this._rxlev3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev4", DbType="NVarChar(255)")]
-		public string rxlev4
-		{
-			get
-			{
-				return this._rxlev4;
-			}
-			set
-			{
-				if ((this._rxlev4 != value))
-				{
-					this._rxlev4 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev5", DbType="NVarChar(255)")]
-		public string rxlev5
-		{
-			get
-			{
-				return this._rxlev5;
-			}
-			set
-			{
-				if ((this._rxlev5 != value))
-				{
-					this._rxlev5 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN0", DbType="NVarChar(255)")]
-		public string ARFCN0
-		{
-			get
-			{
-				return this._ARFCN0;
-			}
-			set
-			{
-				if ((this._ARFCN0 != value))
-				{
-					this._ARFCN0 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN1", DbType="NVarChar(255)")]
-		public string ARFCN1
-		{
-			get
-			{
-				return this._ARFCN1;
-			}
-			set
-			{
-				if ((this._ARFCN1 != value))
-				{
-					this._ARFCN1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN2", DbType="NVarChar(255)")]
-		public string ARFCN2
-		{
-			get
-			{
-				return this._ARFCN2;
-			}
-			set
-			{
-				if ((this._ARFCN2 != value))
-				{
-					this._ARFCN2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN3", DbType="NVarChar(255)")]
-		public string ARFCN3
-		{
-			get
-			{
-				return this._ARFCN3;
-			}
-			set
-			{
-				if ((this._ARFCN3 != value))
-				{
-					this._ARFCN3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN4", DbType="NVarChar(255)")]
-		public string ARFCN4
-		{
-			get
-			{
-				return this._ARFCN4;
-			}
-			set
-			{
-				if ((this._ARFCN4 != value))
-				{
-					this._ARFCN4 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ARFCN5", DbType="NVarChar(255)")]
-		public string ARFCN5
-		{
-			get
-			{
-				return this._ARFCN5;
-			}
-			set
-			{
-				if ((this._ARFCN5 != value))
-				{
-					this._ARFCN5 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_full_up", DbType="NVarChar(255)")]
-		public string rxlev_full_up
-		{
-			get
-			{
-				return this._rxlev_full_up;
-			}
-			set
-			{
-				if ((this._rxlev_full_up != value))
-				{
-					this._rxlev_full_up = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_sub_up", DbType="NVarChar(255)")]
-		public string rxlev_sub_up
-		{
-			get
-			{
-				return this._rxlev_sub_up;
-			}
-			set
-			{
-				if ((this._rxlev_sub_up != value))
-				{
-					this._rxlev_sub_up = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxqual_full_up", DbType="NVarChar(255)")]
-		public string rxqual_full_up
-		{
-			get
-			{
-				return this._rxqual_full_up;
-			}
-			set
-			{
-				if ((this._rxqual_full_up != value))
-				{
-					this._rxqual_full_up = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxqual_sub_up", DbType="NVarChar(255)")]
-		public string rxqual_sub_up
-		{
-			get
-			{
-				return this._rxqual_sub_up;
-			}
-			set
-			{
-				if ((this._rxqual_sub_up != value))
-				{
-					this._rxqual_sub_up = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_full_serv_cell", DbType="NVarChar(255)")]
-		public string rxlev_full_serv_cell
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_full_serv_cell", DbType="Int")]
+		public System.Nullable<int> rxlev_full_serv_cell
 		{
 			get
 			{
@@ -1939,8 +1575,8 @@ namespace Linq2SqlGeography.LinqSql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_sub_serv_cell", DbType="NVarChar(255)")]
-		public string rxlev_sub_serv_cell
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev_sub_serv_cell", DbType="Int")]
+		public System.Nullable<int> rxlev_sub_serv_cell
 		{
 			get
 			{
@@ -1955,178 +1591,290 @@ namespace Linq2SqlGeography.LinqSql
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxqual_full_serv_cell", DbType="NVarChar(255)")]
-		public string rxqual_full_serv_cell
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic0", DbType="Int")]
+		public System.Nullable<int> bsic0
 		{
 			get
 			{
-				return this._rxqual_full_serv_cell;
+				return this._bsic0;
 			}
 			set
 			{
-				if ((this._rxqual_full_serv_cell != value))
+				if ((this._bsic0 != value))
 				{
-					this._rxqual_full_serv_cell = value;
+					this._bsic0 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxqual_sub_serv_cell", DbType="NVarChar(255)")]
-		public string rxqual_sub_serv_cell
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic1", DbType="Int")]
+		public System.Nullable<int> bsic1
 		{
 			get
 			{
-				return this._rxqual_sub_serv_cell;
+				return this._bsic1;
 			}
 			set
 			{
-				if ((this._rxqual_sub_serv_cell != value))
+				if ((this._bsic1 != value))
 				{
-					this._rxqual_sub_serv_cell = value;
+					this._bsic1 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DTX", DbType="NVarChar(255)")]
-		public string DTX
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic2", DbType="Int")]
+		public System.Nullable<int> bsic2
 		{
 			get
 			{
-				return this._DTX;
+				return this._bsic2;
 			}
 			set
 			{
-				if ((this._DTX != value))
+				if ((this._bsic2 != value))
 				{
-					this._DTX = value;
+					this._bsic2 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Channel_Type", DbType="NVarChar(255)")]
-		public string Channel_Type
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic3", DbType="Int")]
+		public System.Nullable<int> bsic3
 		{
 			get
 			{
-				return this._Channel_Type;
+				return this._bsic3;
 			}
 			set
 			{
-				if ((this._Channel_Type != value))
+				if ((this._bsic3 != value))
 				{
-					this._Channel_Type = value;
+					this._bsic3 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="NVarChar(255)")]
-		public string Longitude
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic4", DbType="Int")]
+		public System.Nullable<int> bsic4
 		{
 			get
 			{
-				return this._Longitude;
+				return this._bsic4;
 			}
 			set
 			{
-				if ((this._Longitude != value))
+				if ((this._bsic4 != value))
 				{
-					this._Longitude = value;
+					this._bsic4 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="NVarChar(255)")]
-		public string Latitude
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsic5", DbType="Int")]
+		public System.Nullable<int> bsic5
 		{
 			get
 			{
-				return this._Latitude;
+				return this._bsic5;
 			}
 			set
 			{
-				if ((this._Latitude != value))
+				if ((this._bsic5 != value))
 				{
-					this._Latitude = value;
+					this._bsic5 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_raster_grid", DbType="NVarChar(255)")]
-		public string raster_grid
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch0", DbType="Int")]
+		public System.Nullable<int> bcch0
 		{
 			get
 			{
-				return this._raster_grid;
+				return this._bcch0;
 			}
 			set
 			{
-				if ((this._raster_grid != value))
+				if ((this._bcch0 != value))
 				{
-					this._raster_grid = value;
+					this._bcch0 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Event1", DbType="NVarChar(255)")]
-		public string Event1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch1", DbType="Int")]
+		public System.Nullable<int> bcch1
 		{
 			get
 			{
-				return this._Event1;
+				return this._bcch1;
 			}
 			set
 			{
-				if ((this._Event1 != value))
+				if ((this._bcch1 != value))
 				{
-					this._Event1 = value;
+					this._bcch1 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Event2", DbType="NVarChar(255)")]
-		public string Event2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch2", DbType="Int")]
+		public System.Nullable<int> bcch2
 		{
 			get
 			{
-				return this._Event2;
+				return this._bcch2;
 			}
 			set
 			{
-				if ((this._Event2 != value))
+				if ((this._bcch2 != value))
 				{
-					this._Event2 = value;
+					this._bcch2 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_powercontrol", DbType="NVarChar(255)")]
-		public string powercontrol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch3", DbType="Int")]
+		public System.Nullable<int> bcch3
 		{
 			get
 			{
-				return this._powercontrol;
+				return this._bcch3;
 			}
 			set
 			{
-				if ((this._powercontrol != value))
+				if ((this._bcch3 != value))
 				{
-					this._powercontrol = value;
+					this._bcch3 = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell", DbType="NVarChar(255)")]
-		public string cell
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch4", DbType="Int")]
+		public System.Nullable<int> bcch4
 		{
 			get
 			{
-				return this._cell;
+				return this._bcch4;
 			}
 			set
 			{
-				if ((this._cell != value))
+				if ((this._bcch4 != value))
 				{
-					this._cell = value;
+					this._bcch4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch5", DbType="Int")]
+		public System.Nullable<int> bcch5
+		{
+			get
+			{
+				return this._bcch5;
+			}
+			set
+			{
+				if ((this._bcch5 != value))
+				{
+					this._bcch5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev0", DbType="Int")]
+		public System.Nullable<int> rxlev0
+		{
+			get
+			{
+				return this._rxlev0;
+			}
+			set
+			{
+				if ((this._rxlev0 != value))
+				{
+					this._rxlev0 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev1", DbType="Int")]
+		public System.Nullable<int> rxlev1
+		{
+			get
+			{
+				return this._rxlev1;
+			}
+			set
+			{
+				if ((this._rxlev1 != value))
+				{
+					this._rxlev1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev2", DbType="Int")]
+		public System.Nullable<int> rxlev2
+		{
+			get
+			{
+				return this._rxlev2;
+			}
+			set
+			{
+				if ((this._rxlev2 != value))
+				{
+					this._rxlev2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev3", DbType="Int")]
+		public System.Nullable<int> rxlev3
+		{
+			get
+			{
+				return this._rxlev3;
+			}
+			set
+			{
+				if ((this._rxlev3 != value))
+				{
+					this._rxlev3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev4", DbType="Int")]
+		public System.Nullable<int> rxlev4
+		{
+			get
+			{
+				return this._rxlev4;
+			}
+			set
+			{
+				if ((this._rxlev4 != value))
+				{
+					this._rxlev4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rxlev5", DbType="Int")]
+		public System.Nullable<int> rxlev5
+		{
+			get
+			{
+				return this._rxlev5;
+			}
+			set
+			{
+				if ((this._rxlev5 != value))
+				{
+					this._rxlev5 = value;
 				}
 			}
 		}

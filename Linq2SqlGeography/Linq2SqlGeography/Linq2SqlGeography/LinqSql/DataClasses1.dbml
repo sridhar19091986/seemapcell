@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialJiangmeng" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialJiangmeng;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CELLTRACING" Member="CELLTRACING">
-    <Type Name="CELLTRACING">
+  <Table Name="dbo.CellTracing" Member="CellTracing">
+    <Type Name="CellTracing">
       <Column Name="cell" Storage="_SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -72,55 +72,41 @@
       <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.MR表格" Member="MR表格">
-    <Type Name="MR表格">
-      <Column Name="时间点" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="LAC" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TRX" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="TS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="CALLID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bsic5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="bcch5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN0" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN4" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ARFCN5" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev_full_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev_sub_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxqual_full_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxqual_sub_up" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev_full_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxlev_sub_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxqual_full_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="rxqual_sub_serv_cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DTX" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Channel_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Longitude" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="raster_grid" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Event1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Event2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="powercontrol" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="cell" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+  <Table Name="dbo.Abis_MR" Member="Abis_MR">
+    <Type Name="Abis_MR">
+      <Column Name="FileNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BeginFrameNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[PacketTime(ms)]" Member="PacketTime_ms_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DumpFor" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Measurement_Report" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Measurement_Report_time" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bs_power" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ms_power" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="act_ta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtx_used" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="rxlev_full_serv_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev_sub_serv_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev5" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

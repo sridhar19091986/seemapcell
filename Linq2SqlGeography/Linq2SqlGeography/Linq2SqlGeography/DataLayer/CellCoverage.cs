@@ -14,8 +14,8 @@ namespace Linq2SqlGeography
         private double frequency = 900;
         private double mobileHight = 1.5;    //移动台高度
         private double verticalBeamwidth = 6;  //垂直波瓣
-        private double power=0;
-        private double antGain=0;
+        private double power = 0;
+        private double antGain = 0;
 
         //这里做预测、-75、-85、、-90、-94
         //灵活生成各种图层
@@ -23,7 +23,7 @@ namespace Linq2SqlGeography
 
         //cro ,pt 参数仿真时，则需要调用其他 电平图层？
 
-        public double pre_rxlev = -94;  
+        public double pre_rxlev = -94;
 
 
         private double height = 0;
@@ -45,8 +45,8 @@ namespace Linq2SqlGeography
             pathLoss = this.power + this.antGain - this.pre_rxlev;
 
             SectorCoverage sc = new SectorCoverage(frequency, this.height, mobileHight, pathLoss);
-            
-            Console.WriteLine("{0}...{1}...",frequency, sc.DistanceOkumuraHata);
+
+            Console.WriteLine("{0}...{1}...", frequency, sc.DistanceOkumuraHata);
             //sc.SectorPoint = SqlGeometry.Point(0, 0, 4326);
             sc.Latitude = (double)site.latitude;
             sc.Longtitude = (double)site.longitude;

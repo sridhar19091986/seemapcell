@@ -16,13 +16,20 @@ namespace Linq2SqlGeography
     {
         static void Main(string[] args)
         {
+
+            string sql = "UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = 'JMJZTG1'";
+            DataClasses2DataContext dc = new DataClasses2DataContext();
+            dc.ExecuteCommand(sql);
             
             //通过m-trix导入数据，生成弱覆盖路线图？？？？？
 
-           
-            pointLocating pl = new pointLocating();
-            lineLocating ll = new lineLocating();
             cellLocating cl = new cellLocating();
+
+            pointLocating pl = new pointLocating();
+
+
+            lineLocating ll = new lineLocating();
+         
 
             //getLocating();
             //getSectorCoverage();
