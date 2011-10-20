@@ -41,3 +41,8 @@
            ,-97
            ,'JMJDEY1')
 GO
+
+
+
+
+UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = 'JDJZHL3'

@@ -15,37 +15,48 @@ namespace Linq2SqlGeography
         public SqlGeometry mrline = new SqlGeometry();
         string pen = "Pen (60, 2,16711680)";
         string events = "lineLocating";
+        private string sql;
+        private SqlGeometry mgeo;
+
+        private ILookup<string,EventLocating> eventslookup;
+        private IEnumerable<string> eventskey;
+
         public lineLocating()
         {
-            var eventslookup = dc.EventLocating
+             eventslookup = dc.EventLocating
                 .Where(e => e.events != this.events)
                 .ToLookup(e => e.events);
 
-            var eventskey = eventslookup.Select(e => e.Key);
+            eventskey = eventslookup.Select(e => e.Key);
+
             foreach (var p in eventskey)
             {
                 foreach (var q in eventslookup[p])
                 {
                     mrpoint = mrpoint.STUnion(q.SP_GEOMETRY);
                 }
-                mrpoint = mrpoint.STCentroid();
+
+                //？需要先生成包络线，再求中心点，最后算点集合。
+                //？ 为何加了STBuffer(10)会有问题。
+                mrpoint = mrpoint.STConvexHull().STCentroid().STPointN(1);  
                 mrline = mrline.STUnion(mrpoint);
+
+                Console.WriteLine(mrline.STArea());
+                insertLocating2Sql(events, pen, mrline);
             }
 
            //不知道怎么划线，暂时使用手工定位的方式，点多自然成线
 
            // mrline = SqlGeometry.STLineFromWKB(mrline.STAsBinary(), 4326);
 
-            Console.WriteLine(mrline.STArea());
-            insertLocating2Sql(events, pen, mrline);
+       
         }
 
 
         private void insertLocating2Sql(string events, string pen, SqlGeometry sgeo)
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
-            SqlGeometry mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
-            string sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
+            mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
+            sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                 + events + "','" + pen + "','" + mgeo + "')";
             dc.ExecuteCommand(sql);
 
