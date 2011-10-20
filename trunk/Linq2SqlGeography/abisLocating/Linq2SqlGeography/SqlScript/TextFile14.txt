@@ -1,0 +1,48 @@
+﻿INSERT INTO [SqlSpatialJiangmeng].[dbo].[MR表格](
+            [bsic0]
+           ,[bsic1]
+           ,[bsic2]
+           ,[bsic3]
+           ,[bsic4]
+           ,[bsic5]
+           ,[bcch0]
+           ,[bcch1]
+           ,[bcch2]
+           ,[bcch3]
+           ,[bcch4]
+           ,[bcch5]
+           ,[rxlev0]
+           ,[rxlev1]
+           ,[rxlev2]
+           ,[rxlev3]
+           ,[rxlev4]
+           ,[rxlev5]
+           ,[rxlev_sub_serv_cell]
+           ,[cell])
+     VALUES
+           (30
+           ,53
+           ,14
+           ,43
+           ,65
+           ,62
+           ,9
+           ,1
+           ,6
+           ,4
+           ,0
+           ,11
+           ,-103
+           ,-106
+           ,-110
+           ,-110
+           ,-110
+           ,-110  
+           ,-97
+           ,'JMJDEY1')
+GO
+
+
+
+
+UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = 'JDJZHL3'

@@ -1,0 +1,71 @@
+﻿     var point = SqlGeometry.Point(107.04352, 28.870554, 4326);
+
+            Console.WriteLine(point.STX);
+            Console.WriteLine(point.STY);
+            Console.WriteLine(point.ToString());
+
+           
+
+            var pointStart = SqlGeometry.Point(107.04352, 28.870554, 4326);
+            var pointEnd = SqlGeometry.Point(103.84041, 29.170240, 4326);
+            var result = pointStart.STDistance(pointEnd);
+            Console.WriteLine("地理距离：" + result + "(米)");
+
+            DataClasses2DataContext dc = new DataClasses2DataContext();
+
+    
+            
+            //var site_lj=from p in dc.MCOMSITE
+            //            join q in dc.立交ABC on p.m
+
+            var geo = dc.MCOMSITE;
+            var query = from p in geo
+
+                        where p.SP_GEOMETRY !=null
+
+                        //缓冲区100米距离包含这个点
+
+                        //问题是point也是一个集合
+
+                        //where (bool)p.SP_GEOMETRY..STContains(point)
+
+                        //
+
+
+                        let distance = SqlGeometry.Point((double)p.Latitude, (double)p.Longitude, 4326).STBuffer((double)p.Tilt).STArea()
+                        //let dif=SqlGeometry.STLineFromWKB(p.SP_GEOMETRY,4326).STBuffer(1).STArea()
+                        //where distance < 50
+
+
+                        select new
+                        {
+                            p.SiteName,
+                            distance,
+                            b = p.SP_GEOMETRY.STArea()
+
+                            // p.SP_GEOMETRY.
+                        };
+            var qq = query.ToList();
+            Console.WriteLine(qq.Count());
+
+            //try
+            //{
+            foreach (var m in qq)
+                if (m != null)
+                    Console.WriteLine("{0},,,,,{1},,,,{2}", m.SiteName, 
+                        m.distance.ToSqlDecimal(), m.b
+                        );
+            //}
+            //catch 
+            //{
+            //    //Console.WriteLine(ex.ToString());
+            //}
+            //SqlGeography
+            //var query = from p in geo
+            //            let distance = SqlGeography.Point(p.Latitude, p.Longitude, 4326)
+            //             .STDistance(yourLocation)
+            //             .Value
+            //            where distance <= 50
+            //            select p; 
+
+            //SqlGeography.
