@@ -16,19 +16,18 @@ namespace Linq2SqlGeography
         private double verticalBeamwidth = 6;  //垂直波瓣
         private double power = 0;
         private double antGain = 0;
-
+        private double height = 0;
+        private SqlGeography sgeog;
         //这里做预测、-75、-85、、-90、-94
         //灵活生成各种图层
         //默认生成-94的覆盖范围 ？
-
         //cro ,pt 参数仿真时，则需要调用其他 电平图层？
-
         public double pre_rxlev = -94;
 
+        public CellCoverage()
+        {
+        }
 
-        private double height = 0;
-
-        public CellCoverage() { }
         public SqlGeography MergePoint(SITE site)
         {
             //SectorCovarage(6, (double)site.Height, (double)site.Tilt);
@@ -59,17 +58,17 @@ namespace Linq2SqlGeography
             sc.getSectorRadius();
             sc.getSectorCoveragePoint();
 
-            SqlGeography sgeo = SqlGeography.Point(sc.Latitude, sc.Longtitude, 4326);
+            sgeog = SqlGeography.Point(sc.Latitude, sc.Longtitude, 4326);
             //SqlGeometry sgeo = new SqlGeometry();
             Console.WriteLine("{0}...{1}...", site.latitude, site.longitude);
             foreach (var m in sc.STSectorCoverageRegion)
             {
                 //Console.WriteLine("{0}...{1}", m.Lat, m.Long);
                 //SqlGeometry mgeo=SqlGeometry.STPointFromWKB(m.STAsBinary(),4326);
-                sgeo = sgeo.STUnion(m);
+                sgeog = sgeog.STUnion(m);
 
             }
-            return sgeo;
+            return sgeog;
         }
     }
 }

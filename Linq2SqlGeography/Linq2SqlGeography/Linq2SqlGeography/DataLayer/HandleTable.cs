@@ -11,7 +11,7 @@ namespace Linq2SqlGeography
 {
     public static class HandleTable
     {
-        public static string crcelltracing
+        public static string createCellTracing
                         = @"
 
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CellTracing]') AND type in (N'U'))
@@ -28,7 +28,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 ";
-        public static string creventlocating
+        public static string createEventLocating
                 = @"
 
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[EventLocating]') AND type in (N'U'))

@@ -17,11 +17,12 @@ namespace Linq2SqlGeography
         }
 
         private string linestring;
+        private string line;
 
         private void StreamRead2Class()
         {
             StreamReader sr = new StreamReader(@"D:\RLMFP");
-            string line;
+            //string line;
             while ((line = sr.ReadLine()) != null)
             {
                 if (!line.StartsWith("CELL"))

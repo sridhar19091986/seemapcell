@@ -15,6 +15,16 @@ namespace Linq2SqlGeography
         private ILookup<string, MCOMNEIGH> Neighbours;
         private ILookup<string, MCOMCARRIER> Carriers;
         private Text2Class tc;
+
+        private string bcch;  //frequency 变量
+        private int baIndex;  //ba表索引
+        private CellBA baList;  //ba表
+
+        private string tBCCH = null;  //fequency 变量
+        private int tBSIC = 0;  
+
+        private int powercontrol = 0;
+
         // Define other methods and classes here
         public HandleNeighbour()
         {
@@ -81,9 +91,6 @@ namespace Linq2SqlGeography
             return bccncc;
         }
 
-        private string bcch;
-        private int index;
-        private CellBA balist;
 
         //这个方法要要通过BA表获取到之后实现
 
@@ -91,18 +98,17 @@ namespace Linq2SqlGeography
         {
             if (BaIndex == -1) return null;
             //int index = Int32.Parse(BaIndex);
-            index = BaIndex;
-            balist = tc.CellBaList.Where(e => e.cell == ServiceCell).Where(e => e.mode == "ACTIVE").FirstOrDefault();
+            baIndex = BaIndex;
+            baList = tc.CellBaList.Where(e => e.cell == ServiceCell).Where(e => e.mode == "ACTIVE").FirstOrDefault();
 
-            if (balist == null) return null;
+            if (baList == null) return null;
 
-            bcch = balist.ba.ElementAt(index);
-            Console.WriteLine("bcch.....{0}...index....{1}", bcch, index);
+            bcch = baList.ba.ElementAt(baIndex);
+            Console.WriteLine("bcch.....{0}...index....{1}", bcch, baIndex);
             return bcch;
         }
 
-        private string tBCCH = null;
-        private int tBSIC = 0;
+
         public List<mrNeighbour> getNeighList(List<mrNeighbour> mrNeighs)
         {
             List<mrNeighbour> mrNeighsNew = new List<mrNeighbour>();
@@ -157,7 +163,7 @@ namespace Linq2SqlGeography
         }
 
         //直接从数据库提取下述数据生成事件的GIS定位？
-        private int powercontrol = 0;
+
 
         public List<mrNeighbour> setNeighList(Abis_MR mr)
         {

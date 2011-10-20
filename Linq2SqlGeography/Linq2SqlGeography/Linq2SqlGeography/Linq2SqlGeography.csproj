@@ -55,7 +55,7 @@
     <Compile Include="DataLayer\CellCoverage.cs" />
     <Compile Include="DataLayer\cellLocating.cs" />
     <Compile Include="DataLayer\HandleNeighbour.cs" />
-    <Compile Include="DataLayer\LijiaoSite.cs" />
+    <Compile Include="AppLayer\LijiaoSite.cs" />
     <Compile Include="DataLayer\HandleTable.cs" />
     <Compile Include="DataLayer\LocatingCellBuffer.cs" />
     <Compile Include="DataLayer\mrLocating.cs" />
@@ -86,6 +86,7 @@
     <Content Include="SqlScript\TextFile12.txt" />
     <Content Include="SqlScript\TextFile13.txt" />
     <Content Include="SqlScript\TextFile14.txt" />
+    <Content Include="SqlScript\TextFile15.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
     <Content Include="SqlScript\TextFile4.txt" />

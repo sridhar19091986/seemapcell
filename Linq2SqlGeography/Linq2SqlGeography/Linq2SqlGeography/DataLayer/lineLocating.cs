@@ -11,53 +11,51 @@ namespace Linq2SqlGeography
     public class lineLocating
     {
         private DataClasses2DataContext dc = new DataClasses2DataContext();
-        private SqlGeometry mrpoint = new SqlGeometry();
-        public SqlGeometry mrline = new SqlGeometry();
-        string pen = "Pen (60, 2,16711680)";
-        string events = "lineLocating";
+        private SqlGeometry mrPoint = new SqlGeometry();
+        private SqlGeometry mrLine = new SqlGeometry();
+        private string pen = "Pen (60, 2,16711680)";
+        private string events = "lineLocating";
         private string sql;
-        private SqlGeometry mgeo;
+        private SqlGeometry sgeom;
 
-        private ILookup<string,EventLocating> eventslookup;
-        private IEnumerable<string> eventskey;
+        private ILookup<string, EventLocating> eventsLookup;
+        private IEnumerable<string> eventsKey;
 
         public lineLocating()
         {
-             eventslookup = dc.EventLocating
-                .Where(e => e.events != this.events)
-                .ToLookup(e => e.events);
+            eventsLookup = dc.EventLocating.Where(e => e.events != this.events).ToLookup(e => e.events);
 
-            eventskey = eventslookup.Select(e => e.Key);
+            eventsKey = eventsLookup.Select(e => e.Key);
 
-            foreach (var p in eventskey)
+            foreach (var p in eventsKey)
             {
-                foreach (var q in eventslookup[p])
+                foreach (var q in eventsLookup[p])
                 {
-                    mrpoint = mrpoint.STUnion(q.SP_GEOMETRY);
+                    mrPoint = mrPoint.STUnion(q.SP_GEOMETRY);
                 }
 
                 //？需要先生成包络线，再求中心点，最后算点集合。
                 //？ 为何加了STBuffer(10)会有问题。
-                mrpoint = mrpoint.STConvexHull().STCentroid().STPointN(1);  
-                mrline = mrline.STUnion(mrpoint);
+                mrPoint = mrPoint.STConvexHull().STCentroid().STPointN(1);
+                mrLine = mrLine.STUnion(mrPoint);
 
-                Console.WriteLine(mrline.STArea());
-                insertLocating2Sql(events, pen, mrline);
+                Console.WriteLine(mrLine.STArea());
+                insertLocating2Sql(events, pen, mrLine);
             }
 
-           //不知道怎么划线，暂时使用手工定位的方式，点多自然成线
+            //不知道怎么划线，暂时使用手工定位的方式，点多自然成线
 
-           // mrline = SqlGeometry.STLineFromWKB(mrline.STAsBinary(), 4326);
+            // mrline = SqlGeometry.STLineFromWKB(mrline.STAsBinary(), 4326);
 
-       
+
         }
 
 
         private void insertLocating2Sql(string events, string pen, SqlGeometry sgeo)
         {
-            mgeo = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
+            sgeom = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
             sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
-                + events + "','" + pen + "','" + mgeo + "')";
+                + events + "','" + pen + "','" + sgeom + "')";
             dc.ExecuteCommand(sql);
 
             Console.WriteLine(sql);

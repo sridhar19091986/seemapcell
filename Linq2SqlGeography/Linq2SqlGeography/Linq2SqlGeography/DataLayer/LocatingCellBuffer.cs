@@ -10,8 +10,8 @@ namespace Linq2SqlGeography
 {
     class LocatingCellBuffer
     {
-        DataClasses2DataContext dc = new DataClasses2DataContext();
-        OkumuraHata oh = new OkumuraHata();
+        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private OkumuraHata okumh = new OkumuraHata();
         private double mobileHight = 1.5;    //移动台高度
 
         private string sCell { get; set; }
@@ -23,13 +23,13 @@ namespace Linq2SqlGeography
         private double sHeight;
         private double sPathLoss { get; set; }
 
-        private SqlGeography sgeo;
+        private SqlGeography sitesgeog;
         //private SqlGeometry mgeo;
-        private SqlGeography ngeo;
-        private SITE s;
-        private CellTracing abc;
-        private SqlGeometry cellgeo;
-        private SqlGeography cgeo;
+        private SqlGeography okumbuffersgeog;
+        private SITE site;
+        private CellTracing celltracing;
+        private SqlGeometry celltracingsgeom;
+        private SqlGeography celltracingsgeog;
 
         public LocatingCellBuffer(string cell, double rxlev, double powerControl)
         {
@@ -39,32 +39,32 @@ namespace Linq2SqlGeography
         }
         public SqlGeography getCellGeo()
         {
-            s = dc.SITE.Where(e => e.cell == this.sCell).FirstOrDefault();
-            if (s == null) return SqlGeography.Point(0, 0, 4236);
-            sgeo = SqlGeography.Point((double)s.latitude, (double)s.longitude, 4326);
-            double.TryParse(s.ant_gain, out sAntGain);
-            double.TryParse(s.height, out sHeight);
-            sPathLoss = oh.PathLoss2Distance((double)s.band, (double)sHeight, (double)mobileHight, (double)(sPowerN + sAntGain - sPowerControl - sRxlev));
+            site = dc.SITE.Where(e => e.cell == this.sCell).FirstOrDefault();
+            if (site == null) return SqlGeography.Point(0, 0, 4236);
+            sitesgeog = SqlGeography.Point((double)site.latitude, (double)site.longitude, 4326);
+            double.TryParse(site.ant_gain, out sAntGain);
+            double.TryParse(site.height, out sHeight);
+            sPathLoss = okumh.PathLoss2Distance((double)site.band, (double)sHeight, (double)mobileHight, (double)(sPowerN + sAntGain - sPowerControl - sRxlev));
 
             Console.WriteLine(sPathLoss * 1000);
 
-            ngeo = sgeo.STBuffer(sPathLoss * 1000);
+            okumbuffersgeog = sitesgeog.STBuffer(sPathLoss * 1000);
 
-            abc = dc.CellTracing.Where(e => e.cell == sCell).FirstOrDefault();
+            celltracing = dc.CellTracing.Where(e => e.cell == sCell).FirstOrDefault();
 
             //if (abc == null) return ngeo;
 
-            cellgeo = abc.SP_GEOMETRY;
+            celltracingsgeom = celltracing.SP_GEOMETRY;
 
-            cgeo = SqlGeography.STGeomFromWKB(cellgeo.STAsBinary(), 4326);
+            celltracingsgeog = SqlGeography.STGeomFromWKB(celltracingsgeom.STAsBinary(), 4326);
 
-            Console.WriteLine(ngeo.STArea());
-            Console.WriteLine(cgeo.STArea());
+            Console.WriteLine(okumbuffersgeog.STArea());
+            Console.WriteLine(celltracingsgeog.STArea());
 
-            if (cgeo.STArea() > 0)
-                return ngeo.STIntersection(cgeo);
+            if (celltracingsgeog.STArea() > 0)
+                return okumbuffersgeog.STIntersection(celltracingsgeog);   // 用圆和扇形相交
             else
-                return ngeo;
+                return okumbuffersgeog;    //返回圆
 
         }
     }
