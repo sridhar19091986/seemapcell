@@ -1,0 +1,73 @@
+﻿        /*
+        private double getPointY(double angle, double distance)
+        {
+            //Console.WriteLine(angle);
+            //if (angle <= 90) angle = 90 - angle;
+            //else angle = 360 - (angle - 90) ;
+            //Console.WriteLine(angle);
+            var R = 6371; // km
+            var d = distance / 1000;
+            var brng = angle;
+
+            double lat1 = (double)this.SectorPoint.STStartPoint().Lat;
+            double lon1 = (double)this.SectorPoint.STStartPoint().Long;
+
+
+            var lat2 = Math.Asin(Math.Sin(lat1) * Math.Cos(d / R) + Math.Cos(lat1) * Math.Sin(d / R) * Math.Cos(brng));
+            var lon2 = lon1 + Math.Atan2(Math.Sin(brng) * Math.Sin(d / R) * Math.Cos(lat1), Math.Cos(d / R) - Math.Sin(lat1) * Math.Sin(lat2));
+
+
+
+
+            var p = lon2;
+            //var p = SqlGeography.Point(dd.Latitude, dd.Longitude, 4326);
+
+            Console.WriteLine("{0},,,{1},,,{2},,,{3}", lat1, lon1, lat2, lon2);
+            return p;
+        }
+
+        private double getPointX(double angle, double distance)
+        {
+                        //Console.WriteLine(angle);
+            //if (angle <= 90) angle = 90 - angle;
+            //else angle = 360 - (angle - 90) ;
+            //Console.WriteLine(angle);
+
+
+            DD dd = new DD();
+            dd.Latitude = (double)this.SectorPoint.STStartPoint().Lat;
+            dd.Longitude = (double)this.SectorPoint.STStartPoint().Long;
+            var utm = GeographyConvert.DD2UTM(dd);
+            double lat1 = utm.Easting;
+            double lon1 = utm.Northing;
+            var R = 6371; // km
+            var d = distance / 1000;
+            var brng = angle;
+
+            var lat2 = Math.Asin(Math.Sin(lat1) * Math.Cos(d / R) + Math.Cos(lat1) * Math.Sin(d / R) * Math.Cos(brng));
+            var lon2 = lon1 + Math.Atan2(Math.Sin(brng) * Math.Sin(d / R) * Math.Cos(lat1), Math.Cos(d / R) - Math.Sin(lat1) * Math.Sin(lat2));
+            
+            
+            utm.Easting = lat2;
+            utm.Northing = lon2;
+            dd = GeographyConvert.UTM2DD(utm);
+
+            var p = dd.Latitude;
+            //var p = SqlGeography.Point(dd.Latitude, dd.Longitude, 4326);
+
+            Console.WriteLine("{0},,,{1},,,{2},,,{3}", lat1, lon1, lat2, lon2);
+            return p;
+        
+        }
+         * 
+         * */
+
+
+		             //Console.WriteLine(angle);
+            //if (angle <= 90) angle = 90 - angle;
+            //else angle = 360 - (angle - 90);
+            //Console.WriteLine(angle);
+            //angle = 360 - angle-90;
+            //angle = (angle + 180) % 360;
+
+Console.WriteLine("{0}...{1}...{2}", Direction, HorizontalBeamwidth, distance);

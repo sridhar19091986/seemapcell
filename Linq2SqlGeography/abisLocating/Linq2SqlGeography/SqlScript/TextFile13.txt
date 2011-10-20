@@ -1,0 +1,5 @@
+﻿
+select * from [SqlSpatialJiangmeng].dbo.CELL1 where Bs_no='JMXWSK4'
+
+
+SELECT * FROM [SqlSpatialJiangmeng].[dbo].[cdd] where cell='JMXWSK4'

@@ -1,0 +1,152 @@
+﻿
+http://en.wikipedia.org/wiki/COST_Hata_model
+
+
+include <stdio.h> 
+#include <math.h> 
+//#include <string.h> 
+ 
+
+ 小区Okumura-Hata路径损耗公式修正
+
+
+char CityType_Landform[4]; //城市类型选择、适用地形。定义为全局变量。 
+double frequency = 0;                 //频率 
+char c=NULL,m=NULL; 
+ 
+double City_Lb (double f,double hb,double hm,double d)//市区传播损耗中值函数，单位为dB 
+                                                 //f(MHz):工作频率,  hb(m):基站天线有效高度, 
+                                                 //hm(m):移动台天线高度, d(km):收发天线之间的距离 
+{      
+	double Modi_Factor( double );//函数声明 
+	return 69.55+26.16*log10(f)-13.82*log10(hb)-Modi_Factor(hm)+( 44.9-6.55*log10(hb) )*log10(d); 
+} 
+ 
+ 
+double Suburb_Lb (double f,double hb,double hm,double d)//郊区传播损耗函数 
+{ 
+	return City_Lb(f,hb,hm,d)-2*pow( log10(f/28) , 2)- 5.4 ; 
+} 
+ 
+ 
+double Width_Lb (double f,double hb,double hm,double d)//开阔去传播损耗函数 
+{ 
+	return City_Lb(f,hb,hm,d)-4.78*pow( log10(f) , 2)-18.33*log10(f)-40.98; 
+} 
+ 
+double Modi_Factor (double hm )//移动台天线高度校正因子，单位（dB） 
+{ 
+	 
+	if ('c'==CityType_Landform[0] )//&& frequency<300)   //大城市 
+	{ 
+		if(frequency<300) 
+		{ 
+			return 8.29*pow( log10(1.54*hm) , 2)-1.1 ;  
+		} 
+		else 
+			return 3.2*pow( log10(11.75*hm) , 2)-4.97; 
+	} 
+	else 	 
+		return ( 1.1*log10(frequency)-0.7 )*hm-1.56*log10(frequency)+0.8; 
+	 
+} 
+ 
+void main () 
+{	 
+	int i;  
+	//char Landform; 
+	double hb=0,hm=0,d=0; 
+	double Value=0; 
+	char u=NULL,s=NULL,w=NULL; 
+	 
+ 
+	printf("应用说明：\n本函数的使用范围为：150MHz=f=1920MHz,可扩展到3000MHz,20m=hb=1000m,1m=hm=10                    m,1km=d=100km,准平坦地形。\n\n"); 
+	printf("操作说明：输入的字母用“空格键”分开 ；回车键进入下一步操作！\n\n"); 
+	printf("请输入城市类型：大城市输入c，中、小城市输入m 。\n"); 
+	printf("请输入适用地形：市区输入u，郊区输入s，开阔区输入w 。\n\r"); 
+	 
+label0:for(i=0;i<1;i++) 
+	   { 
+		    
+label1:	gets(CityType_Landform) ; //scanf("%c%c",&City_Type,&Landform); 
+	 
+		if ( (CityType_Landform[0]=='c'||CityType_Landform[0]=='m') && (CityType_Landform[2]=='u'||CityType_Landform[2]=='s'||CityType_Landform[2]=='w') ) 
+		{ 
+			printf("请输入信号频率f(MHz)="); 
+label2:		scanf("%lf",&frequency); 
+			if(frequency>=150 && frequency=1920 )//&& hb>=20&&hb=1000 && hm>=1&&hm=10 && d>=1&&d=100 ) 
+			{ 
+				printf("请输入基站天线高度hm(m)="); 
+label3:			scanf("%lf",&hb); 
+				if(hb>=20 && hb=1000) 
+				{ 
+					printf("请输入移动台天线高度hb(m)="); 
+label4:				scanf("%lf",&hm); 
+					if(hm>=1 && hm=10) 
+					{ 
+						printf("请输入收、发天线之间距离d(km)="); 
+label5:					scanf("%lf",&d); 
+						if(d>=1 && d=100) 
+						{ 
+							if(CityType_Landform[0]=='c' && CityType_Landform[2]=='u' ) 
+							{ 
+								Value=City_Lb(frequency,hb,hm,d); 
+								printf("大城市市区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+								if('\r') 
+								{ 
+									goto label0; 
+								} 
+							}	 
+		 
+							if('c'==CityType_Landform[0] && 's'==CityType_Landform[2]) 
+							{ 
+								Value=Suburb_Lb(frequency,hb,hm,d); 
+								printf("大城市郊区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+							} 
+							if('c'==CityType_Landform[0] && 'w'==CityType_Landform[2]) 
+							{ 
+								Value=Width_Lb(frequency,hb,hm,d); 
+								printf("大城市开阔区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+							} 
+ 
+ 
+ 
+							if('m'==CityType_Landform[0] && 'u'==CityType_Landform[2]) 
+							{ 
+								Value=City_Lb(frequency,hb,hm,d); 
+								printf("中、小城市市区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+							} 
+							if('m'==CityType_Landform[0] && 's'==CityType_Landform[2]) 
+							{ 
+								Value=Suburb_Lb(frequency,hb,hm,d); 
+								printf("中、小城市郊区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+							} 
+							if('m'==CityType_Landform[0] && 'w'==CityType_Landform[2]) 
+							{ 
+								Value=Width_Lb(frequency,hb,hm,d); 
+								printf("中、小城市开阔区的传播衰耗值Value=%.3lf (dB)\n",Value); 
+							} 
+						 
+						}//收发距离if 
+						else 
+							printf("您输入的收、发天线距离不再适用范围，请仔细阅读“应用说明”并重新输入 ！\n"); 
+							goto label5; 
+ 
+					}//移动台天线高度if 
+					else 
+						printf("您输入的移动台天线高度不在适用范围，请仔细阅读“应用说明”并重新输入 ！\n"); 
+						goto label4; 
+				}//基站天线高度if 
+				else 
+					printf("您输入的基站天线高度不在适用范围，请仔细阅读“应用说明”并重新输入 ！\n"); 
+					goto label3; 
+			}//信号频率if 
+			else 
+				printf("您输入的信号频率不在适用范围，请仔细阅读“应用说明”并重新输入 ！\n"); 
+				goto label2; 
+		}//城市类型和适用地形if  
+		else 
+			printf("您输入的城市类型和适用地形代码错误，请仔细阅读“操作说明”并重新输入 ！\n"); 
+			goto  label1; 
+	} 
+}//main
