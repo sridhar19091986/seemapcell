@@ -11,8 +11,8 @@ namespace Linq2SqlGeography
     public class pointLocating
     {
 
-        private int pencolor = 0;
-        private int[] pencolors = { 16711680, 65280, 255, 65535, 16711935, 16776960, 0 };
+        //private int pencolor = 0;
+        private int[] pencolors = { 65280, 255, 65535, 16711935, 16776960, 0 };
         private int pencolorindex = 0;
         private IEnumerable<Abis_MR> abis_mrr;
         private string events;
@@ -49,13 +49,13 @@ namespace Linq2SqlGeography
 
             //？？？？？这里的颜色的调整  ？？？？？
 
-            abis_mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
+            //abis_mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
 
-            //var mrr = dc.Abis_MR;
+            abis_mrr = dc.Abis_MR.Where(e => e.bsic5 > 0);
 
             foreach (var mr in abis_mrr)
             {
-                pencolor = pencolors[0];
+                //pencolor =;
                 pencolorindex++;
                 if (pencolorindex >= pencolors.Length - 1)
                     pencolorindex = 0;
@@ -76,7 +76,7 @@ namespace Linq2SqlGeography
 
                 //生成覆盖连线也需要再做一个图层
 
-                pen = "Pen (" + (1 + 2 * pencolorindex).ToString() + ", 2," + pencolor.ToString() + ")";
+                pen = "Pen (1, 2," +  pencolors[pencolorindex].ToString() + ")";
                 //var mrnews=mrneighsNew.Take(1);
 
                 foreach (var n in mrNeighsNew)
