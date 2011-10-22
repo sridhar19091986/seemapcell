@@ -23,7 +23,7 @@ namespace Linq2SqlGeography
             
             //通过m-trix导入数据，生成弱覆盖路线图？？？？？
 
-            cellLocating cl = new cellLocating();
+            //cellLocating cl = new cellLocating();
 
             pointLocating pl = new pointLocating();
 

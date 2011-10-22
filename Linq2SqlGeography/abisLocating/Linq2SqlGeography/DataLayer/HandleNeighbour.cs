@@ -102,6 +102,7 @@ namespace Linq2SqlGeography
             baList = tc.CellBaList.Where(e => e.cell == ServiceCell).Where(e => e.mode == "ACTIVE").FirstOrDefault();
 
             if (baList == null) return null;
+            if (baList.ba.Count() < BaIndex + 1) return null;
 
             bcch = baList.ba.ElementAt(baIndex);
             Console.WriteLine("bcch.....{0}...index....{1}", bcch, baIndex);
