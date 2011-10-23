@@ -55,18 +55,24 @@ namespace Linq2SqlGeography
 
         }
 
-        //2011.10.21 需要解决的2个问题？
+        //2011.10.21 需要解决的7个问题？
 
 
-        //1.需要重新生成到新的table？ google earth 上识别
+        //1.需要重新生成到新的table？ google earth 上识别  ?  增加table 字段？ 增加table,
 
-        //2.切换，变换小区的问题 ？？ 这个直接在m-trix切除？
+        //2.切换，变换小区的问题 ？？ 这个直接在m-trix切除？ 增加 ho stop?
 
         //3.style
 
         //3.brush color 渐进
 
-        //4.color 递归
+        //4.color 递归   red blue green   value ++  
+
+        //5.ref penson 直接修改对象
+
+        //6.enumerable.range(1,10) 生成随机序列？
+
+        //7.sptial 脚本的问题 ？
 
         private void insertLocating2Sql(string events, string pen, SqlGeometry sgeo)
         {
