@@ -52,7 +52,7 @@ namespace Linq2SqlGeography
             var neighcells = Neighbours[ServiceCell].FirstOrDefault();
 
             //Console.WriteLine("{0}...{1}", neighcells.Cell, neighcells.ncell);
-            //if (neighcells == null) return null;
+            if (neighcells == null) return null;
 
             Regex r = new Regex(@"\s+");
             string ncelllist = r.Replace(neighcells.ncell, @" ");
@@ -73,18 +73,9 @@ namespace Linq2SqlGeography
         //mtrix 读入的都是10进制  ？  转换成8 进制
         public int getNeighBSIC(int BSIC)
         {
-            //int bsic;
-            //int.TryParse(BSIC, out bsic);
-            //var ncc = (int)(bsic / 8);
-            //var bcc = bsic % 8;
-            //string nbsic = ncc.ToString() + bcc.ToString();
-            //return nbsic;
-            //byte[] floatVals = BitConverter.GetBytes(BSIC);
-
             if (BSIC == -1) return -1;
 
             int bccncc = Int32.Parse(Convert.ToString(BSIC, 8));
-
 
             Console.WriteLine("bsic....{0}...bccncc....{1}", BSIC, bccncc);
 
@@ -109,6 +100,7 @@ namespace Linq2SqlGeography
             return bcch;
         }
 
+        //考虑用ref ，避免在内存生成多余的对象 ,但是似乎是一个集合，在迭代过程中不能修改？？
 
         public List<mrNeighbour> getNeighList(List<mrNeighbour> mrNeighs)
         {

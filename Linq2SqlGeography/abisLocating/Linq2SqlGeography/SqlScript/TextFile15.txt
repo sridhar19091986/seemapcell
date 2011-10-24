@@ -1,1 +1,117 @@
 ﻿
+        //2011.10.21 需要解决的7个问题？
+
+
+        //1.需要重新生成到新的table？ google earth 上识别  ?  增加table 字段？ 增加table,
+
+        //2.切换，变换小区的问题 ？？ 这个直接在m-trix切除？ 增加 ho stop?
+
+        //3.style
+
+        //3.brush color 渐进
+
+        //4.color 递归   red blue green   value ++  
+
+        //5.ref penson 直接修改对象
+
+        //6.enumerable.range(1,10) 生成随机序列？
+
+        //7.sptial 脚本的问题 ？
+
+		        //private string pen = "Pen (1, 2,16711680)";    //???   Red: 16711680
+
+
+		        //private int[] pencolors = { 65280, 255, 65535, 16711935, 16776960, 0 };
+
+            //eventsLookup = dc.EventLocating.Where(e => e.events != this.events).ToLookup(e => e.events);
+
+            //Console.WriteLine(sql);
+
+			                  //pen = q.MI_STYLE;  //颜色一致性
+			
+            //不知道怎么划线，暂时使用手工定位的方式，点多自然成线
+
+            // mrline = SqlGeometry.STLineFromWKB(mrline.STAsBinary(), 4326);
+
+			
+                //？需要先->生成包络线，再求中心点，最后算点集合。
+                //？ 为何加了STBuffer(10)会有问题。
+
+            // Console.ReadKey();
+
+
+				                //pencolor = HandleTable.getRandomPenColor();
+                //这里要执行 locating 算法
+
+
+                //这里做成一个再处理的过程 ？？？？？？？？？扩展？？？？
+
+                //这里的方法不需要了，每个小区都单独1行，不需要合并
+
+                //mrlocating.getLocating();
+                //sgeog = mrlocating.servicecellgeog;
+
+                //Console.WriteLine(mgeo.STArea());
+                //Console.WriteLine("{0}...{1}", mrl.sgeo.Long, mrl.sgeo.Lat);
+
+
+                //string pen = "Pen (6, 2," + pencolor.ToString() + ")";
+
+                //这里可以通过各种方式进行修改，以做前后点的失败
+
+                //如何生成层连线的问题，定位位置点的问题，生成连续的路线走势图，需要再做一个图层，以表示
+
+                //生成覆盖连线也需要再做一个图层
+
+                //pen = "Pen (1, 2," +  pencolor.ToString() + ")";
+                //var mrnews=mrneighsNew.Take(1);
+
+
+				            //？？？？？这里的颜色的调整  ？？？？？
+
+            //abis_mrr = dc.Abis_MR.Where(e => e.bsic3 > 0).Take(10);
+
+
+            //怎么处理是其他小区，非服务小区mr的问题呢？ 最好的办法是把mr的lac ci拿上来？？？？？？
+
+            //对一个用户而言，本人则可以通过abis_ho 这张表串联起来  ？？？？？？？？
+
+            //处理这条语句即可：sql = "UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = 'JMJZTG1'";
+
+            //通过时间比较可以获取到cell?
+
+
+
+			        //private int[] pencolors = { 65280, 255, 65535, 16711935, 16776960, 0 };
+
+			
+        //private IEnumerable<int> pengreen = Enumerable.Range(0, 255);
+
+        //private int pengreens = 0;
+
+
+
+
+			            //int bsic;
+            //int.TryParse(BSIC, out bsic);
+            //var ncc = (int)(bsic / 8);
+            //var bcc = bsic % 8;
+            //string nbsic = ncc.ToString() + bcc.ToString();
+            //return nbsic;
+            //byte[] floatVals = BitConverter.GetBytes(BSIC);
+
+
+
+			            //HandleNeighbour hn = new HandleNeighbour();
+            //List<mrNeighbour> mrneighsNew = new List<mrNeighbour>();
+            //mrneighsNew = hn.getNeighList(hn.setNeighList());
+
+            /*
+            Red: 16711680
+            Green: 65280
+            Blue: 255
+            Cyan: 65535
+            Magenta: 16711935
+            Yellow: 16776960
+            Black: 0 
+              * */

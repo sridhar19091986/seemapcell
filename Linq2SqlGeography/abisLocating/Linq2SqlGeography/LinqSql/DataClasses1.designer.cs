@@ -126,6 +126,14 @@ namespace Linq2SqlGeography.LinqSql
 				return this.GetTable<Abis_MR>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Abis_Ho> Abis_Ho
+		{
+			get
+			{
+				return this.GetTable<Abis_Ho>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CellTracing")]
@@ -1875,6 +1883,267 @@ namespace Linq2SqlGeography.LinqSql
 				if ((this._rxlev5 != value))
 				{
 					this._rxlev5 = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Abis_Ho")]
+	public partial class Abis_Ho
+	{
+		
+		private System.Nullable<int> _FileNum;
+		
+		private System.Nullable<int> _PacketNum;
+		
+		private System.Nullable<int> _BeginFrameNum;
+		
+		private System.Nullable<System.DateTime> _PacketTime;
+		
+		private System.Nullable<int> _PacketTime_ms_;
+		
+		private string _DumpFor;
+		
+		private System.Nullable<int> _Handover_Command;
+		
+		private string _Handover_Command_time;
+		
+		private string _Handover_Command_MsgType;
+		
+		private System.Nullable<int> _Handover_Command_RepeatCounter;
+		
+		private string _ncc;
+		
+		private string _bcc;
+		
+		private string _bcch_arfcn;
+		
+		private string _chd2_single_ch_ARFCN;
+		
+		public Abis_Ho()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileNum", DbType="Int")]
+		public System.Nullable<int> FileNum
+		{
+			get
+			{
+				return this._FileNum;
+			}
+			set
+			{
+				if ((this._FileNum != value))
+				{
+					this._FileNum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacketNum", DbType="Int")]
+		public System.Nullable<int> PacketNum
+		{
+			get
+			{
+				return this._PacketNum;
+			}
+			set
+			{
+				if ((this._PacketNum != value))
+				{
+					this._PacketNum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BeginFrameNum", DbType="Int")]
+		public System.Nullable<int> BeginFrameNum
+		{
+			get
+			{
+				return this._BeginFrameNum;
+			}
+			set
+			{
+				if ((this._BeginFrameNum != value))
+				{
+					this._BeginFrameNum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacketTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PacketTime
+		{
+			get
+			{
+				return this._PacketTime;
+			}
+			set
+			{
+				if ((this._PacketTime != value))
+				{
+					this._PacketTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[PacketTime(ms)]", Storage="_PacketTime_ms_", DbType="Int")]
+		public System.Nullable<int> PacketTime_ms_
+		{
+			get
+			{
+				return this._PacketTime_ms_;
+			}
+			set
+			{
+				if ((this._PacketTime_ms_ != value))
+				{
+					this._PacketTime_ms_ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DumpFor", DbType="NVarChar(30)")]
+		public string DumpFor
+		{
+			get
+			{
+				return this._DumpFor;
+			}
+			set
+			{
+				if ((this._DumpFor != value))
+				{
+					this._DumpFor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Handover_Command", DbType="Int")]
+		public System.Nullable<int> Handover_Command
+		{
+			get
+			{
+				return this._Handover_Command;
+			}
+			set
+			{
+				if ((this._Handover_Command != value))
+				{
+					this._Handover_Command = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Handover_Command_time", DbType="NVarChar(200)")]
+		public string Handover_Command_time
+		{
+			get
+			{
+				return this._Handover_Command_time;
+			}
+			set
+			{
+				if ((this._Handover_Command_time != value))
+				{
+					this._Handover_Command_time = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Handover_Command_MsgType", DbType="NVarChar(200)")]
+		public string Handover_Command_MsgType
+		{
+			get
+			{
+				return this._Handover_Command_MsgType;
+			}
+			set
+			{
+				if ((this._Handover_Command_MsgType != value))
+				{
+					this._Handover_Command_MsgType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Handover_Command_RepeatCounter", DbType="Int")]
+		public System.Nullable<int> Handover_Command_RepeatCounter
+		{
+			get
+			{
+				return this._Handover_Command_RepeatCounter;
+			}
+			set
+			{
+				if ((this._Handover_Command_RepeatCounter != value))
+				{
+					this._Handover_Command_RepeatCounter = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ncc", DbType="NVarChar(2)")]
+		public string ncc
+		{
+			get
+			{
+				return this._ncc;
+			}
+			set
+			{
+				if ((this._ncc != value))
+				{
+					this._ncc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcc", DbType="NVarChar(2)")]
+		public string bcc
+		{
+			get
+			{
+				return this._bcc;
+			}
+			set
+			{
+				if ((this._bcc != value))
+				{
+					this._bcc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bcch_arfcn", DbType="NVarChar(10)")]
+		public string bcch_arfcn
+		{
+			get
+			{
+				return this._bcch_arfcn;
+			}
+			set
+			{
+				if ((this._bcch_arfcn != value))
+				{
+					this._bcch_arfcn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chd2_single_ch_ARFCN", DbType="NVarChar(10)")]
+		public string chd2_single_ch_ARFCN
+		{
+			get
+			{
+				return this._chd2_single_ch_ARFCN;
+			}
+			set
+			{
+				if ((this._chd2_single_ch_ARFCN != value))
+				{
+					this._chd2_single_ch_ARFCN = value;
 				}
 			}
 		}
