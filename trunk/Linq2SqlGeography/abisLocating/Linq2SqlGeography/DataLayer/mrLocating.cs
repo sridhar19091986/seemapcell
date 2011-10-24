@@ -31,6 +31,8 @@ namespace Linq2SqlGeography
             return neighcellgeog;
             //lgeo.Add(lc2.getCellGeo());
         }
+
+        // 这个方法暂时不用，分别入库
         public void getLocating()
         {
             foreach (var geog in listgeog)

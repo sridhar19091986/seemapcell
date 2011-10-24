@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppLayer\ExcuteSqlScript.cs" />
+    <Compile Include="AppLayer\UpdateServiceCell.cs" />
     <Compile Include="DataLayer\CellCoverage.cs" />
     <Compile Include="DataLayer\cellLocating.cs" />
     <Compile Include="DataLayer\HandleNeighbour.cs" />

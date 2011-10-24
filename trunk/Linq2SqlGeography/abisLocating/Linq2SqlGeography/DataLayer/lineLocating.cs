@@ -14,8 +14,15 @@ namespace Linq2SqlGeography
         private SqlGeometry mrPointsgeom = new SqlGeometry();
         private SqlGeometry mrLinesgeom = new SqlGeometry();
         private SqlGeography tsgeog = new SqlGeography();
-        private string pen = "Pen (1, 2,16711680)";    //???
-        private string events = "lineLocating";   //???
+
+        private string pen;
+        private int pencolor = 0;
+        private int redindex = 1;
+        private int greenindex = 1;
+        private int blueindex = 1;
+
+        private string events = "LineLocating";
+        private const string tableName = "LineLocating";
         private string sql;
         private SqlGeometry sgeom;
 
@@ -24,7 +31,14 @@ namespace Linq2SqlGeography
 
         public lineLocating()
         {
-            eventsLookup = dc.EventLocating.Where(e => e.events != this.events).ToLookup(e => e.events);
+
+            #region //这里用的是通用方法
+            ExcuteSqlScript es = new ExcuteSqlScript();
+            //es.insertSqltableIntoMapinfo(tableName);
+            es.createLocatingTable(tableName);
+            #endregion
+
+            eventsLookup = dc.EventLocating.ToLookup(e => e.events);
 
             eventsKey = eventsLookup.Select(e => e.Key);
 
@@ -33,55 +47,39 @@ namespace Linq2SqlGeography
                 foreach (var q in eventsLookup[p])
                 {
                     mrPointsgeom = mrPointsgeom.STUnion(q.SP_GEOMETRY);
+                    events = q.events;
                 }
 
-                //？需要先生成包络线，再求中心点，最后算点集合。
-                //？ 为何加了STBuffer(10)会有问题。
+                redindex++;
+                if (redindex > 255) redindex = 0;
+                pencolor = redindex * 65535 + greenindex * 256 + blueindex;
+                pen = "Pen (1, 2," + pencolor.ToString() + ")";
+
                 mrPointsgeom = mrPointsgeom.STConvexHull().STCentroid().STPointN(1);
+
+                if (!mrPointsgeom.STIsValid()) continue;
+
                 tsgeog = SqlGeography.STGeomFromWKB(mrPointsgeom.STAsBinary(), 4326);
-                tsgeog = SqlGeography.Point((double)tsgeog.Lat,(double)tsgeog.Long, 4326);
-                tsgeog=tsgeog.STBuffer(1);
+
+                if (tsgeog.IsNull) continue;
+
+                tsgeog = SqlGeography.Point((double)tsgeog.Lat, (double)tsgeog.Long, 4326);
+                tsgeog = tsgeog.STBuffer(1);
 
                 mrLinesgeom = SqlGeometry.STGeomFromWKB(tsgeog.STAsBinary(), 4326);
 
                 Console.WriteLine(mrLinesgeom.STArea());
                 insertLocating2Sql(events, pen, mrLinesgeom);
             }
-
-            //不知道怎么划线，暂时使用手工定位的方式，点多自然成线
-
-            // mrline = SqlGeometry.STLineFromWKB(mrline.STAsBinary(), 4326);
-
-
         }
 
-        //2011.10.21 需要解决的7个问题？
-
-
-        //1.需要重新生成到新的table？ google earth 上识别  ?  增加table 字段？ 增加table,
-
-        //2.切换，变换小区的问题 ？？ 这个直接在m-trix切除？ 增加 ho stop?
-
-        //3.style
-
-        //3.brush color 渐进
-
-        //4.color 递归   red blue green   value ++  
-
-        //5.ref penson 直接修改对象
-
-        //6.enumerable.range(1,10) 生成随机序列？
-
-        //7.sptial 脚本的问题 ？
 
         private void insertLocating2Sql(string events, string pen, SqlGeometry sgeo)
         {
             sgeom = SqlGeometry.STGeomFromWKB(sgeo.STAsBinary(), 4326);
-            sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
+            sql = @" INSERT INTO [" + tableName + @"]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                 + events + "','" + pen + "','" + sgeom + "')";
             dc.ExecuteCommand(sql);
-
-            Console.WriteLine(sql);
         }
     }
 }
