@@ -38,17 +38,18 @@ namespace Linq2SqlGeography
             HandleNeighbour handleNeigh = new HandleNeighbour();
             List<mrNeighbour> mrNeighsNew = new List<mrNeighbour>();
 
-            abis_mrr = dc.Abis_MR.Where(e => e.bsic5 > 0);
+            abis_mrr = dc.Abis_MR.Where(e=>e.cell.Length>2).Where(e => e.bsic5 > 0);
 
             foreach (var mr in abis_mrr)
             {
-                mrNeighsNew = handleNeigh.getNeighList(handleNeigh.setNeighList(mr));
+                mrNeighsNew = handleNeigh.getNeighList(handleNeigh.setNeighList(mr), true);
                 mrLocating mrlocating = new mrLocating();
                 //pencolor = HandleTable.getRandomPenColor(false,false,false);
                 SqlGeography tempgeog = new SqlGeography();
 
                 //以时间点做索引比较妥当？
-                events = mr.Measurement_Report_time.ToString();
+                if (mr.Measurement_Report_time != null)
+                    events = mr.Measurement_Report_time.ToString();
 
                 foreach (var n in mrNeighsNew)
                 {

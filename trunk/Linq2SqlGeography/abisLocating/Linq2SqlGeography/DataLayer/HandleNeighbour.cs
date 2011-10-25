@@ -102,7 +102,7 @@ namespace Linq2SqlGeography
 
         //考虑用ref ，避免在内存生成多余的对象 ,但是似乎是一个集合，在迭代过程中不能修改？？
 
-        public List<mrNeighbour> getNeighList(List<mrNeighbour> mrNeighs)
+        public List<mrNeighbour> getNeighList(List<mrNeighbour> mrNeighs, bool bsic_conversion)
         {
             List<mrNeighbour> mrNeighsNew = new List<mrNeighbour>();
             foreach (var n in mrNeighs)
@@ -110,7 +110,10 @@ namespace Linq2SqlGeography
                 mrNeighbour mn = new mrNeighbour();
 
                 tBCCH = getNeighBCCH(n.ServiceCell, n.nBaIndex);  // 通过计算获取到邻小区 BCCH
-                tBSIC = getNeighBSIC(n.nBSIC);
+                if (bsic_conversion)
+                    tBSIC = getNeighBSIC(n.nBSIC);
+                else
+                    tBSIC = n.nBSIC;
 
                 Console.WriteLine("bcch.....{0}..", tBCCH);
 
@@ -162,9 +165,10 @@ namespace Linq2SqlGeography
         {
             List<mrNeighbour> mrneighs = new List<mrNeighbour>();
             powercontrol = 0;
+            if(mr.bs_power !=null)
             int.TryParse(mr.bs_power.Replace("Pn", ""), out powercontrol);  //功率去掉pn即可
             //服务小区只记录功率控制和由dtx转换的接受电平
-            if (mr.dtx_used == "Set")
+            if (mr.dtx_used == "Set" || mr.rxlev_full_serv_cell ==null )
             {
                 mrNeighbour scell = new mrNeighbour(mr.cell, (int)mr.rxlev_sub_serv_cell - 110, -1, -1, powercontrol);
                 mrneighs.Add(scell);

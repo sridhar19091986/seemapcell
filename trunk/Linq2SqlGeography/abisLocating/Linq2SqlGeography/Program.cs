@@ -27,7 +27,7 @@ namespace Linq2SqlGeography
 
             //cellLocating cl = new cellLocating();
 
-           //pointLocating pl = new pointLocating();
+           pointLocating pl = new pointLocating();
 
 
             lineLocating ll = new lineLocating();
