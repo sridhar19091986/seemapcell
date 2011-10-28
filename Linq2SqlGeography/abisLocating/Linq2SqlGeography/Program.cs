@@ -22,16 +22,16 @@ namespace Linq2SqlGeography
             //dc.ExecuteCommand(sql);
 
             //UpdateServiceCell usc = new UpdateServiceCell();
-            
+
             //通过m-trix导入数据，生成弱覆盖路线图？？？？？
 
             //cellLocating cl = new cellLocating();
 
-           pointLocating pl = new pointLocating();
+            pointLocating pl = new pointLocating();
 
 
             lineLocating ll = new lineLocating();
-         
+
 
             //getLocating();
             //getSectorCoverage();

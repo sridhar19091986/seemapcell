@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.MCOMNEIGH" Member="MCOMNEIGH">
+    <Type Name="MCOMNEIGH">
+      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ncell" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITE" Member="SITE">
+    <Type Name="SITE">
+      <Column Name="msc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="bsc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="cell_name" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="longitude" Type="System.Decimal" DbType="Decimal(11,6)" CanBeNull="true" />
+      <Column Name="latitude" Type="System.Decimal" DbType="Decimal(11,6)" CanBeNull="true" />
+      <Column Name="band" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arfcn" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="height" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="dir" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="tilt" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="ant_bw" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="power" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ant_gain" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ant_type" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ant_size" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MCOMCARRIER" Member="MCOMCARRIER">
+    <Type Name="MCOMCARRIER">
+      <Column Name="Cell" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="LAI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="CI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="BCCH" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BSIC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="TCH" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="HOP" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="HSN" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(10,6)" CanBeNull="true" />
+      <Column Name="Dir" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ant_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Font_size" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Abis_Ho" Member="Abis_Ho">
+    <Type Name="Abis_Ho">
+      <Column Name="FileNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BeginFrameNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[PacketTime(ms)]" Member="PacketTime_ms_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DumpFor" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Handover_Command" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Handover_Command_time" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Handover_Command_MsgType" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Handover_Command_RepeatCounter" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ncc" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="bcc" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="bcch_arfcn" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="chd2_single_ch_ARFCN" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Abis_MR" Member="Abis_MR">
+    <Type Name="Abis_MR">
+      <Column Name="FileNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BeginFrameNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PacketTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[PacketTime(ms)]" Member="PacketTime_ms_" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DumpFor" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Measurement_Report" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Measurement_Report_time" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cell" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bs_power" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ms_power" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="act_ta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dtx_used" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="rxlev_full_serv_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev_sub_serv_cell" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bsic5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bcch5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rxlev5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

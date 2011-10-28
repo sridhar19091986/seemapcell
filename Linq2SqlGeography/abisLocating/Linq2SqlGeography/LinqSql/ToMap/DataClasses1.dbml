@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.EventLocating" Member="EventLocating">
+    <Type Name="EventLocating">
+      <Column Name="events" Storage="_SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CellTracing" Member="CellTracing">
+    <Type Name="CellTracing">
+      <Column Name="cell" Storage="_SiteName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
