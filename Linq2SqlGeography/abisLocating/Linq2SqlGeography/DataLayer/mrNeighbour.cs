@@ -11,13 +11,13 @@ namespace Linq2SqlGeography
 
     public class mrNeighbour
     {
-        public string ServiceCell;
+        public string ServiceCell = null;
         public string NeighCell = null;
-        public int nBaIndex;
-        public string nBCCH;
-        public int nBSIC;
-        public int rxLev;
-        public int powerControl;
+        public int nBaIndex = -1;
+        public string nBCCH = null;
+        public int nBSIC = -1;
+        public int rxLev = -1;
+        public int powerControl = -1;
         public mrNeighbour(string serviceCell, int rxLev, int BaIndex, int nbsic, int powerControl)
         {
             this.ServiceCell = serviceCell;

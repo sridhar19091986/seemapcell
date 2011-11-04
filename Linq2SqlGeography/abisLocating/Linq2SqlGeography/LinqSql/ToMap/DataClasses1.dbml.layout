@@ -14,5 +14,11 @@
         <elementListCompartment Id="1844cd85-797d-44ce-a550-43f904d54163" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.88834635416666674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="f05e7fae-5e4f-4a66-a799-9146f97fce82" absoluteBounds="4.5, 2.625, 2, 1.4483463541666668">
+      <DataClassMoniker Name="/DataClasses1DataContext/CELLTRACINGqq" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9811db45-7c21-406f-b21e-aeddd5fd4e7c" absoluteBounds="4.515, 3.085, 1.9700000000000002, 0.88834635416666674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

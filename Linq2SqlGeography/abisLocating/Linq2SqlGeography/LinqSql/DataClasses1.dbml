@@ -1,3 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialJiangmeng" Class="DataClasses2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialJiangmeng;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
-</Database>

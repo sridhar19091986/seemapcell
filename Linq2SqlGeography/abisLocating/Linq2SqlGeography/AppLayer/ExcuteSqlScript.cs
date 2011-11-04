@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+//using Linq2SqlGeography.LinqSql;
 using System.Text.RegularExpressions;
+//using Linq2SqlGeography.LinqSql.FromAbis;
+//using Linq2SqlGeography.LinqSql.FromMap;
+//using Linq2SqlGeography.LinqSql.FromOSS;
+using Linq2SqlGeography.LinqSql.ToMap;
 
 namespace Linq2SqlGeography
 {
     public class ExcuteSqlScript
     {
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private DataClasses1DataContext dc = new DataClasses1DataContext();
 
         public ExcuteSqlScript()
         {

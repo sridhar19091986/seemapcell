@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+//using Linq2SqlGeography.LinqSql;
 using System.Text.RegularExpressions;
+//using Linq2SqlGeography.LinqSql.FromAbis;
+//using Linq2SqlGeography.LinqSql.FromMap;
+using Linq2SqlGeography.LinqSql.FromOSS;
+using Linq2SqlGeography.LinqSql.ToMap;
 
 namespace Linq2SqlGeography
 {
@@ -14,7 +18,8 @@ namespace Linq2SqlGeography
         private SqlGeometry sgeom = new SqlGeometry();
         private SqlGeography sgeog = new SqlGeography();
         private string sql = null;
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext dc_oss = new Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext();
+        private Linq2SqlGeography.LinqSql.ToMap.DataClasses1DataContext dc_tmap =new Linq2SqlGeography.LinqSql.ToMap.DataClasses1DataContext();
 
         public cellLocating()
         {
@@ -24,10 +29,10 @@ namespace Linq2SqlGeography
         private void getSectorCoverage()
         {
 
-            dc.ExecuteCommand(HandleTable.createCellTracing);
-            Console.WriteLine(dc.SITE.Count());
+            dc_tmap.ExecuteCommand(HandleTable.createCellTracing);
+            Console.WriteLine(dc_oss.SITE.Count());
 
-            foreach (var site in dc.SITE)
+            foreach (var site in dc_oss.SITE)
             {
 
                 if (site.latitude == null) continue;
@@ -51,7 +56,7 @@ namespace Linq2SqlGeography
                 ct.SP_GEOMETRY = sgeom;
                 sql = @" INSERT INTO [CELLTRACING]([cell],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                     + ct.cell + "','" + ct.MI_STYLE + "','" + ct.SP_GEOMETRY + "')";
-                dc.ExecuteCommand(sql);
+                dc_tmap.ExecuteCommand(sql);
 
             }
         }

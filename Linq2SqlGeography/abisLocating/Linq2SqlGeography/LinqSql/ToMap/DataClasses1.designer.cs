@@ -22,6 +22,7 @@ namespace Linq2SqlGeography.LinqSql.ToMap
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SqlSpatialJiangmeng")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace Linq2SqlGeography.LinqSql.ToMap
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public DataClasses1DataContext() : 
+				base(global::Linq2SqlGeography.Properties.Settings.Default.SqlSpatialTestConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
@@ -68,6 +75,14 @@ namespace Linq2SqlGeography.LinqSql.ToMap
 			get
 			{
 				return this.GetTable<CellTracing>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CELLTRACINGqq> CELLTRACINGqq
+		{
+			get
+			{
+				return this.GetTable<CELLTRACINGqq>();
 			}
 		}
 	}
@@ -219,6 +234,87 @@ namespace Linq2SqlGeography.LinqSql.ToMap
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", UpdateCheck=UpdateCheck.Never)]
 		public Microsoft.SqlServer.Types.SqlGeometry SP_GEOMETRY
+		{
+			get
+			{
+				return this._SP_GEOMETRY;
+			}
+			set
+			{
+				if ((this._SP_GEOMETRY != value))
+				{
+					this._SP_GEOMETRY = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CELLTRACINGqq")]
+	public partial class CELLTRACINGqq
+	{
+		
+		private string _SiteName;
+		
+		private string _MI_STYLE;
+		
+		private int _MI_PRINX;
+		
+		private System.Data.Linq.Binary _SP_GEOMETRY;
+		
+		public CELLTRACINGqq()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SiteName", DbType="VarChar(30)")]
+		public string SiteName
+		{
+			get
+			{
+				return this._SiteName;
+			}
+			set
+			{
+				if ((this._SiteName != value))
+				{
+					this._SiteName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_STYLE", DbType="VarChar(254)")]
+		public string MI_STYLE
+		{
+			get
+			{
+				return this._MI_STYLE;
+			}
+			set
+			{
+				if ((this._MI_STYLE != value))
+				{
+					this._MI_STYLE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MI_PRINX", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int MI_PRINX
+		{
+			get
+			{
+				return this._MI_PRINX;
+			}
+			set
+			{
+				if ((this._MI_PRINX != value))
+				{
+					this._MI_PRINX = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SP_GEOMETRY", DbType="VarBinary(1)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary SP_GEOMETRY
 		{
 			get
 			{

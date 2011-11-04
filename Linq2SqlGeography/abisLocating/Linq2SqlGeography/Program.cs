@@ -18,24 +18,37 @@ namespace Linq2SqlGeography
         {
 
             //string sql = "UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = 'JMJZTG1'";
-            //DataClasses2DataContext dc = new DataClasses2DataContext();
+            //DataClasses1DataContext dc = new DataClasses1DataContext();
             //dc.ExecuteCommand(sql);
 
-            //UpdateServiceCell usc = new UpdateServiceCell();
+            //起始小区？
+
+            //UpdateServiceCell usc = new UpdateServiceCell("JMJDEY1");
+
+            UpdateServiceCell usc = new UpdateServiceCell("JMJJHJ1");
 
             //通过m-trix导入数据，生成弱覆盖路线图？？？？？
 
-            //cellLocating cl = new cellLocating();
+            //小区覆盖分析
 
+
+           // cellLocating cl = new cellLocating();
+
+            //mr服务小区和邻小区分析
             pointLocating pl = new pointLocating();
 
-
+            //mr位置分析
             lineLocating ll = new lineLocating();
 
 
             //getLocating();
             //getSectorCoverage();
             Console.ReadKey();
+
+            //主要存在的问题，ba丢失，定位不准，从si消息中获取ba表，但是m没解码？？？？？？
+
+            //天线高度和经纬度的更新的问题？？？？？？
+
         }
     }
 }

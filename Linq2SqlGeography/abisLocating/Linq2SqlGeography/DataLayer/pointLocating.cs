@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.FromAbis;
 using System.Text.RegularExpressions;
 
 namespace Linq2SqlGeography
@@ -14,7 +14,7 @@ namespace Linq2SqlGeography
         private int pencolor = 0;
 
         private int redindex = 1;
-        private int greenindex = 1;      
+        private int greenindex = 1;
         private int blueindex = 1;
 
         private IEnumerable<Abis_MR> abis_mrr;
@@ -23,7 +23,7 @@ namespace Linq2SqlGeography
         //private SqlGeography sgeog;
         private SqlGeometry sgeom;
         private string sql;
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private DataClasses1DataContext dc = new DataClasses1DataContext();
 
 
         public pointLocating()
@@ -38,7 +38,9 @@ namespace Linq2SqlGeography
             HandleNeighbour handleNeigh = new HandleNeighbour();
             List<mrNeighbour> mrNeighsNew = new List<mrNeighbour>();
 
-            abis_mrr = dc.Abis_MR.Where(e=>e.cell.Length>2).Where(e => e.bsic5 > 0);
+            //abis_mrr = dc.Abis_MR.Where(e=>e.cell.Length>2).Where(e => e.bsic5 > 0);
+
+            abis_mrr = dc.Abis_MR;
 
             foreach (var mr in abis_mrr)
             {
@@ -53,7 +55,7 @@ namespace Linq2SqlGeography
 
                 foreach (var n in mrNeighsNew)
                 {
-                    if (n.nBaIndex == -1 && n.nBSIC == -1)
+                    if (n.nBaIndex == -1 || n.nBSIC == -1)
                     {
                         //服务小区用红色标识吧！
                         // Red: 16711680
@@ -77,9 +79,16 @@ namespace Linq2SqlGeography
                         {
                             tempgeog = mrlocating.nLocating(n.NeighCell, n.rxLev, n.powerControl); //邻小区
                             insertLocatingGeo(events, pen, tempgeog);
+                            WriteConsole(n.ServiceCell, n.nBaIndex, n.nBCCH, n.nBSIC, n.NeighCell, n.rxLev, n.powerControl);
                         }
-                        Console.WriteLine("邻小区：{0}...{1}...{2}", n.NeighCell, n.rxLev, n.powerControl);
+                        else
+                        {
+                            WriteConsole(n.ServiceCell, n.nBaIndex, n.nBCCH, n.nBSIC, "<><><>lost neighbour<><><>", n.rxLev, n.powerControl);
+                        }
+                       // Console.WriteLine("邻小区：{0}...{1}...{2}", n.NeighCell, n.rxLev, n.powerControl);
+                      
                     }
+                    //Console.ReadKey();
                 }
 
             }
@@ -91,6 +100,17 @@ namespace Linq2SqlGeography
             sql = @" INSERT INTO [EventLocating]([events],[MI_STYLE],[SP_GEOMETRY]) VALUES  ('"
                 + events + "','" + pen + "','" + sgeom + "')";
             dc.ExecuteCommand(sql);
+        }
+        private void WriteConsole(params object[] message)
+        {
+            foreach (var m in message)
+            {
+                if (m != null)
+                {
+                    Console.Write(m.GetType()); Console.Write(".."); Console.Write(m); Console.Write("..");
+                }
+            }
+            Console.WriteLine();
         }
     }
 }

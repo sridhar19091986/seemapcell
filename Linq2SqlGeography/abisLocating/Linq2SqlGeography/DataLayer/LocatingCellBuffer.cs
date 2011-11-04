@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.ToMap;
+using Linq2SqlGeography.LinqSql.FromOSS;
 using System.Text.RegularExpressions;
 
 namespace Linq2SqlGeography
 {
     class LocatingCellBuffer
     {
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext dc_oss = new Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext();
+        private Linq2SqlGeography.LinqSql.ToMap.DataClasses1DataContext dc_tmap = new Linq2SqlGeography.LinqSql.ToMap.DataClasses1DataContext();
         private OkumuraHata okumh = new OkumuraHata();
         private double mobileHight = 1.5;    //移动台高度
 
@@ -39,7 +41,7 @@ namespace Linq2SqlGeography
         }
         public SqlGeography getCellGeo()
         {
-            site = dc.SITE.Where(e => e.cell == this.sCell).FirstOrDefault();
+            site = dc_oss.SITE.Where(e => e.cell == this.sCell).FirstOrDefault();
             if (site == null) return SqlGeography.Point(0, 0, 4236);
             sitesgeog = SqlGeography.Point((double)site.latitude, (double)site.longitude, 4326);
             double.TryParse(site.ant_gain, out sAntGain);
@@ -50,7 +52,7 @@ namespace Linq2SqlGeography
 
             okumbuffersgeog = sitesgeog.STBuffer(sPathLoss * 1000);
 
-            celltracing = dc.CellTracing.Where(e => e.cell == sCell).FirstOrDefault();
+            celltracing = dc_tmap.CellTracing.Where(e => e.cell == sCell).FirstOrDefault();
 
             //if (abc == null) return ngeo;
 

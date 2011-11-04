@@ -22,6 +22,7 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SqlSpatialJiangmeng")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,6 +37,12 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
     partial void UpdateMCOMCARRIER(MCOMCARRIER instance);
     partial void DeleteMCOMCARRIER(MCOMCARRIER instance);
     #endregion
+		
+		public DataClasses1DataContext() : 
+				base(global::Linq2SqlGeography.Properties.Settings.Default.SqlSpatialTestConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
@@ -69,19 +76,19 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 			}
 		}
 		
-		public System.Data.Linq.Table<SITE> SITE
-		{
-			get
-			{
-				return this.GetTable<SITE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MCOMCARRIER> MCOMCARRIER
 		{
 			get
 			{
 				return this.GetTable<MCOMCARRIER>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SITE> SITE
+		{
+			get
+			{
+				return this.GetTable<SITE>();
 			}
 		}
 	}
@@ -196,303 +203,6 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SITE")]
-	public partial class SITE
-	{
-		
-		private string _msc;
-		
-		private string _bsc;
-		
-		private string _cell;
-		
-		private string _cell_name;
-		
-		private System.Nullable<decimal> _longitude;
-		
-		private System.Nullable<decimal> _latitude;
-		
-		private int _band;
-		
-		private System.Nullable<decimal> _arfcn;
-		
-		private string _height;
-		
-		private System.Nullable<decimal> _dir;
-		
-		private System.Nullable<decimal> _tilt;
-		
-		private System.Nullable<int> _ant_bw;
-		
-		private System.Nullable<int> _power;
-		
-		private string _ant_gain;
-		
-		private string _ant_type;
-		
-		private System.Nullable<int> _ant_size;
-		
-		public SITE()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_msc", DbType="NVarChar(30)")]
-		public string msc
-		{
-			get
-			{
-				return this._msc;
-			}
-			set
-			{
-				if ((this._msc != value))
-				{
-					this._msc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsc", DbType="NVarChar(30)")]
-		public string bsc
-		{
-			get
-			{
-				return this._bsc;
-			}
-			set
-			{
-				if ((this._bsc != value))
-				{
-					this._bsc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell", DbType="NVarChar(30)")]
-		public string cell
-		{
-			get
-			{
-				return this._cell;
-			}
-			set
-			{
-				if ((this._cell != value))
-				{
-					this._cell = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell_name", DbType="VarChar(21)")]
-		public string cell_name
-		{
-			get
-			{
-				return this._cell_name;
-			}
-			set
-			{
-				if ((this._cell_name != value))
-				{
-					this._cell_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_longitude", DbType="Decimal(11,6)")]
-		public System.Nullable<decimal> longitude
-		{
-			get
-			{
-				return this._longitude;
-			}
-			set
-			{
-				if ((this._longitude != value))
-				{
-					this._longitude = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_latitude", DbType="Decimal(11,6)")]
-		public System.Nullable<decimal> latitude
-		{
-			get
-			{
-				return this._latitude;
-			}
-			set
-			{
-				if ((this._latitude != value))
-				{
-					this._latitude = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_band", DbType="Int NOT NULL")]
-		public int band
-		{
-			get
-			{
-				return this._band;
-			}
-			set
-			{
-				if ((this._band != value))
-				{
-					this._band = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_arfcn", DbType="Decimal(3,0)")]
-		public System.Nullable<decimal> arfcn
-		{
-			get
-			{
-				return this._arfcn;
-			}
-			set
-			{
-				if ((this._arfcn != value))
-				{
-					this._arfcn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_height", DbType="VarChar(3)")]
-		public string height
-		{
-			get
-			{
-				return this._height;
-			}
-			set
-			{
-				if ((this._height != value))
-				{
-					this._height = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dir", DbType="Decimal(3,0)")]
-		public System.Nullable<decimal> dir
-		{
-			get
-			{
-				return this._dir;
-			}
-			set
-			{
-				if ((this._dir != value))
-				{
-					this._dir = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tilt", DbType="Decimal(3,0)")]
-		public System.Nullable<decimal> tilt
-		{
-			get
-			{
-				return this._tilt;
-			}
-			set
-			{
-				if ((this._tilt != value))
-				{
-					this._tilt = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_bw", DbType="Int")]
-		public System.Nullable<int> ant_bw
-		{
-			get
-			{
-				return this._ant_bw;
-			}
-			set
-			{
-				if ((this._ant_bw != value))
-				{
-					this._ant_bw = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_power", DbType="Int")]
-		public System.Nullable<int> power
-		{
-			get
-			{
-				return this._power;
-			}
-			set
-			{
-				if ((this._power != value))
-				{
-					this._power = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_gain", DbType="VarChar(3)")]
-		public string ant_gain
-		{
-			get
-			{
-				return this._ant_gain;
-			}
-			set
-			{
-				if ((this._ant_gain != value))
-				{
-					this._ant_gain = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_type", DbType="VarChar(15)")]
-		public string ant_type
-		{
-			get
-			{
-				return this._ant_type;
-			}
-			set
-			{
-				if ((this._ant_type != value))
-				{
-					this._ant_type = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_size", DbType="Int")]
-		public System.Nullable<int> ant_size
-		{
-			get
-			{
-				return this._ant_size;
-			}
-			set
-			{
-				if ((this._ant_size != value))
-				{
-					this._ant_size = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MCOMCARRIER")]
 	public partial class MCOMCARRIER : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -507,7 +217,7 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 		
 		private string _CI;
 		
-		private System.Nullable<short> _BCCH;
+		private string _BCCH;
 		
 		private string _BSIC;
 		
@@ -545,7 +255,7 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
     partial void OnLAIChanged();
     partial void OnCIChanging(string value);
     partial void OnCIChanged();
-    partial void OnBCCHChanging(System.Nullable<short> value);
+    partial void OnBCCHChanging(string value);
     partial void OnBCCHChanged();
     partial void OnBSICChanging(string value);
     partial void OnBSICChanged();
@@ -658,8 +368,8 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BCCH", DbType="SmallInt")]
-		public System.Nullable<short> BCCH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BCCH", DbType="VarChar(6)")]
+		public string BCCH
 		{
 			get
 			{
@@ -935,6 +645,303 @@ namespace Linq2SqlGeography.LinqSql.FromOSS
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SITE")]
+	public partial class SITE
+	{
+		
+		private string _msc;
+		
+		private string _bsc;
+		
+		private string _cell;
+		
+		private string _cell_name;
+		
+		private System.Nullable<decimal> _longitude;
+		
+		private System.Nullable<decimal> _latitude;
+		
+		private int _band;
+		
+		private System.Nullable<decimal> _arfcn;
+		
+		private string _height;
+		
+		private System.Nullable<decimal> _dir;
+		
+		private System.Nullable<decimal> _tilt;
+		
+		private System.Nullable<int> _ant_bw;
+		
+		private System.Nullable<int> _power;
+		
+		private string _ant_gain;
+		
+		private string _ant_type;
+		
+		private System.Nullable<int> _ant_size;
+		
+		public SITE()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_msc", DbType="NVarChar(30)")]
+		public string msc
+		{
+			get
+			{
+				return this._msc;
+			}
+			set
+			{
+				if ((this._msc != value))
+				{
+					this._msc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bsc", DbType="NVarChar(30)")]
+		public string bsc
+		{
+			get
+			{
+				return this._bsc;
+			}
+			set
+			{
+				if ((this._bsc != value))
+				{
+					this._bsc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell", DbType="NVarChar(30)")]
+		public string cell
+		{
+			get
+			{
+				return this._cell;
+			}
+			set
+			{
+				if ((this._cell != value))
+				{
+					this._cell = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cell_name", DbType="NVarChar(90)")]
+		public string cell_name
+		{
+			get
+			{
+				return this._cell_name;
+			}
+			set
+			{
+				if ((this._cell_name != value))
+				{
+					this._cell_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_longitude", DbType="Decimal(11,6)")]
+		public System.Nullable<decimal> longitude
+		{
+			get
+			{
+				return this._longitude;
+			}
+			set
+			{
+				if ((this._longitude != value))
+				{
+					this._longitude = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_latitude", DbType="Decimal(11,6)")]
+		public System.Nullable<decimal> latitude
+		{
+			get
+			{
+				return this._latitude;
+			}
+			set
+			{
+				if ((this._latitude != value))
+				{
+					this._latitude = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_band", DbType="Int NOT NULL")]
+		public int band
+		{
+			get
+			{
+				return this._band;
+			}
+			set
+			{
+				if ((this._band != value))
+				{
+					this._band = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_arfcn", DbType="Decimal(3,0)")]
+		public System.Nullable<decimal> arfcn
+		{
+			get
+			{
+				return this._arfcn;
+			}
+			set
+			{
+				if ((this._arfcn != value))
+				{
+					this._arfcn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_height", DbType="VarChar(3)")]
+		public string height
+		{
+			get
+			{
+				return this._height;
+			}
+			set
+			{
+				if ((this._height != value))
+				{
+					this._height = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dir", DbType="Decimal(3,0)")]
+		public System.Nullable<decimal> dir
+		{
+			get
+			{
+				return this._dir;
+			}
+			set
+			{
+				if ((this._dir != value))
+				{
+					this._dir = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tilt", DbType="Decimal(3,0)")]
+		public System.Nullable<decimal> tilt
+		{
+			get
+			{
+				return this._tilt;
+			}
+			set
+			{
+				if ((this._tilt != value))
+				{
+					this._tilt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_bw", DbType="Int")]
+		public System.Nullable<int> ant_bw
+		{
+			get
+			{
+				return this._ant_bw;
+			}
+			set
+			{
+				if ((this._ant_bw != value))
+				{
+					this._ant_bw = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_power", DbType="Int")]
+		public System.Nullable<int> power
+		{
+			get
+			{
+				return this._power;
+			}
+			set
+			{
+				if ((this._power != value))
+				{
+					this._power = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_gain", DbType="VarChar(3)")]
+		public string ant_gain
+		{
+			get
+			{
+				return this._ant_gain;
+			}
+			set
+			{
+				if ((this._ant_gain != value))
+				{
+					this._ant_gain = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_type", DbType="VarChar(15)")]
+		public string ant_type
+		{
+			get
+			{
+				return this._ant_type;
+			}
+			set
+			{
+				if ((this._ant_type != value))
+				{
+					this._ant_type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ant_size", DbType="Int")]
+		public System.Nullable<int> ant_size
+		{
+			get
+			{
+				return this._ant_size;
+			}
+			set
+			{
+				if ((this._ant_size != value))
+				{
+					this._ant_size = value;
+				}
 			}
 		}
 	}

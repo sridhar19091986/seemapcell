@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.ToMap;
 using System.Text.RegularExpressions;
 
 namespace Linq2SqlGeography
 {
     public class lineLocating
     {
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private DataClasses1DataContext dc = new DataClasses1DataContext();
         private SqlGeometry mrPointsgeom = new SqlGeometry();
         private SqlGeometry mrLinesgeom = new SqlGeometry();
         private SqlGeography tsgeog = new SqlGeography();

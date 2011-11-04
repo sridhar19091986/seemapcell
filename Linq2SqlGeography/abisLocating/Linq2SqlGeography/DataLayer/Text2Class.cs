@@ -21,7 +21,7 @@ namespace Linq2SqlGeography
 
         private void StreamRead2Class()
         {
-            StreamReader sr = new StreamReader(@"D:\RLMFP");
+            StreamReader sr = new StreamReader(commonMethod.ba_filepath);
             //string line;
             while ((line = sr.ReadLine()) != null)
             {

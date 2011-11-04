@@ -22,6 +22,7 @@ namespace Linq2SqlGeography.LinqSql.FromAbis
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SqlSpatialJiangmeng")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace Linq2SqlGeography.LinqSql.FromAbis
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public DataClasses1DataContext() : 
+				base(global::Linq2SqlGeography.Properties.Settings.Default.SqlSpatialTestConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DataClasses1DataContext(string connection) : 
 				base(connection, mappingSource)
@@ -93,8 +100,6 @@ namespace Linq2SqlGeography.LinqSql.FromAbis
 		private string _Handover_Command_time;
 		
 		private string _Handover_Command_MsgType;
-		
-		private System.Nullable<int> _Handover_Command_RepeatCounter;
 		
 		private string _ncc;
 		
@@ -248,22 +253,6 @@ namespace Linq2SqlGeography.LinqSql.FromAbis
 				if ((this._Handover_Command_MsgType != value))
 				{
 					this._Handover_Command_MsgType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Handover_Command_RepeatCounter", DbType="Int")]
-		public System.Nullable<int> Handover_Command_RepeatCounter
-		{
-			get
-			{
-				return this._Handover_Command_RepeatCounter;
-			}
-			set
-			{
-				if ((this._Handover_Command_RepeatCounter != value))
-				{
-					this._Handover_Command_RepeatCounter = value;
 				}
 			}
 		}

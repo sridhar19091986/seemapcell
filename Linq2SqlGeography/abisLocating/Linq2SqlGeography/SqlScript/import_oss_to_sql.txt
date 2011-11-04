@@ -1,0 +1,33 @@
+﻿
+UPDATE [SqlSpatialJiangmeng].[dbo].[SITE]
+   SET 
+      [longitude] = CAST(bbb.Longitude as float),
+      [latitude] =CAST(bbb.Latitude as float),
+      [dir] = Cast(bbb.Dir as int)
+ from [SqlSpatialJiangmeng].[dbo].[MCOM2001Sitedata20111027] as bbb
+ WHERE [SqlSpatialJiangmeng].[dbo].[SITE].cell=bbb.Cell
+and charindex('/',bbb.Dir)=0
+and charindex('信源',bbb.Dir)=0
+and charindex('月',bbb.Dir)=0
+and charindex('室内',bbb.Dir)=0
+
+alter table SqlSpatialJiangmeng.[dbo].[MCOMCARRIER] alter column BCCH varchar(6)
+go
+UPDATE [SqlSpatialJiangmeng].[dbo].[MCOMCARRIER]
+   SET 
+      -- Longitude=CAST(bbb.LAI as decimal(10,6))
+      --,Latitude=CAST(bbb.CI as decimal)
+      --[BCCH] = convert(int,isnull(bbb.BCCH,0))
+      [BCCH] = cast(bbb.BCCH as varchar(6)),      
+      [BSIC] = cast(bbb.BSIC as varchar(4))
+FROM [SqlSpatialJiangmeng].[dbo].[MCOMCarrierData20111027] as bbb
+WHERE  ltrim(rtrim([SqlSpatialJiangmeng].[dbo].[MCOMCARRIER].Cell))=ltrim(rtrim(bbb.CELL))
+and bbb.BCCH is not null
+
+alter table SqlSpatialJiangmeng.[dbo].[MCOMNEIGH] alter column Cell nvarchar(255)
+alter table SqlSpatialJiangmeng.[dbo].[MCOMNEIGH] alter column ncell nvarchar(max)
+go
+INSERT INTO [SqlSpatialJiangmeng].[dbo].[MCOMNEIGH]
+           ([Cell],[ncell])
+select cell,ncell from  [SqlSpatialJiangmeng].[dbo].[MCOMNCELL20111027]
+GO
