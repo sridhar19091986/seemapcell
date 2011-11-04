@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.FromAbis;
+using Linq2SqlGeography.LinqSql.FromMap;
+using Linq2SqlGeography.LinqSql.FromOSS;
+using Linq2SqlGeography.LinqSql.ToMap;
 
 
 namespace Linq2SqlGeography
@@ -28,6 +31,7 @@ namespace Linq2SqlGeography
         {
         }
 
+        private double tilt;
         public SqlGeography MergePoint(SITE site)
         {
             //SectorCovarage(6, (double)site.Height, (double)site.Tilt);
@@ -40,6 +44,8 @@ namespace Linq2SqlGeography
             this.power = (double)site.power;
             double.TryParse(site.ant_gain, out antGain);
             double.TryParse(site.height, out height);
+            double.TryParse(site.tilt.ToString(), out this.tilt);
+
             //this.antGain = (double)site.ant_gain;
             pathLoss = this.power + this.antGain - this.pre_rxlev;
 
@@ -51,7 +57,7 @@ namespace Linq2SqlGeography
             sc.Longtitude = (double)site.longitude;
             //Console.WriteLine("{0}...", sc.SectorPoint.Long);
             sc.Direction = (double)site.dir;
-            sc.DownTilt = (double)site.tilt;
+            sc.DownTilt = this.tilt;
             //sc.SectorPoint = SqlGeography.STGeomFromWKB(site.SP_GEOMETRY.STAsBinary(), 4326);
             sc.HorizontalBeamwidth = (double)site.ant_bw;
             sc.VerticalBeamwidth = verticalBeamwidth;

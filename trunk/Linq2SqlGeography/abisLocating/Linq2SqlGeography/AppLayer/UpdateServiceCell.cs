@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Types;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.FromAbis;
 using System.Text.RegularExpressions;
 
 namespace Linq2SqlGeography
@@ -11,7 +11,7 @@ namespace Linq2SqlGeography
     public class UpdateServiceCell
     {
         //private ILookup<string, MCOMCARRIER> Carriers;
-        private DataClasses2DataContext dc = new DataClasses2DataContext();
+        private DataClasses1DataContext dc = new DataClasses1DataContext();
         private string ServiceCell = "";
         private string TargetCell = "";
         private string sql = "";
@@ -24,8 +24,9 @@ namespace Linq2SqlGeography
         private IEnumerable<int?> filenums;
         private string neighcell;
 
-        public UpdateServiceCell()
+        public UpdateServiceCell(string ServiceCell)
         {
+            this.ServiceCell = ServiceCell;
             //Carriers = dc.MCOMCARRIER.ToLookup(e => e.BCCH.Value.ToString() + "-" + e.BSIC.Trim());
             updateServiceCell();
         }
@@ -55,7 +56,7 @@ namespace Linq2SqlGeography
             hotimes = dc.Abis_Ho.Where(e => e.FileNum == filenum).Select(e => e.PacketTime).Distinct().OrderBy(e => e.Value).ToList();
             hotimes.Add(DateTime.Now.AddDays(100));
             timeslen = hotimes.Count();
-            ServiceCell = "JMJZTG1";
+           
             if (timeslen == 1)
             {
                 sql = "UPDATE [SqlSpatialJiangmeng].[dbo].[Abis_MR] SET [cell] = '" + ServiceCell + "'"

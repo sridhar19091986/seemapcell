@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq;
 using System.Reflection;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.FromOSS;
 
 
 namespace Linq2SqlGeography
@@ -54,7 +54,7 @@ PRIMARY KEY CLUSTERED
             string createtable = linqTableClass.Name;
             //MessageBox.Show(createtable);
             //混淆以后反射名称被改变出现问题
-            using (DataClasses2DataContext localdb = new DataClasses2DataContext())
+            using (DataClasses1DataContext localdb = new DataClasses1DataContext())
             {
                 try
                 {

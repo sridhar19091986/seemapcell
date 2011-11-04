@@ -8,5 +8,11 @@
         <elementListCompartment Id="bc9fe8ee-08b5-4895-b2d2-e7d66e7175ab" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.88834635416666674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="3f647760-efed-4637-aadc-f2497b464b34" absoluteBounds="4.75, 2, 2, 1.4483463541666668">
+      <DataClassMoniker Name="/DataClasses1DataContext/城市内部主要交通干道abc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f018ee10-3a18-49be-bd89-9319525a350c" absoluteBounds="4.765, 2.46, 1.9700000000000002, 0.88834635416666674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

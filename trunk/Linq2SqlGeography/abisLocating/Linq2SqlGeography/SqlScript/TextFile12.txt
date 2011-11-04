@@ -1,6 +1,6 @@
 ﻿        private static void getSectorCoverage()
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+            DataClasses1DataContext dc = new DataClasses1DataContext();
             //dc.ExecuteCommand("delete  from  CELLTRACING");
             //HandleTable.CreateTable(typeof(CELLTRACING));
             dc.ExecuteCommand(HandleTable.crcelltracing);

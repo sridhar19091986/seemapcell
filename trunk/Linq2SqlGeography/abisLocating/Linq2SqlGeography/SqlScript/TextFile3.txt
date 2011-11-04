@@ -23,7 +23,7 @@ namespace Linq2SqlGeography
 
         private static void DisplayLiJiaoSite()
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+            DataClasses1DataContext dc = new DataClasses1DataContext();
             List<LiJiaoSite> lijiaosites = new List<LiJiaoSite>();
             Console.WriteLine(dc.MCOMSITE.Count());
           

@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.SqlServer.Types;
 using Linq2SqlGeography.LinqSql;
 using System.Text.RegularExpressions;
+using Linq2SqlGeography.LinqSql.FromOSS;
+using Linq2SqlGeography.LinqSql.FromAbis;
 
 namespace Linq2SqlGeography
 {
@@ -28,12 +30,13 @@ namespace Linq2SqlGeography
         // Define other methods and classes here
         public HandleNeighbour()
         {
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+            Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext dc 
+                = new Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext();
 
             //此处留意数据库中含有空格
 
             Neighbours = dc.MCOMNEIGH.ToLookup(e => e.Cell.Trim());
-            Carriers = dc.MCOMCARRIER.ToLookup(e => e.BCCH.Value.ToString() + "-" + e.BSIC.Trim());
+            Carriers = dc.MCOMCARRIER.ToLookup(e => e.BCCH + "-" + e.BSIC.Trim());
             //只用频率匹配
             //Carriers = dc.MCOMCARRIER.ToLookup(e => e.BCCH.Value.ToString());
             //尝试只用bsic匹配
@@ -47,8 +50,8 @@ namespace Linq2SqlGeography
             //if (BSIC == null) return null;
             //只用频率匹配
             //var bsiccells = Carriers[BCCH ].Select(e => e.Cell);
-            Console.WriteLine("bcch...{0}...bsic...{1}", BCCH, BSIC);
-            Console.WriteLine("{0}...{1}", bsiccells.Count(), bsiccells.FirstOrDefault());
+            //Console.WriteLine("bcch...{0}...bsic...{1}", BCCH, BSIC);
+            //Console.WriteLine("{0}...{1}", bsiccells.Count(), bsiccells.FirstOrDefault());
             var neighcells = Neighbours[ServiceCell].FirstOrDefault();
 
             //Console.WriteLine("{0}...{1}", neighcells.Cell, neighcells.ncell);
@@ -77,7 +80,7 @@ namespace Linq2SqlGeography
 
             int bccncc = Int32.Parse(Convert.ToString(BSIC, 8));
 
-            Console.WriteLine("bsic....{0}...bccncc....{1}", BSIC, bccncc);
+            //Console.WriteLine("bsic....{0}...bccncc....{1}", BSIC, bccncc);
 
             return bccncc;
         }
@@ -96,7 +99,7 @@ namespace Linq2SqlGeography
             if (baList.ba.Count() < BaIndex + 1) return null;
 
             bcch = baList.ba.ElementAt(baIndex);
-            Console.WriteLine("bcch.....{0}...index....{1}", bcch, baIndex);
+            //Console.WriteLine("bcch.....{0}...index....{1}", bcch, baIndex);
             return bcch;
         }
 
@@ -110,19 +113,21 @@ namespace Linq2SqlGeography
                 mrNeighbour mn = new mrNeighbour();
 
                 tBCCH = getNeighBCCH(n.ServiceCell, n.nBaIndex);  // 通过计算获取到邻小区 BCCH
+
+                //BSIC的编码是否需要转换，
                 if (bsic_conversion)
                     tBSIC = getNeighBSIC(n.nBSIC);
                 else
                     tBSIC = n.nBSIC;
 
-                Console.WriteLine("bcch.....{0}..", tBCCH);
+                //Console.WriteLine("bcch.....{0}..", tBCCH);
 
                 mn.ServiceCell = n.ServiceCell;
                 mn.NeighCell = getNeighCell(n.ServiceCell, tBCCH, tBSIC.ToString());  //通过计算获取到邻小区 名称
 
-                Console.WriteLine("neigbour cell....cell....{0}..bcch...{1}...bsic...{2}", mn.NeighCell, tBCCH, tBSIC);
+                //Console.WriteLine("neigbour cell....cell....{0}..bcch...{1}...bsic...{2}", mn.NeighCell, tBCCH, tBSIC);
 
-                Console.WriteLine("--------------------------");
+                //Console.WriteLine("--------------------------");
 
                 mn.nBaIndex = n.nBaIndex;
                 mn.nBCCH = tBCCH;

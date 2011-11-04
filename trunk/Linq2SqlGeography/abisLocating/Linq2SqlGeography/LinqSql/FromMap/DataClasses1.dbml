@@ -1,10 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SqlSpatialJiangmeng" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=SqlSpatialJiangmeng;Integrated Security=True" SettingsObjectName="Linq2SqlGeography.Properties.Settings" SettingsPropertyName="SqlSpatialTestConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.城市内部主要交通干道" Member="城市内部主要交通干道">
     <Type Name="城市内部主要交通干道">
       <Column Name="编码" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
       <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
       <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="SP_GEOMETRY" Type="Microsoft.SqlServer.Types.SqlGeometry" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.城市内部主要交通干道abc" Member="城市内部主要交通干道abc">
+    <Type Name="城市内部主要交通干道abc">
+      <Column Name="编码" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="MI_STYLE" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="MI_PRINX" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_GEOMETRY" Type="System.Data.Linq.Binary" DbType="VarBinary(1)" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

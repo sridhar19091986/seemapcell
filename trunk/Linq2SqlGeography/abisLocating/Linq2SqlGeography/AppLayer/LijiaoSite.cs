@@ -6,7 +6,8 @@ using Linq2SqlGeography;
 using Microsoft.SqlServer.Types;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
-using Linq2SqlGeography.LinqSql;
+using Linq2SqlGeography.LinqSql.FromMap;
+using Linq2SqlGeography.LinqSql.FromOSS;
 
 namespace Linq2SqlGeography
 {
@@ -17,7 +18,7 @@ namespace Linq2SqlGeography
     }
     public class GetLiJiaoSite
     {
-        public void getLiJiaoSite(DataClasses2DataContext dc, SITE site, List<LiJiaoSite> lijiaosites)
+        public void getLiJiaoSite(Linq2SqlGeography.LinqSql.FromMap.DataClasses1DataContext dc, SITE site, List<LiJiaoSite> lijiaosites)
         {
             var sp = SqlGeography.Point((double)site.latitude, (double)site.longitude, 4326);
             var sitebuffer = sp.STBuffer(50);   //类型转换以后没有问题，单位是米

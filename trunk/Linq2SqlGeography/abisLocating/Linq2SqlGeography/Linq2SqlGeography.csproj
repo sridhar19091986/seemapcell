@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="AppLayer\ExcuteSqlScript.cs" />
     <Compile Include="AppLayer\UpdateServiceCell.cs" />
+    <Compile Include="commonMethod.cs" />
     <Compile Include="DataLayer\CellCoverage.cs" />
     <Compile Include="DataLayer\cellLocating.cs" />
     <Compile Include="DataLayer\HandleNeighbour.cs" />
@@ -66,11 +67,6 @@
     <Compile Include="DataLayer\lineLocating.cs" />
     <Compile Include="DataLayer\pointLocating.cs" />
     <Compile Include="DataLayer\Text2Class.cs" />
-    <Compile Include="LinqSql\DataClasses1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </Compile>
     <Compile Include="LinqSql\FromAbis\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +105,7 @@
     <Content Include="SqlScript\TextFile13.txt" />
     <Content Include="SqlScript\TextFile14.txt" />
     <Content Include="SqlScript\TextFile15.txt" />
+    <Content Include="SqlScript\import_oss_to_sql.txt" />
     <Content Include="SqlScript\TextFile2.txt" />
     <Content Include="SqlScript\TextFile3.txt" />
     <Content Include="SqlScript\TextFile4.txt" />
@@ -144,22 +141,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="LinqSql\DataClasses1.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="LinqSql\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="LinqSql\ToMap\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>

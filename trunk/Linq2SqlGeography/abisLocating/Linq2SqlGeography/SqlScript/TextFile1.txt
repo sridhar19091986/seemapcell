@@ -11,7 +11,7 @@
             var result = pointStart.STDistance(pointEnd);
             Console.WriteLine("地理距离：" + result + "(米)");
 
-            DataClasses2DataContext dc = new DataClasses2DataContext();
+            DataClasses1DataContext dc = new DataClasses1DataContext();
 
     
             
