@@ -23,14 +23,14 @@ namespace Linq2SqlGeography
         private CellBA baList;  //ba表
 
         private string tBCCH = null;  //fequency 变量
-        private int tBSIC = 0;  
+        private int tBSIC = 0;
 
         private int powercontrol = 0;
 
         // Define other methods and classes here
         public HandleNeighbour()
         {
-            Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext dc 
+            Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext dc
                 = new Linq2SqlGeography.LinqSql.FromOSS.DataClasses1DataContext();
 
             //此处留意数据库中含有空格
@@ -165,26 +165,32 @@ namespace Linq2SqlGeography
 
         //直接从数据库提取下述数据生成事件的GIS定位？
 
+        //这里需要增加  TA 和 天线高度的控制 ，还有室内站，室外站 等等。
 
         public List<mrNeighbour> setNeighList(Abis_MR mr)
         {
             List<mrNeighbour> mrneighs = new List<mrNeighbour>();
             powercontrol = 0;
-            if(mr.bs_power !=null)
-            int.TryParse(mr.bs_power.Replace("Pn", ""), out powercontrol);  //功率去掉pn即可
+            if (mr.bs_power != null)
+                int.TryParse(mr.bs_power.Replace("Pn", ""), out powercontrol);  //功率去掉pn即可
+
             //服务小区只记录功率控制和由dtx转换的接受电平
-            if (mr.dtx_used == "Set" || mr.rxlev_full_serv_cell ==null )
-            {
-                mrNeighbour scell = new mrNeighbour(mr.cell, (int)mr.rxlev_sub_serv_cell - 110, -1, -1, powercontrol);
-                mrneighs.Add(scell);
-            }
-            else
-            {
-                mrNeighbour scell = new mrNeighbour(mr.cell, (int)mr.rxlev_full_serv_cell - 110, -1, -1, powercontrol);
-                mrneighs.Add(scell);
-            }
+
+            if (mr.act_ta <= 12)   //服务小区的TA值太大则剔除掉？？？ 13~17是直放站话务密集区域
+
+                if (mr.dtx_used == "Set" || mr.rxlev_full_serv_cell == null)
+                {
+                    mrNeighbour scell = new mrNeighbour(mr.cell, (int)mr.rxlev_sub_serv_cell - 110, -1, -1, powercontrol);
+                    mrneighs.Add(scell);
+                }
+                else
+                {
+                    mrNeighbour scell = new mrNeighbour(mr.cell, (int)mr.rxlev_full_serv_cell - 110, -1, -1, powercontrol);
+                    mrneighs.Add(scell);
+                }
 
             //邻小区不需要记录功率控制值，只需要测量的电平值即可
+
             if (mr.bsic0 != 0)
             {
                 mrNeighbour n0 = new mrNeighbour(mr.cell, (int)mr.rxlev0, (int)mr.bcch0, (int)mr.bsic0, 0);
