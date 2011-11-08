@@ -46,8 +46,15 @@ namespace Linq2SqlGeography
             {
                 foreach (var q in eventsLookup[p])
                 {
-                    mrPointsgeom = mrPointsgeom.STUnion(q.SP_GEOMETRY);
-                    events = q.events;
+                   // Console.WriteLine(".....{0}...{1}....{2}", q.events, 3 * Math.Pow(10, -8), q.SP_GEOMETRY.STArea());
+
+                    //这里剔除天线高度为0的小区，避免定位干扰？
+                    if (q.SP_GEOMETRY.STArea() >3 * Math.Pow(10, -8))
+                    {
+                        //Console.WriteLine("面接多少.....{0}....", q.SP_GEOMETRY.STArea());
+                        mrPointsgeom = mrPointsgeom.STUnion(q.SP_GEOMETRY);
+                        events = q.events;
+                    }
                 }
 
                 redindex++;

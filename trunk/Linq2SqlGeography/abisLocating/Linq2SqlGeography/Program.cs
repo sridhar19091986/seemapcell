@@ -23,9 +23,9 @@ namespace Linq2SqlGeography
 
             //起始小区？
 
-            //UpdateServiceCell usc = new UpdateServiceCell("JMJDEY1");
+            UpdateServiceCell usc = new UpdateServiceCell("JMJDEY1");
 
-            UpdateServiceCell usc = new UpdateServiceCell("JMJJHJ1");
+            //UpdateServiceCell usc = new UpdateServiceCell("JMJJHJ1");
 
             //通过m-trix导入数据，生成弱覆盖路线图？？？？？
 
