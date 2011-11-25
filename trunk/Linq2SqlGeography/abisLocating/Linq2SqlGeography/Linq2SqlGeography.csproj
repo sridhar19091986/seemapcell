@@ -67,25 +67,25 @@
     <Compile Include="DataLayer\lineLocating.cs" />
     <Compile Include="DataLayer\pointLocating.cs" />
     <Compile Include="DataLayer\Text2Class.cs" />
-    <Compile Include="LinqSql\FromAbis\DataClasses1.designer.cs">
+    <Compile Include="LinqSql\FromAbis\DataClasses1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>DataClasses1.tt</DependentUpon>
     </Compile>
-    <Compile Include="LinqSql\FromMap\DataClasses1.designer.cs">
+    <Compile Include="LinqSql\FromMap\DataClasses1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>DataClasses1.tt</DependentUpon>
     </Compile>
-    <Compile Include="LinqSql\FromOSS\DataClasses1.designer.cs">
+    <Compile Include="LinqSql\FromOSS\DataClasses1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>DataClasses1.tt</DependentUpon>
     </Compile>
-    <Compile Include="LinqSql\ToMap\DataClasses1.designer.cs">
+    <Compile Include="LinqSql\ToMap\DataClasses1.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
+      <DependentUpon>DataClasses1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,21 +122,41 @@
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="LinqSql\FromAbis\DataClasses1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataClasses1.generated.cs</LastGenOutput>
+    </None>
+    <None Include="LinqSql\FromAbis\L2ST4.ttinclude" />
     <None Include="LinqSql\FromMap\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="LinqSql\FromMap\DataClasses1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataClasses1.generated.cs</LastGenOutput>
+    </None>
+    <None Include="LinqSql\FromMap\L2ST4.ttinclude" />
     <None Include="LinqSql\FromOSS\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="LinqSql\FromOSS\DataClasses1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataClasses1.generated.cs</LastGenOutput>
+    </None>
+    <None Include="LinqSql\FromOSS\L2ST4.ttinclude" />
     <None Include="LinqSql\ToMap\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="LinqSql\ToMap\DataClasses1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataClasses1.generated.cs</LastGenOutput>
+    </None>
+    <None Include="LinqSql\ToMap\L2ST4.ttinclude" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,26 +165,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LinqSql\ToMap\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LinqSql\FromOSS\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LinqSql\FromAbis\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="LinqSql\FromMap\DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
